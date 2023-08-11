@@ -1,0 +1,48 @@
+.root {
+  font-family: "Poppins", sans-serif;
+  color: #393939;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.h2, .h3 {
+  margin: 0;
+  color: #fe2e16;
+}
+
+.h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+@media(min-width:768px) {
+  .h2 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+}
+
+.h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+@media(min-width:768px) {
+  .h3 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+}
+
+.button {
+  font-family: Roboto;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0.46000000834465027px;
+  text-align: left;
+}

@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+import FullPageLoader from './components/FullPageLoader'
+import Typography from './components/Typography/Typography'
+
+
+export class App extends React.Component {
+  state = {
+    // global state
+    isLoading: false,
+
+  }
+
+  render () {
+    const { isLoading } = this.state
+
+    return (
+      <div>
+        <h1>Pharmacy Website</h1>
+
+        {
+          isLoading ?
+            <FullPageLoader />
+            :
+            null
+        }
+        <Typography
+          variant={'h2'}
         >
-          Learn React
-        </a>
-      </header>
+          Header 2
+        </Typography>
+        <br />
+        <Typography
+          variant={'h3'}
+        >
+          Header 2
+        </Typography>
     </div>
-  );
+    )
+  }
 }
 
-export default App;
+export default App
