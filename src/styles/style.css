@@ -1,0 +1,43 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__container.flex {
+  justify-content: space-between;
+}
+
+.container, .main {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 1000px) {
+  .container, .main {
+    padding-left: 0;
+  }
+}
+@media (min-width: 768px) {
+  .container, .main {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container, .main {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container, .main {
+    max-width: 1250px;
+  }
+}
+.column {
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=style.css.map */

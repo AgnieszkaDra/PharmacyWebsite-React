@@ -1,0 +1,44 @@
+.root {
+    color: black;
+}
+
+.logo{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: black;
+}
+
+.nav__item {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .nav{
+        justify-content: space-between;
+    }
+    .btn{
+        display: none;
+    }
+    .nav__menu{
+        height: 60vh;
+        position: absolute;
+        top: 50px;
+        margin-top: 50px;
+        left: 0;
+        z-index: 2;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav__hide{
+        display: none;
+    } 
+}

@@ -1,0 +1,149 @@
+
+
+// html,
+// body {
+
+//     margin: 0;
+//     padding: 0;
+//     font-family: 'Poppins', sans-serif;
+//     color: #393939;
+//     overflow-x: hidden;
+//     line-height: 1.5;
+//     font-size: 16px;
+//     font-weight: 400;
+//     box-sizing: border-box;
+
+// }
+
+// .border--pink {
+
+//     border: 10px solid $color-submain;
+//     border-radius: 2px;
+
+// }
+
+// .text-center {
+
+//     text-align: center;
+
+// }
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__container.flex {
+    justify-content: space-between;
+}
+
+
+// .section__headline--h2 {
+
+//     margin: 0;
+//     font-size: 40px;
+//     color: $color-main;
+//     font-weight: 700;
+//     margin-bottom: 30px;
+
+// }
+
+// @media (max-width: 768px) {
+
+//     .section__headline--h2 {
+
+//         font-size: 30px;
+
+//     }
+
+// }
+
+// .section__headline--h3 {
+
+//     color: $color-font;
+//     font-size: 25px;
+
+// }
+
+// .section > div {
+
+//     padding: 10px 20px 20px 20px;
+//     margin: 20px 0;
+
+// }
+
+// label {
+
+//     width: 80%;
+//     margin-bottom: 5px;
+    
+// }
+
+// .label__error {
+
+//     color: $color-white;
+//     width: 130%;
+//     font-size: 15px;
+//     margin-top: 10px;
+//     margin-bottom: 15px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     animation: color_change 1s infinite alternate;
+
+//   }
+
+// @keyframes color_change {
+
+//     from { color: white; }
+//     to { color: $color-pink; }
+
+// }
+
+// input {
+
+//     width: 80%;
+    
+// }   
+
+// .success {
+
+//     border: none;
+//     background-color: $color-pink;
+
+// }
+
+// span.success {
+
+//     position: absolute;
+//     right: -10px;
+//     background-color: none;
+
+// }
+
+// span.spanok {
+
+//     display: none;
+
+// }
+
+// span.success.spanok {
+
+//     display: block;
+//     background-color: $color-main;
+
+// }
+  
+// span.spanwrong {
+
+//     display: none;
+
+// }
+
+// span.spanwrong .error {
+
+//     display: none;
+//     background-color: none;
+
+// }

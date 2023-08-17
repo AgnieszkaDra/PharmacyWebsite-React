@@ -2,6 +2,8 @@ import React from 'react'
 
 import FullPageLoader from './components/FullPageLoader'
 import Typography from './components/Typography/Typography'
+import Menu from './components/Menu/Menu'
+import Header from './components/Header/Header'
 
 
 export class App extends React.Component {
@@ -35,6 +37,15 @@ export class App extends React.Component {
         >
           Header 2
         </Typography>
+        <Menu
+          className={'nav'}
+        >
+          Menu
+        </Menu>
+        <Header
+           id={'header'} 
+        >
+        </Header>
     </div>
     )
   }
