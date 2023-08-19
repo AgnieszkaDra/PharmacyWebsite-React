@@ -1,0 +1,9 @@
+@import "colors";
+
+:export  {
+
+    // Export the color palette to make it accessible to JS
+    red: $color-main
+
+
+}

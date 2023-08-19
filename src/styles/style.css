@@ -8,6 +8,10 @@
     max-width: 1250px;
   }
 }
+:export {
+  red: rgb(254, 46, 22);
+}
+
 .border--pink {
   border: 10px solid rgb(249, 217, 213);
   border-radius: 2px;
@@ -21,6 +25,35 @@
 
 section {
   margin: 10px;
+}
+
+.section > div {
+  padding: 10px 20px 20px 20px;
+  margin: 20px 0;
+}
+
+.section--first {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .section--first {
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+  }
+}
+button {
+  border-radius: 55px;
+  border-color: #fe2e16;
+  font-size: 16px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 35px;
+  background: #fe2e16;
+  color: #393939;
 }
 
 .container, .main {

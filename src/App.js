@@ -60,7 +60,7 @@ export class App extends React.Component {
          className={'container'}
         >
           <Section
-            className={'section--first'}
+            className={'section section--first'}
           >
            <SectionFirst
             className={'border--pink'}

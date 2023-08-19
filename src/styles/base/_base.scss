@@ -18,7 +18,6 @@
 .border--pink {
     border: 10px solid $color-submain;
     border-radius: 2px;
-
 }
 
 // .text-center {
@@ -35,6 +34,36 @@
 
 section {
     margin: 10px;
+}
+
+.section>div {
+    padding: 10px 20px 20px 20px;
+    margin: 20px 0;
+}
+
+.section--first {
+    display: flex;
+    flex-direction: column;
+}
+
+@media(min-width:768px) {
+    .section--first {
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 25px;
+    }
+}
+
+button {
+    border-radius: 55px;
+    border-color: #fe2e16;
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 35px;
+    background: #fe2e16;
+    color: #393939;
 }
 
 // .header__container.flex {
@@ -84,7 +113,7 @@ section {
 
 //     width: 80%;
 //     margin-bottom: 5px;
-    
+
 // }
 
 // .label__error {
@@ -111,7 +140,7 @@ section {
 // input {
 
 //     width: 80%;
-    
+
 // }   
 
 // .success {
@@ -141,7 +170,7 @@ section {
 //     background-color: $color-main;
 
 // }
-  
+
 // span.spanwrong {
 
 //     display: none;
