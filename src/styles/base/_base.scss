@@ -1,4 +1,4 @@
-
+@import '../abstracts/';
 
 // html,
 // body {
@@ -15,12 +15,11 @@
 
 // }
 
-// .border--pink {
+.border--pink {
+    border: 10px solid $color-submain;
+    border-radius: 2px;
 
-//     border: 10px solid $color-submain;
-//     border-radius: 2px;
-
-// }
+}
 
 // .text-center {
 
@@ -34,9 +33,17 @@
     align-items: center;
 }
 
-.header__container.flex {
-    justify-content: space-between;
+section {
+    margin: 10px;
 }
+
+// .header__container.flex {
+//     justify-content: space-between;
+// }
+
+// .header__container > *{
+//     margin-right: 10px;
+// }
 
 
 // .section__headline--h2 {

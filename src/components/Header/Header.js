@@ -22,11 +22,11 @@ export const Header = (props) => {
 
   return (
     <div
-      className={`${classes.root}${className ? ` ${className}` : ''}`}
+      className={`${classes.root}`}
       {...otherProps}
     >
       <div className={classes.header__back}>
-        <div className={'header__container flex container'} >
+        <div className={`${classes.header__container}${className ? ` ${className}` : ''}`} >
           <div className={classes.header__logo}>
             <img
               src={logo}
@@ -38,7 +38,7 @@ export const Header = (props) => {
             <button onClick={handleToggle} className={classes.hamburger__btn}><GiHamburgerMenu /></button>
             <div className={classes.name__top}>
               <Typography
-                variant={'h3'}
+                variant={'h4'}
               >
                 Apteka Non-Stop 2  Jelcz-Laskowice
               </Typography>

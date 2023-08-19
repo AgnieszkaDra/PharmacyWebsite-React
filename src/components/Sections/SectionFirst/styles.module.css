@@ -1,0 +1,11 @@
+.root {
+    display: flex;
+    flex-direction: column;
+}
+
+@media(min-width:768px) {
+    .root {
+        display: flex;
+        flex-direction: row
+    }
+}

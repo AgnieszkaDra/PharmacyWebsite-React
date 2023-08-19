@@ -8,7 +8,6 @@
 
 .h2, .h3 {
   margin: 0;
-  color: #fe2e16;
 }
 
 .h2 {
@@ -34,6 +33,18 @@
   .h3 {
     font-size: 25px;
     font-weight: 500;
+  }
+}
+
+.h4 {
+  font-size: 17px;
+  font-weight: 300;
+}
+
+@media(min-width:768px) {
+  .h4 {
+    font-size: 20px;
+    font-weight: 400;
   }
 }
 

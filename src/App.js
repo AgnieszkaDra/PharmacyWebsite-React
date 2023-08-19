@@ -4,6 +4,9 @@ import FullPageLoader from './components/FullPageLoader'
 import Typography from './components/Typography/Typography'
 import Menu from './components/Menu/Menu'
 import Header from './components/Header/Header'
+import Main from './components/Main/Main'
+import Section from './components/Section/Section'
+import SectionFirst from './components/Sections/SectionFirst/SectionFirst'
 
 
 export class App extends React.Component {
@@ -35,7 +38,13 @@ export class App extends React.Component {
         <Typography
           variant={'h3'}
         >
-          Header 2
+          Header 3
+        </Typography>
+        <br />
+        <Typography
+          variant={'h4'}
+        >
+          Header 4
         </Typography>
         <Menu
           className={'nav'}
@@ -43,9 +52,38 @@ export class App extends React.Component {
           Menu
         </Menu>
         <Header
-           id={'header'} 
+           id={'header'}
+           className={'container flex'}
         >
         </Header>
+        <Main
+         className={'container'}
+        >
+          <Section
+            className={'section--first'}
+          >
+           <SectionFirst
+            className={'border--pink'}
+           >
+          </SectionFirst>
+
+          </Section>
+          <Section
+            className={'section--second'}
+          >
+
+          </Section>
+          <Section
+            className={'section--third'}
+          >
+
+          </Section>
+          <Section
+            className={'section--fourth'}
+          >
+
+          </Section>
+        </Main>
     </div>
     )
   }

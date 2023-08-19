@@ -1,11 +1,26 @@
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1250px;
+  }
+}
+.border--pink {
+  border: 10px solid rgb(249, 217, 213);
+  border-radius: 2px;
+}
+
 .flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.header__container.flex {
-  justify-content: space-between;
+section {
+  margin: 10px;
 }
 
 .container, .main {
