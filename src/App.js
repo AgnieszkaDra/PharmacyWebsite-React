@@ -9,6 +9,7 @@ import Section from './components/Section/Section'
 import SectionFirst from './components/Sections/SectionFirst/SectionFirst'
 import SectionSecond from './components/Sections/SectionSecond/SectionSecond'
 import SectionThird from './components/Sections/SectionThird/SectionThird'
+import SectionFourth from './components/Sections/SectionFourth/SectionFourth'
 
 
 export class App extends React.Component {
@@ -61,21 +62,15 @@ export class App extends React.Component {
         <Main
           className={'container'}
         >
-          <Section
+          <SectionFirst
             className={'section section--first'}
           >
-            <SectionFirst
-              className={'border--pink'}
-            >
-            </SectionFirst>
-          </Section>
-          <Section
+          </SectionFirst>
+          <SectionSecond
             className={'section section--second'}
           >
-            <SectionSecond
-            >
-            </SectionSecond>
-          </Section>
+          </SectionSecond>
+
           <Section
             className={'section section--third'}
           >
@@ -90,11 +85,11 @@ export class App extends React.Component {
             </SectionThird>
 
           </Section>
-          <Section
+          <SectionFourth
             className={'section--fourth'}
           >
 
-          </Section>
+          </SectionFourth>
         </Main>
       </div>
     )

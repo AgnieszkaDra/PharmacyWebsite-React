@@ -65,7 +65,7 @@ export const SectionSecond = (props) => {
   }
 
   return (
-    <div
+    <section
       className={`${classes.root}${className ? ` ${className}` : ''}`}
       {...otherProps}
     >
@@ -81,7 +81,7 @@ export const SectionSecond = (props) => {
           return renderListItem(element, index)
         })}
       </div>
-    </div>
+    </section>
   )
 }
 

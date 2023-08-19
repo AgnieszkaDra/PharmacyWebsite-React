@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Typography from '../../Typography/Typography'
+import Section from '../../Section/Section'
 // import variables from '../../../styles/abstracts'
 // import styles from '../../../styles/abstracts/_export.module.scss'
 import classes from './styles.module.css'
@@ -13,11 +14,12 @@ export const SectionFirst = (props) => {
 
   return (
     <>
-      <div
+      <section
         className={`${classes.root}${className ? ` ${className}` : ''}`}
         {...otherProps}
       >
-        <Typography
+        <div className='border--pink'>
+            <Typography
           variant={'h2'}
           color={'red'} ///how to import from abstarcts
           className={classes.h2}
@@ -36,12 +38,16 @@ export const SectionFirst = (props) => {
             Złóż zamówienie
           </a>
         </button>
-      </div>
-      <div
+        </div>
+         
+     
+        <div
         className={`${classes.mobileNone}${className ? ` ${className}` : ''}`}
         {...otherProps}
       >
       </div>
+      </section>
+     
     </>
 
   )
