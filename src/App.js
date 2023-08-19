@@ -7,6 +7,7 @@ import Header from './components/Header/Header'
 import Main from './components/Main/Main'
 import Section from './components/Section/Section'
 import SectionFirst from './components/Sections/SectionFirst/SectionFirst'
+import SectionSecond from './components/Sections/SectionSecond/SectionSecond'
 
 
 export class App extends React.Component {
@@ -16,7 +17,7 @@ export class App extends React.Component {
 
   }
 
-  render () {
+  render() {
     const { isLoading } = this.state
 
     return (
@@ -52,21 +53,27 @@ export class App extends React.Component {
           Menu
         </Menu>
         <Header
-           id={'header'}
-           className={'container flex'}
+          id={'header'}
+          className={'container flex'}
         >
         </Header>
         <Main
-         className={'container'}
+          className={'container'}
         >
           <Section
             className={'section section--first'}
           >
-           <SectionFirst
-            className={'border--pink'}
-           >
-          </SectionFirst>
-
+            <SectionFirst
+              className={'border--pink'}
+            >
+            </SectionFirst>
+          </Section>
+          <Section
+            className={'section section--second'}
+          >
+            <SectionSecond
+            >
+            </SectionSecond>
           </Section>
           <Section
             className={'section--second'}
@@ -84,7 +91,7 @@ export class App extends React.Component {
 
           </Section>
         </Main>
-    </div>
+      </div>
     )
   }
 }
