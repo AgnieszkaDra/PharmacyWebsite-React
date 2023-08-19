@@ -43,24 +43,7 @@ export const SectionSecond = (props) => {
     ...otherProps
   } = props
 
-  const showObject = (el) => {
-
-    return Object.entries(el).map(([key, values]) => {
-
-      return (
-        <>
-          <ElementSecond
-            key={'njnj'}
-            values={`${values}`}
-          >
-          </ElementSecond>
-        </>
-
-
-
-      )
-    })
-  }
+ 
 
   const renderListItem = (element, i) => {
     return (
@@ -97,10 +80,6 @@ export const SectionSecond = (props) => {
         {howToBook.list.map((element, index) => {
           return renderListItem(element, index)
         })}
-        {<FontAwesomeIcon
-          icon={faEnvelope}
-          key={'kk'}
-        />}
       </div>
     </div>
   )

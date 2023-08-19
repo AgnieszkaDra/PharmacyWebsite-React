@@ -8,6 +8,7 @@ import Main from './components/Main/Main'
 import Section from './components/Section/Section'
 import SectionFirst from './components/Sections/SectionFirst/SectionFirst'
 import SectionSecond from './components/Sections/SectionSecond/SectionSecond'
+import SectionThird from './components/Sections/SectionThird/SectionThird'
 
 
 export class App extends React.Component {
@@ -76,13 +77,17 @@ export class App extends React.Component {
             </SectionSecond>
           </Section>
           <Section
-            className={'section--second'}
+            className={'section section--third'}
           >
 
           </Section>
           <Section
-            className={'section--third'}
+            className={'section section--fourth'}
           >
+            <SectionThird
+            >
+
+            </SectionThird>
 
           </Section>
           <Section
