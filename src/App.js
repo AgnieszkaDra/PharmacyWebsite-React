@@ -10,50 +10,15 @@ import SectionFirst from './components/Sections/SectionFirst/SectionFirst'
 import SectionSecond from './components/Sections/SectionSecond/SectionSecond'
 import SectionThird from './components/Sections/SectionThird/SectionThird'
 import SectionFourth from './components/Sections/SectionFourth/SectionFourth'
+import Footer from './components/Footer/Footer'
 
 
 export class App extends React.Component {
-  state = {
-    // global state
-    isLoading: false,
-
-  }
 
   render() {
-    const { isLoading } = this.state
 
     return (
-      <div>
-        <h1>Pharmacy Website</h1>
-
-        {
-          isLoading ?
-            <FullPageLoader />
-            :
-            null
-        }
-        <Typography
-          variant={'h2'}
-        >
-          Header 2
-        </Typography>
-        <br />
-        <Typography
-          variant={'h3'}
-        >
-          Header 3
-        </Typography>
-        <br />
-        <Typography
-          variant={'h4'}
-        >
-          Header 4
-        </Typography>
-        <Menu
-          className={'nav'}
-        >
-          Menu
-        </Menu>
+      <>
         <Header
           id={'header'}
           className={'container flex'}
@@ -91,7 +56,8 @@ export class App extends React.Component {
 
           </SectionFourth>
         </Main>
-      </div>
+        <Footer></Footer>
+      </>
     )
   }
 }

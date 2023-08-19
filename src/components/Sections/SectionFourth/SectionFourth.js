@@ -15,7 +15,7 @@ export const SectionFourth = (props) => {
 
   return (
 
-    <section
+    <footer
       className={`${classes.root}${className ? ` ${className}` : ''}`}
       {...otherProps}
     >
@@ -57,10 +57,7 @@ export const SectionFourth = (props) => {
           </div>
         </div>
       </div>
-
-
-
-    </section >
+    </footer >
   )
 }
 
