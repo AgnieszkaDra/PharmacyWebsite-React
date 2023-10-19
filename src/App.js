@@ -5,12 +5,13 @@ import Typography from './components/Typography/Typography'
 import Menu from './components/Menu/Menu'
 import Header from './components/Header/Header'
 import Main from './components/Main/Main'
-import Section from './components/Section/Section'
+
 import SectionFirst from './components/Sections/SectionFirst/SectionFirst'
 import SectionSecond from './components/Sections/SectionSecond/SectionSecond'
 import SectionThird from './components/Sections/SectionThird/SectionThird'
 import SectionFourth from './components/Sections/SectionFourth/SectionFourth'
 import Footer from './components/Footer/Footer'
+import drug from './images/leki.webp'
 
 
 export class App extends React.Component {
@@ -21,14 +22,15 @@ export class App extends React.Component {
       <>
         <Header
           id={'header'}
-          className={'container flex'}
+          className={'header'}
         >
         </Header>
         <Main
-          className={'container'}
+          className={'main'}
         >
           <SectionFirst
             className={'section section--first'}
+            image = {drug}
           >
           </SectionFirst>
           <SectionSecond
@@ -36,27 +38,19 @@ export class App extends React.Component {
           >
           </SectionSecond>
 
-          <Section
+          <SectionThird
             className={'section section--third'}
           >
 
-          </Section>
-          <Section
-            className={'section section--fourth'}
-          >
-            <SectionThird
-            >
-
-            </SectionThird>
-
-          </Section>
+          </SectionThird>
+      
           <SectionFourth
             className={'section--fourth'}
           >
 
           </SectionFourth>
         </Main>
-        <Footer></Footer>
+        <Footer className={'footer'}></Footer>
       </>
     )
   }

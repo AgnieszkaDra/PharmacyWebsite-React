@@ -1,64 +1,49 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Typography from '../../Typography/Typography'
-import ElementSecond from '../ElementSecond/ElementSecond'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-
-import classes from './styles.module.css'
-
 const howToBook = {
   list: [
-    [
-      { id: 1 },
-      <FontAwesomeIcon
-        icon={faEnvelope}
-        key={'kk'}
-      />,
-      { description: "Wypełnij formularz" }
-    ],
-    [
-      { id: 2 },
-      <FontAwesomeIcon
-        icon={faEnvelope}
-        key={'kk'}
-      />,
-      { description: "Potwierdź złożenie zamówienia" },
-    ],
-    [
-      { id: 3 },
-      <FontAwesomeIcon
-        icon={faEnvelope}
-        key={'kk'}
-      />,
-      { description: "Czekaj na informację o przygotowanym zamówienie i zrealizuj je w aptece" },
-    ],
+    {
+      id: 1,
+      icon: faEnvelope,
+      description: "Wypełnij formularz" 
+    },
+   
+    {
+      id: 2,
+      icon: faEnvelope,
+      description: "Potwierdź złożenie zamówienia" 
+    },
+      {
+        id: 3,
+        icon: faEnvelope,
+        description: "Czekaj na informację o przygotowanym zamówienie i zrealizuj je w aptece"
+      }
+  
   ]
 }
 
 export const SectionSecond = (props) => {
   const {
-    className,
-    ...otherProps
+    className
   } = props
 
- 
-
-  const renderListItem = (element, i) => {
+  const renderListItem = (element, index) => {
     return (
-      <div className={classes.listContainer}>
-        <div className={classes.listItemTop}>
-          <div className={classes.itemNumber}>
-            {element[0].id + '.'}
+      <div className={'order__sub'} key={index}>
+        <div className={'order__sub__icon'}>
+          <div className={'number'}>
+            {element.id + '.'}
           </div>
-          <div className={classes.itemIcon}>
-            {element[1]}
-          </div>
+          
+          <FontAwesomeIcon icon={element.icon}  ></FontAwesomeIcon>   
+       
             
         </div>
-        <div className={classes.listItemBottom}>
-          {element[2].description}
+        <div className={''}>
+          {element.description}
         </div>
       </div>
     )
@@ -66,17 +51,10 @@ export const SectionSecond = (props) => {
 
   return (
     <section
-      className={`${classes.root}${className ? ` ${className}` : ''}`}
-      {...otherProps}
+      className={className}
     >
-      <Typography
-        variant={'h2'}
-        color={'red'}
-        className={classes.h2}
-      >
-        {'Jak to działa?'}
-      </Typography>
-      <div className={classes.container}>
+      <h2 className={'section--second__element headline--h2'}>Jak to działa?</h2>
+      <div className={'section--second__element order'}>
         {howToBook.list.map((element, index) => {
           return renderListItem(element, index)
         })}

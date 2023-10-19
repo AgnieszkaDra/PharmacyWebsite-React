@@ -1,46 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Typography from '../../Typography/Typography'
-
-import classes from './styles.module.css'
 
 export const SectionThird = (props) => {
   const {
     className,
-    ...otherProps
+   
   } = props
 
   const listDescription = [
 
-  
+ 
     'Złożone zamówienie nie zobowiązuje do wykupienia. Bez problemu możesz zrezygnować, wybrać zamiennik lub zrealizować kolejną receptę',
     'W razie niejasności będziemy się z Panią/Panem kontaktować drogą mailową'
   ]
 
-  const renderListItem = (element, i) => {
+  const renderListItem = (element, index) => {
     return (
-      <li className={classes.element}>{element}</li>
+      <li className={'headline--h4'} key={index}>{element}</li>
     )
   }
 
   return (
-    <div
-      className={`${classes.root}${className ? ` ${className}` : ''}`}
-      {...otherProps}
+    <section
+      className={className}
+     
     >
-        <Typography
-        variant={'h2'}
-        color={'red'}
-        className={classes.h2}
-      >
-        {'Warunki'}
-      </Typography>
-      <ul className={classes.list}>
-        {listDescription.map((item, i) => {
-          return renderListItem(item, i)
+      <h2 className={'section--third__element headline--h2'}> {'Warunki'}</h2>
+       
+      <ul className={'section--third__element list'}>
+        {listDescription.map((item, index) => {
+          return renderListItem(item, index)
         })}
       </ul>
-    </div>
+    </section>
   )
 }
 

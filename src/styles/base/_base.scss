@@ -1,79 +1,91 @@
 @import '../abstracts/';
 
-// html,
-// body {
+html,
+body {
 
-//     margin: 0;
-//     padding: 0;
-//     font-family: 'Poppins', sans-serif;
-//     color: #393939;
-//     overflow-x: hidden;
-//     line-height: 1.5;
-//     font-size: 16px;
-//     font-weight: 400;
-//     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #393939;
+    overflow-x: hidden;
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 400;
+    box-sizing: border-box;
 
-// }
+}
 
 .border--pink {
+
     border: 10px solid $color-submain;
     border-radius: 2px;
+
 }
 
-// .text-center {
 
-//     text-align: center;
-
-// }
-
-.flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-section {
-    margin: 10px;
-}
-
-.section>div {
-    padding: 10px 20px 20px 20px;
-    margin: 20px 0;
-}
-
-.section--first {
-    display: flex;
-    flex-direction: column;
-}
-
-@media(min-width:768px) {
-    .section--first {
-        flex-direction: row;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 25px;
-    }
-}
-
-button {
+.button {
     border-radius: 55px;
-    border-color: #fe2e16;
     font-size: 16px;
     display: inline-block;
     text-decoration: none;
     padding: 14px 35px;
-    background: #fe2e16;
-    color: #393939;
+    background: $color-main;
+ 
+
 }
 
-// .header__container.flex {
-//     justify-content: space-between;
-// }
+.text-center {
 
-// .header__container > *{
-//     margin-right: 10px;
-// }
+    text-align: center;
 
+}
+
+.flex {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.link {
+
+    text-decoration: none;
+    color: $color-white;
+
+}
+
+.headline--h2 {
+    margin: 0;
+    font-size: 30px;
+    color: $color-main;
+    font-weight: 700;
+    text-align: center;
+    @include respond(tablet) {
+         font-size: 40px;
+    }
+    
+}
+
+.headline--h3 {
+    margin: 0;
+    font-size: 20px;
+    color: $color-font;
+    font-weight: 500;
+    @include respond(tablet) {
+        font-size: 30px;
+    }
+
+}
+
+.headline--h4 {
+    margin: 0;
+    font-size: 20px;
+    color: $color-font;
+    font-weight: 500;
+
+}
 
 // .section__headline--h2 {
 
@@ -95,12 +107,12 @@ button {
 
 // }
 
-// .section__headline--h3 {
+.section__headline--h3 {
 
-//     color: $color-font;
-//     font-size: 25px;
+    color: $color-font;
+    font-size: 25px;
 
-// }
+}
 
 // .section > div {
 
@@ -109,77 +121,82 @@ button {
 
 // }
 
-// label {
+label {
 
-//     width: 80%;
-//     margin-bottom: 5px;
+    width: 80%;
+    margin-bottom: 5px;
 
-// }
+}
 
-// .label__error {
+.label__error {
 
-//     color: $color-white;
-//     width: 130%;
-//     font-size: 15px;
-//     margin-top: 10px;
-//     margin-bottom: 15px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     animation: color_change 1s infinite alternate;
+    color: $color-white;
+    width: 130%;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: color_change 1s infinite alternate;
 
-//   }
+}
 
-// @keyframes color_change {
+@keyframes color_change {
 
-//     from { color: white; }
-//     to { color: $color-pink; }
+    from {
+        color: white;
+    }
 
-// }
+    to {
+        color: $color-pink;
+    }
 
-// input {
+}
 
-//     width: 80%;
+input {
 
-// }   
+    width: 80%;
 
-// .success {
+}
 
-//     border: none;
-//     background-color: $color-pink;
+.success {
 
-// }
+    border: none;
+    background-color: $color-pink;
 
-// span.success {
+}
 
-//     position: absolute;
-//     right: -10px;
-//     background-color: none;
+span.success {
 
-// }
+    position: absolute;
+    right: -10px;
+    background-color: none;
 
-// span.spanok {
+}
 
-//     display: none;
+span.spanok {
 
-// }
+    display: none;
 
-// span.success.spanok {
+}
 
-//     display: block;
-//     background-color: $color-main;
+span.success.spanok {
 
-// }
+    display: block;
+    background-color: $color-main;
 
-// span.spanwrong {
+}
 
-//     display: none;
+span.spanwrong {
 
-// }
+    display: none;
 
-// span.spanwrong .error {
+}
 
-//     display: none;
-//     background-color: none;
+span.spanwrong .error {
 
-// }
+    display: none;
+    background-color: none;
+
+}

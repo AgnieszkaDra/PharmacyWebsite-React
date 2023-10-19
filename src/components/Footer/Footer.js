@@ -6,17 +6,14 @@ import classes from './styles.module.css'
 
 export const Footer = (props) => {
   const {
-    className,
-    ...otherProps
+    className
   } = props
 
   return (
     <footer
-      className={`${classes.root}${className ? ` ${className}` : ''}`}
-      {...otherProps}
+      className={className}
     >
-      <div className={classes.logo}><img src={logo} alt=""></img></div>
-
+      <img src={logo} alt="logo"></img>
     </footer>
   )
 }
