@@ -8,20 +8,18 @@ const howToBook = {
     {
       id: 1,
       icon: faEnvelope,
-      description: "Wypełnij formularz" 
+      description: 'Wypełnij formularz'
     },
-   
     {
       id: 2,
       icon: faEnvelope,
-      description: "Potwierdź złożenie zamówienia" 
+      description: 'Potwierdź złożenie zamówienia'
     },
-      {
-        id: 3,
-        icon: faEnvelope,
-        description: "Czekaj na informację o przygotowanym zamówienie i zrealizuj je w aptece"
-      }
-  
+    {
+      id: 3,
+      icon: faEnvelope,
+      description: 'Czekaj na informację o przygotowanym zamówienie i zrealizuj je w aptece'
+    }
   ]
 }
 
@@ -32,15 +30,16 @@ export const SectionSecond = (props) => {
 
   const renderListItem = (element, index) => {
     return (
-      <div className={'order__sub'} key={index}>
+      <div
+        className={'order__sub'}
+        key={index}
+      >
         <div className={'order__sub__icon'}>
           <div className={'number'}>
             {element.id + '.'}
           </div>
-          
-          <FontAwesomeIcon icon={element.icon}  ></FontAwesomeIcon>   
-       
-            
+
+          <FontAwesomeIcon icon={element.icon}></FontAwesomeIcon>
         </div>
         <div className={''}>
           {element.description}

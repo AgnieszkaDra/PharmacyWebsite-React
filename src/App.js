@@ -1,8 +1,4 @@
 import React from 'react'
-
-import FullPageLoader from './components/FullPageLoader'
-import Typography from './components/Typography/Typography'
-import Menu from './components/Menu/Menu'
 import Header from './components/Header/Header'
 import Main from './components/Main/Main'
 
@@ -13,11 +9,8 @@ import SectionFourth from './components/Sections/SectionFourth/SectionFourth'
 import Footer from './components/Footer/Footer'
 import drug from './images/leki.webp'
 
-
 export class App extends React.Component {
-
-  render() {
-
+  render () {
     return (
       <>
         <Header
@@ -43,7 +36,6 @@ export class App extends React.Component {
           >
 
           </SectionThird>
-      
           <SectionFourth
             className={'section--fourth'}
           >

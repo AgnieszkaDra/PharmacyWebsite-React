@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import logo from '../../data/logo/drofarmaptekanamyslow.webp'
 
-import classes from './styles.module.css'
-
 export const Footer = (props) => {
   const {
     className
@@ -13,7 +11,11 @@ export const Footer = (props) => {
     <footer
       className={className}
     >
-      <img src={logo} alt="logo"></img>
+      <img
+        src={logo}
+        alt={'logo'}
+      >
+      </img>
     </footer>
   )
 }
