@@ -5,16 +5,11 @@ export const Menu = (props) => {
   const {
     isNavbarOpen
   } = props
-
   return (
     <>
-      {/* <nav
-        className={`nav ${open ? 'nav__block' : ''} ${className}`}
-
-      > */}
-      <nav className={'nav'} >
-        {/* <button onClick={handleToggle} className={classes.hamburger__btn}><GiHamburgerMenu/></button>     */}
-        {/* <ul className={'nav__menu menu '}> */}
+      <nav
+        className={`${'nav__menu menu'} ${isNavbarOpen ? `${'nav__hide'}` : `${'nav__block'}`} `}
+      >
         <ul className={`${'nav__menu menu'} ${isNavbarOpen ? `${'nav__hide'}` : `${'nav__block'}`} `}>
           <li className={'menu__item'}>
             <a
@@ -41,13 +36,11 @@ export const Menu = (props) => {
         </ul>
       </nav>
     </>
-
   )
 }
 
 Menu.propTypes = {
-  className: PropTypes.string,
-  isNavbarOpen: PropTypes.string
+  isNavbarOpen: PropTypes.bool
 }
 
 export default Menu

@@ -5,7 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { GiHamburgerMenu } from 'react-icons/gi'
+// import Menu from '../Menu/Menu'
 import Menu from '../Menu/Menu'
+import { useToggleNavbar } from '../../hooks/useToggleNavbar'
 
 library.add(faXmark)
 
@@ -15,16 +17,17 @@ export const Header = (props) => {
     className
   } = props
 
-  const [navbarOpen, setNavbarOpen] = useState(false)
+  const { navbarOpen, openNavbar } = useToggleNavbar()
+  // const [navbarOpen, setNavbarOpen] = useState(false)
   const [isActive, setIsActive] = useState(false)
 
   const handleClick = () => {
     setIsActive(!isActive)
   }
 
-  const handleToggle = () => {
-    setNavbarOpen(!navbarOpen)
-  }
+  // const handleToggle = () => {
+  //   setNavbarOpen(!navbarOpen)
+  // }
 
   return (
     <header
@@ -38,29 +41,35 @@ export const Header = (props) => {
         </img>
       </div>
       <div className={'header__navigation'}>
-        <NavbarContext.Provider value={{ navbarOpen, setNavbarOpen }}>
-          <button
-            onClick={handleToggle}
-            className={'hamburger'}
-          ><GiHamburgerMenu />
-          </button>
-          <h3 className={'headline--h3'}>Apteka Non-Stop 2 Jelcz-Laskowice</h3>
-          <Menu
-            open={navbarOpen}
-            openFunc={setNavbarOpen}
-            className={`${isActive ? 'none' : ''}`}
-          >
-          </Menu>
-          <FontAwesomeIcon
-            icon={faXmark}
-            // className={`${open ? 'open' : ''} `}
-            onClick={handleClick}
-          />
-          {/* <ButtonClose open={navbarOpen} onClick={setNavbarOpen}>
+        {/* <NavbarContext.Provider value={{ navbarOpen, setNavbarOpen }}> */}
+        <button
+          onClick={openNavbar}
+          className={'hamburger'}
+        ><GiHamburgerMenu />
+        </button>
+        <h3 className={'headline--h3'}>Apteka Non-Stop 2 Jelcz-Laskowice</h3>
+        <Menu
+          className={'nav'}
+          isNavbarOpen={navbarOpen}
+          navbarOpenFunc={openNavbar}
+        >
+        </Menu>
+        {/* <Menu
+          open={navbarOpen}
+          openFunc={openNavbar}
+          className={`${isActive ? 'none' : ''}`}
+        >
+        </Menu> */}
+        <FontAwesomeIcon
+          icon={faXmark}
+          // className={`${open ? 'open' : ''} `}
+          onClick={handleClick}
+        />
+        {/* <ButtonClose open={navbarOpen} onClick={setNavbarOpen}>
 
             </ButtonClose> */}
 
-        </NavbarContext.Provider>
+        {/* </NavbarContext.Provider> */}
       </div>
 
     </header>

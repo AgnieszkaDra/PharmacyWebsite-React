@@ -18,7 +18,7 @@ export const Main = (props) => {
 
 Main.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.object
+  children: PropTypes.array
 }
 
 export default Main

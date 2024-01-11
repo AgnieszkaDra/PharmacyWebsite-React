@@ -324,7 +324,7 @@ span.spanwrong .error {
 
 @media only screen and (min-width: 900px) {
   .header > * {
-    width: 0;
+    width: 100%;
   }
 }
 @media only screen and (min-width: 900px) {
@@ -337,13 +337,6 @@ span.spanwrong .error {
   height: 100%;
 }
 
-@media only screen and (min-width: 900px) {
-  .header__navigation {
-    width: 70%;
-    display: grid;
-    grid-template-columns: 0 30% 70%;
-  }
-}
 .header__navigation .headline--h3 {
   display: none;
 }
@@ -357,19 +350,47 @@ span.spanwrong .error {
     align-items: center;
   }
 }
+.header__navigation .nav {
+  height: 100%;
+}
+
+.header__navigation .nav .nav__block {
+  width: 200%;
+  position: absolute;
+  top: 20vh;
+  left: -100%;
+  height: 80vh;
+  overflow-y: auto;
+  z-index: 100;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 @media only screen and (min-width: 900px) {
-  .header__navigation .nav {
+  .header__navigation .nav .nav__block {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-column: 3/4;
+    flex-direction: row;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
-  .header__navigation .nav__menu {
+  .header__navigation .nav .nav__block__menu {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 }
+.header__navigation .nav .nav__hide {
+  display: none;
+}
+
 .menu__item {
   padding: 10px;
 }
@@ -379,7 +400,9 @@ span.spanwrong .error {
   right: 10px;
   top: calc(50% - 20px);
   display: block;
-  background-color: rgb(249, 217, 213);
+  background-color: rgb(255, 228, 225);
+  border-radius: 5px;
+  padding: 10px 10px;
   border: none;
   width: 40px;
   height: 40px;
@@ -401,70 +424,47 @@ span.spanwrong .error {
   font-size: 30px;
 }
 
-.nav {
-  display: none;
+.hamburger__icon-open, .hamburger__icon-close {
+  width: 30px;
+  height: 30px;
+  transition: 0.1s;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
-@media only screen and (min-width: 900px) {
-  .nav {
-    display: block;
-  }
-}
-.nav__block {
-  height: 100vh;
-  width: calc(200% + 20px);
-  position: absolute;
-  transform: translateX(-50%);
-  top: -20px;
-  left: 0px;
-  z-index: 2;
-  display: block;
-  background: rgb(255, 255, 255) 40%;
+.hamburger__icon-open div, .hamburger__icon-close div {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 2px 2px;
 }
 
-.nav__block .menu {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+.hamburger__icon-open div span {
+  width: 5px;
+  height: 5px;
+  background-color: rgb(228, 0, 124);
+  display: block;
+  border-radius: 50%;
 }
 
-.nav__block .menu__item .link {
-  color: rgb(57, 57, 57);
+.hamburger__icon-close {
+  transform: rotate(180deg);
+  cursor: pointer;
+  transition: 0.2s cubic-bezier(0.8, 0.5, 0.2, 1.4);
 }
 
-.nav__button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.nav__button__icon {
-  color: rgb(57, 57, 57);
-  font-size: 40px;
-}
-
-@media only screen and (min-width: 900px) {
-  .nav__button {
-    display: none;
-  }
-}
-.nav__button.close {
-  visibility: visible;
-}
-
-.nav__button.close.open {
-  visibility: none;
-}
-
-.nav .icon.open {
-  background-color: yellow;
-}
-
-.nav__button.none {
-  display: none;
+.hamburger__icon-close div:nth-child(odd) span {
+  width: 5px;
+  height: 5px;
+  background-color: rgb(228, 0, 124);
+  display: block;
+  border-radius: 50%;
+  transition-delay: 200ms;
+  transition: 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
 }
 
 .none {

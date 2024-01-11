@@ -16,9 +16,12 @@
 
     >* {
         width: 50%;
+    }
 
-        @include respond(tablet) {
-            width: 0;
+
+    @include respond(tablet) {
+        >* {
+            width: 100%;
         }
     }
 
@@ -34,12 +37,6 @@
     position: relative;
     height: 100%;
 
-    @include respond(tablet) {
-        width: 70%;
-        display: grid;
-        grid-template-columns: 0 30% 70%;
-    }
-
     .headline--h3 {
         display: none;
 
@@ -51,18 +48,52 @@
     }
 
     .nav {
+        height: 100%;
+       .nav__block {
 
-        @include respond(tablet) {
+        
+            width: 200%;
+            // height: 100%;
+            position: absolute;
+            top: 20vh;
+            left: -100%;
+            height: 80vh;
+            overflow-y: auto;
+            z-index: 100;
+            background-color: pink;
+            @include flexAbsoluteCenter(); 
+            flex-direction: column;
+
+            @include respond(tablet) {
             @include flexAbsoluteCenter();
-            grid-column: 3/4;
-
-            &__menu {
+            flex-direction: row;
+              position: relative;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              // width: 100%;
+              // left: 0;
+              // top: 0;
+              // height: 10vh;
+              // min-height: 0;
+              // width: 100%;
+              // z-index: 0;
+              // overflow-y: initial;
+               &__menu {
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
-        }
+      
+            }
+    } 
+    .nav__hide {
+        display: none;
     }
+    }
+    
+    
 }
 
 
@@ -78,7 +109,9 @@
     right: 10px;
     top: calc(50% - 20px);
     display: block;
-    background-color: $color-submain;
+    background-color: $color-very-light-pink;
+    border-radius: 5px;
+    padding: 10px 10px;
     border: none;
     width: 40px;
     height: 40px;
@@ -96,73 +129,119 @@
         background-color: white;
         font-size: 30px;
     }
-}
 
-.nav {
-    display: none;
+    &__icon-open,
+    &__icon-close {
+        width: 30px;
+        height: 30px;
+        transition: .1s;
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
 
-    @include respond(tablet) {
-        display: block;
+        div {
+            @include flexAbsoluteCenter();
+            width: 100%;
+            height: 100%;
+            padding: 2px 2px;
+        }
     }
 
-    &__block {
-        height: 100vh;
-        width: calc(200% + 20px);
-        position: absolute;
-        transform: translateX(-50%);
-        top: -20px;
-        left: 0px;
-        z-index: 2;
-        display: block;
-        background: $color-white 40%;
-        @include flexAbsoluteCenter;
-
-        .menu {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            &__item {
-                .link {
-                    color: $color-font;
-                }
+    &__icon-open {
+        div {
+            span {
+                width: 5px;
+                height: 5px;
+                background-color: $color-dark-pink;
+                display: block;
+                border-radius: 50%; 
             }
         }
     }
 
-    &__button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
+    &__icon-close {
+        transform: rotate(180deg);
+        cursor: pointer;
+        transition: .2s cubic-bezier(.8, .5, .2, 1.4);
 
-        &__icon {
-            color: $color-font;
-            font-size: 40px;
+        div:nth-child(odd) {
+            span {
+                width: 5px;
+                height: 5px;
+                background-color: $color-dark-pink;
+                display: block;
+                border-radius: 50%; 
+                transition-delay: 200ms;
+                transition: .5s cubic-bezier(.8, .5, .2, 1.4);
+               }
         }
-
-        @include respond(tablet) {
-            display: none;
-        }
-    }
-
-    &__button.close {
-        visibility: visible;
-    }
-
-    &__button.close.open {
-        visibility: none;
-    }
-
-    .icon.open {
-        background-color: yellow;
-    }
-    &__button.none {
-        display: none
     }
 }
+
+// .nav {
+//     display: none;
+
+//     @include respond(tablet) {
+//         display: block;
+//     }
+
+//     &__block {
+//         height: 100vh;
+//         width: calc(200% + 20px);
+//         position: absolute;
+//         transform: translateX(-50%);
+//         top: -20px;
+//         left: 0px;
+//         z-index: 2;
+//         display: block;
+//         background: $color-white 40%;
+//         @include flexAbsoluteCenter;
+
+//         .menu {
+//             display: flex;
+//             justify-content: center;
+//             flex-direction: column;
+//             &__item {
+//                 .link {
+//                     color: $color-font;
+//                 }
+//             }
+//         }
+//     }
+
+//     &__button {
+//         position: absolute;
+//         top: 20px;
+//         right: 20px;
+
+//         &__icon {
+//             color: $color-font;
+//             font-size: 40px;
+//         }
+
+//         @include respond(tablet) {
+//             display: none;
+//         }
+//     }
+
+//     &__button.close {
+//         visibility: visible;
+//     }
+
+//     &__button.close.open {
+//         visibility: none;
+//     }
+
+//     .icon.open {
+//         background-color: yellow;
+//     }
+//     &__button.none {
+//         display: none
+//     }
+// }
 
 .none {
     display: none;
-    
+
 }
-
-

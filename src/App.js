@@ -1,5 +1,6 @@
 import React from 'react'
-import Header from './components/Header/Header'
+// import Header from './components/Header/Header'
+import HeaderSecond from './components/HeaderSecond'
 import Main from './components/Main/Main'
 
 import SectionFirst from './components/Sections/SectionFirst/SectionFirst'
@@ -13,11 +14,13 @@ export class App extends React.Component {
   render () {
     return (
       <>
-        <Header
-          id={'header'}
+        <HeaderSecond
           className={'header'}
         >
-        </Header>
+        </HeaderSecond>
+        {/* <Header
+        >
+        </Header> */}
         <Main
           className={'main'}
         >
