@@ -1,8 +1,7 @@
 import React from 'react'
-// import Header from './components/Header/Header'
-import HeaderSecond from './components/HeaderSecond'
-import Main from './components/Main/Main'
 
+import Header from './components/Header'
+import Main from './components/Main/Main'
 import SectionFirst from './components/Sections/SectionFirst/SectionFirst'
 import SectionSecond from './components/Sections/SectionSecond/SectionSecond'
 import SectionThird from './components/Sections/SectionThird/SectionThird'
@@ -14,13 +13,10 @@ export class App extends React.Component {
   render () {
     return (
       <>
-        <HeaderSecond
+        <Header
           className={'header'}
         >
-        </HeaderSecond>
-        {/* <Header
-        >
-        </Header> */}
+        </Header>
         <Main
           className={'main'}
         >

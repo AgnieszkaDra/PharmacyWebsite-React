@@ -1,0 +1,125 @@
+@import '../abstracts';
+
+.form {
+    display: grid;
+    width: 100%;
+    grid-gap: 20px;
+    grid-template-areas:
+        'username'
+        'electronicPrescription'
+        'paperPrescription'
+        'nonPrescription'
+        'formButton';
+
+    @include respond(tablet) {
+        grid-template-areas:
+            'username username'
+            'electronicPrescription orderSection'
+            'paperPrescription orderSection'
+            'nonPrescription orderSection'
+            'formButton formButton';
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &-electronicPrescription,
+    &-paperPrescription,
+    &-nonPrescription {
+        width: 50%;
+        @include flexAbsoluteCenter();
+        flex-direction: column;
+    }
+}
+
+.section-form {
+    position: relative;
+    background-color: $color-main;
+    min-height: 100px;
+    padding: 30px 10px 30px 10px;
+    width: 100%;
+    @include flexAbsoluteCenter;
+    flex-direction: column;
+
+    &__title {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        line-height: 1;
+        margin: -9px 0 0;
+        background-color: $color-pink;
+        padding: 0 3px;
+    }
+
+    &__inputContainer {
+
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+
+        &>* {
+            margin: 2px;
+        }
+    }
+
+    &__label {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+
+    &-username {
+        grid-area: username;
+        flex-direction: column;
+    }
+
+    &-electronicPrescription {
+        grid-area: electronicPrescription;
+    }
+
+    &-paperPrescription {
+        grid-area: paperPrescription;
+    }
+
+    &-nonPrescription {
+        grid-area: nonPrescription;
+    }
+
+    &-order {
+        grid-area: orderSection;
+    }
+
+    &-button {
+        background-color: $color-pink;
+        border: 2px solid $color-white;
+        border-radius: 10px;
+        margin-top: 15px;
+        padding: 5px;
+        font-size: 0.7rem;
+        grid-area: formButton;
+    }
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+
+    label {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+
+    &>* {
+        margin: 2px;
+    }
+}
+
+.button__submit {
+    background-color: $color-very-light-pink;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-top: 15px;
+    padding: 5px;
+    font-size: 0.7rem;
+    width: 80%;
+}

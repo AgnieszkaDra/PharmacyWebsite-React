@@ -1,77 +1,46 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import Logo from '../Logo'
+import Navigation from '../Navigation'
+import logo from '../../data/logo/drofarmaptekanamyslow.webp'
+
 import PropTypes from 'prop-types'
-import logo from '../../images/drofarmaptekanamyslow.webp'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
-import { GiHamburgerMenu } from 'react-icons/gi'
-// import Menu from '../Menu/Menu'
-import Menu from '../Menu/Menu'
-import { useToggleNavbar } from '../../hooks/useToggleNavbar'
 
-library.add(faXmark)
-
-export const NavbarContext = React.createContext()
 export const Header = (props) => {
   const {
     className
   } = props
+  const logoImage = logo
 
-  const { navbarOpen, openNavbar } = useToggleNavbar()
-  // const [navbarOpen, setNavbarOpen] = useState(false)
-  const [isActive, setIsActive] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
-  const handleClick = () => {
-    setIsActive(!isActive)
-  }
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
 
-  // const handleToggle = () => {
-  //   setNavbarOpen(!navbarOpen)
-  // }
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
-    <header
-      className={className}
-    >
-      <div className={'header__logo'}>
-        <img
-          src={logo}
-          alt={'background-tablet'}
-        >
-        </img>
+    <header className={`${className}${scrolled ? ' scrolled' : ''}`}>
+      <Logo
+        className={'header__logo'}
+        logo={logoImage}
+      >
+      </Logo>
+      <div
+        className={'header__navigation'}
+      >
+        <Navigation></Navigation>
       </div>
-      <div className={'header__navigation'}>
-        {/* <NavbarContext.Provider value={{ navbarOpen, setNavbarOpen }}> */}
-        <button
-          onClick={openNavbar}
-          className={'hamburger'}
-        ><GiHamburgerMenu />
-        </button>
-        <h3 className={'headline--h3'}>Apteka Non-Stop 2 Jelcz-Laskowice</h3>
-        <Menu
-          className={'nav'}
-          isNavbarOpen={navbarOpen}
-          navbarOpenFunc={openNavbar}
-        >
-        </Menu>
-        {/* <Menu
-          open={navbarOpen}
-          openFunc={openNavbar}
-          className={`${isActive ? 'none' : ''}`}
-        >
-        </Menu> */}
-        <FontAwesomeIcon
-          icon={faXmark}
-          // className={`${open ? 'open' : ''} `}
-          onClick={handleClick}
-        />
-        {/* <ButtonClose open={navbarOpen} onClick={setNavbarOpen}>
-
-            </ButtonClose> */}
-
-        {/* </NavbarContext.Provider> */}
-      </div>
-
     </header>
   )
 }
