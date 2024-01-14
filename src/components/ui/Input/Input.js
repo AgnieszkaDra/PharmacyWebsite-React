@@ -35,6 +35,7 @@ export const Input = (props) => {
         onChange={handleInputChange}
       />
       {/* {error && error.length > 0 && <Error message={error} />} */}
+      {/* {hasError && <ErrorText>{errors[name]}</ErrorText>} */}
     </div>
   )
 }

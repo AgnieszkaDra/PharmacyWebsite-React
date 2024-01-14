@@ -1,11 +1,12 @@
 import React from 'react'
+import Form from '../../Form/Form'
 import Input from '../../ui/Input'
 import Button from '../../ui/Button'
 import PropTypes from 'prop-types'
 
 export const ElectronicData = () => {
   return (
-    <>
+    <Form>
       <Input
         label={'Nazwa leku'}
         name={'drugName'}
@@ -30,7 +31,7 @@ export const ElectronicData = () => {
         text={'Dodaj kolejny lek'}
       >
       </Button>
-    </>
+    </Form>
   )
 }
 
