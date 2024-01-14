@@ -1,24 +1,22 @@
 import React from 'react'
-import Form from '../../Form/Form'
 import Button from '../../ui/Button'
 import PropTypes from 'prop-types'
 
 export const PaperPrescriptionData = () => {
   return (
-    <Form>
+    <form>
       <Button
         type={'submit'}
         className={'button__submit'}
         text={'Dodaj kolejną receptę papierową'}
       >
       </Button>
-    </Form>
+    </form>
   )
 }
 
 PaperPrescriptionData.propTypes = {
-  className: PropTypes.string,
-  logo: PropTypes.string
+  className: PropTypes.string
 }
 
 export default PaperPrescriptionData

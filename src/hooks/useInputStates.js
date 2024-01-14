@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 export const useInputStates = () => {
   const [form, setForm] = useState({
     username: {
@@ -28,7 +27,7 @@ export const useInputStates = () => {
         val: value
       }
     })
-    console.log(name, value)
+    console.log(name, value, form[name])
   }
 
   return { form, handleInputChange }

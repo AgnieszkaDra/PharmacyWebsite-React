@@ -12,7 +12,7 @@ export const Form = (props) => {
     className
   } = props
   return (
-    <form className={className}>
+    <div className={className}>
       <Section
         className={'section-form-username'}
         title={'Name and Surname'}
@@ -48,7 +48,7 @@ export const Form = (props) => {
         text={'Zamawiam'}
       >
       </Button>
-    </form>
+    </div>
   )
 }
 
