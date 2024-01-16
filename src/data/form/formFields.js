@@ -3,6 +3,7 @@ export const formFields = {
   electronicPrescriptionForm: [
     {
       value: '',
+      error: '',
       name: 'PIN',
       label: 'PIN recepty',
       required: false,
@@ -10,6 +11,7 @@ export const formFields = {
     },
     {
       value: '',
+      error: '',
       name: 'PESEL',
       label: 'PESEL',
       required: false,

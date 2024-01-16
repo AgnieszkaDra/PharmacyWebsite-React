@@ -3,6 +3,7 @@ import Section from './components/Section'
 import PatientData from './components/layout/PatientData'
 import ElectronicData from './components/layout/ElectronicData'
 import NonPrescriptionData from './components/layout/NonPrescriptionData'
+import ElectronicOrder from './components/layout/ElectronicOrder'
 import Button from './components/ui/Button'
 import PropTypes from 'prop-types'
 import PaperPrescriptionData from './components/layout/PaperPrescriptionData'
@@ -16,30 +17,31 @@ export const Form = (props) => {
       <Section
         className={'section-form-username'}
         title={'Name and Surname'}
-        content = {<PatientData></PatientData>}
+        content={<PatientData></PatientData>}
       >
       </Section>
       <Section
         className={'section-form-electronicPrescription'}
         title={'Drugs for electronic prescription'}
-        content = {<ElectronicData></ElectronicData>}
+        content={<ElectronicData></ElectronicData>}
       >
       </Section>
       <Section
         className={'section-form-paperPrescription'}
         title={'Drugs for paper prescription'}
-        content = {<PaperPrescriptionData></PaperPrescriptionData>}
+        content={<PaperPrescriptionData></PaperPrescriptionData>}
       >
       </Section>
       <Section
         className={'section-form-nonPrescription'}
         title={'Other drugs and medicaments'}
-        content = {<NonPrescriptionData></NonPrescriptionData>}
+        content={<NonPrescriptionData></NonPrescriptionData>}
       >
       </Section>
       <Section
         className={'section-form-order'}
         title={'Your order'}
+        content={<ElectronicOrder></ElectronicOrder>}
       >
       </Section>
       <Button

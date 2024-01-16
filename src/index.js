@@ -17,7 +17,7 @@ root.render(
         />
         <Route
           path={'/form'}
-          element={<Form className={'form'} />}
+          element={<Form className={'order'} />}
         />
       </Routes>
     </Router>

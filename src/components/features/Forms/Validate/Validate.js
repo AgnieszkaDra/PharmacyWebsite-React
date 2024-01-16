@@ -17,40 +17,39 @@ const fields = [
   {
     name: 'PIN',
     label: 'PIN recepty',
-    required: false,
+    required: true,
     pattern: /^[0-9]{4}$/,
     error: 'PIN is invalid'
   },
   {
     name: 'PESEL',
     label: 'PESEL',
-    required: false,
+    required: true,
     pattern: '[0-9]{4}[0-3]{1}[0-9}{1}[0-9]{5}',
     error: 'PESEL is invalid'
   }
 ]
 
 export const validateForm = (form) => {
-  fields.forEach(function (field) {
-    const { name, pattern = null } = field
+  let errors = {
+    PIN: '',
+    PESEL: ''
+  }
+  fields.forEach((field) => {
+    const { label, name, required, pattern, error: errorMessage } = field
     const value = form[name]
-    const trimmedValue = value.trim()
     console.log(value)
-    // if (pattern.test(trimmedValue)) {
-    //   const reg = new RegExp(pattern.test(trimmedValue))
-    //   if (!reg.test(trimmedValue)) {
-    //     // alert(`Field ${label} is invalid`);
-    //     // setError(valParent, `${label} jest niepoprawny`)
-    //     // errors.push('error');
-    //     alert('wrong')
-    //   } else {
-    //     alert('ok')
-    //   }
-    // }
-    if (pattern.test(trimmedValue)) {
-      console.log('Match')
-    } else {
-      console.log('No match')
+    if (required) {
+      if (value.length === 0) {
+        const error = `${label} is required!`
+        errors = { ...errors, [name]: error }
+      } else if (pattern) {
+        const reg = new RegExp(pattern)
+        if (!reg.test(value)) {
+          errors = { ...errors, [name]: errorMessage }
+        }
+      }
     }
   })
+  return errors
 }

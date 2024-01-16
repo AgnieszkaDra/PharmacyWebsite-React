@@ -1,12 +1,11 @@
 import React from 'react'
-import Form from '../../Form/Form'
 import Input from '../../ui/Input'
 import Button from '../../ui/Button'
 import PropTypes from 'prop-types'
 
-export const ElectronicData = () => {
+export const NonPrescriptionData = () => {
   return (
-    <Form>
+    <form className={'form'}>
       <Input
         label={'Nazwa leku'}
         name={'drugName'}
@@ -31,13 +30,13 @@ export const ElectronicData = () => {
         text={'Dodaj kolejny lek'}
       >
       </Button>
-    </Form>
+    </form>
   )
 }
 
-ElectronicData.propTypes = {
+NonPrescriptionData.propTypes = {
   className: PropTypes.string,
   logo: PropTypes.string
 }
 
-export default ElectronicData
+export default NonPrescriptionData

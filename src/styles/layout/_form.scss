@@ -1,6 +1,7 @@
 @import '../abstracts';
 
-.form {
+.order {
+    padding: 20px;
     display: grid;
     width: 100%;
     grid-gap: 20px;
@@ -99,21 +100,6 @@
     }
 }
 
-.input-container {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-
-    label {
-        text-transform: uppercase;
-        font-size: 0.8rem;
-    }
-
-    &>* {
-        margin: 2px;
-    }
-}
-
 .button__submit {
     background-color: $color-very-light-pink;
     border: 2px solid white;
@@ -123,3 +109,50 @@
     font-size: 0.7rem;
     width: 80%;
 }
+
+.form {
+    &__field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 25px;
+      color: $color-font;
+    }
+    &__input {
+        width: 60%;
+        margin-top: 10px;
+        background: none;
+        padding: 10px 8px;
+        border-radius: 0.3em;
+        border: 1px solid $color-font;
+        background-color: $color-white;
+        &:focus, &:active {
+          outline: none;
+        }
+    }
+    &__label {
+        text-transform: capitalize;
+        font-weight: 500;
+    }
+    &__button {
+      width: 60%;
+        margin-bottom: 15px; 
+        padding: 5px;
+        border-radius: 0.3em;
+        background-color: $color-very-light-pink;
+        color: black; 
+        border: none;
+        box-shadow: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        position: relative;
+        font-weight: bold;
+        font-size: 1.5em;
+        transition: 0.5s;
+        &:active, &:focus {
+          outline: 0;
+        }
+        &:hover {
+          background-color:  white;;
+        }
+    }
+    }
