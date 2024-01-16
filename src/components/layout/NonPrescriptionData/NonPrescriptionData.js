@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 export const NonPrescriptionData = () => {
   return (
-    <form className={'form'}>
+    <div className={'form'}>
       <Input
         label={'Nazwa leku'}
         name={'drugName'}
@@ -30,7 +30,7 @@ export const NonPrescriptionData = () => {
         text={'Dodaj kolejny lek'}
       >
       </Button>
-    </form>
+    </div>
   )
 }
 

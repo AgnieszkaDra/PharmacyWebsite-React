@@ -8,13 +8,13 @@ import { validateForm } from '../../features/Forms/Validate/Validate'
 import PropTypes from 'prop-types'
 
 export const ElectronicData = (props) => {
-  const { data, onChange } = props
+  const { data, onChange, result } = props
   console.log(data)
 
-  const [form] = useState({
-    PIN: '',
-    PESEL: ''
-  })
+  // const [form] = useState({
+  //   PIN: '',
+  //   PESEL: ''
+  // })
   // const { inputsValue, onChangeValue } = useInputsValue()
   // // const { showElectronicOrder } = useShowElectronicOrder()
 
@@ -36,12 +36,11 @@ export const ElectronicData = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const errors = validateForm(form)
-    console.log(errors)
+    const errors = validateForm(data)
     errors.PIN.length > 0 ||
-    errors.PESEL.length > 0
+      errors.PESEL.length > 0
       ? setValidationErrors(errors)
-      : alert('form i send successfully')
+      : result()
   }
   return (
     <>
@@ -49,22 +48,6 @@ export const ElectronicData = (props) => {
         onSubmit={handleSubmit}
         className={'form'}
       >
-        {/* {
-          formFields.electronicPrescriptionForm.map((field) => (
-            <div key={field.name}>
-              <Input
-                label={field.label}
-                name={field.name}
-                id={field.name}
-                value={form[field.name]?.value || ''}
-                onChange={(e) => handleChange(e, field.name)}
-                error = {validationErrors[field.name]?.error || ''}
-                // errors={validationErrors.name}
-              >
-              </Input>
-            </div>
-          ))
-        } */}
         <Input
           label={'PIN'}
           name={'PIN'}
@@ -104,7 +87,8 @@ ElectronicData.propTypes = {
   className: PropTypes.string,
   logo: PropTypes.string,
   data: PropTypes.object,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  result: PropTypes.bool
 }
 
 export default ElectronicData

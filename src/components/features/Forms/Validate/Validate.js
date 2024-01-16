@@ -30,7 +30,7 @@ const fields = [
   }
 ]
 
-export const validateForm = (form) => {
+export const validateForm = (data) => {
   alert('validate')
   let errors = {
     PIN: '',
@@ -39,7 +39,7 @@ export const validateForm = (form) => {
 
   fields.forEach((field) => {
     const { label, name, required, pattern, error: errorMessage } = field
-    const value = form[name]
+    const value = data[name]
     console.log(value)
     if (required) {
       if (value.length === 0) {

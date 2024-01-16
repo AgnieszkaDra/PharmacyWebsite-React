@@ -11,9 +11,7 @@ export const Section = (props) => {
   return (
     <section className={`${className} section-form`}>
       <h3 className={'section-form__title'}>{title}</h3>
-      <form>
-        {content}
-      </form>
+      {content}
     </section>
   )
 }

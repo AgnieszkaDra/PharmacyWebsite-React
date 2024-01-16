@@ -4,14 +4,14 @@ import PropTypes from 'prop-types'
 
 export const PaperPrescriptionData = () => {
   return (
-    <form>
+    <div>
       <Button
         type={'submit'}
         className={'button__submit'}
         text={'Dodaj kolejną receptę papierową'}
       >
       </Button>
-    </form>
+    </div>
   )
 }
 
