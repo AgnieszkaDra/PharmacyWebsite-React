@@ -31,10 +31,12 @@ const fields = [
 ]
 
 export const validateForm = (form) => {
+  alert('validate')
   let errors = {
     PIN: '',
     PESEL: ''
   }
+
   fields.forEach((field) => {
     const { label, name, required, pattern, error: errorMessage } = field
     const value = form[name]

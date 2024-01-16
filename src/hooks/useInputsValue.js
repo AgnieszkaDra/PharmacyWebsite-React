@@ -12,6 +12,7 @@ export const useInputsValue = () => {
       ...inputsValue,
       [name]: value
     })
+    console.log(value)
   }
 
   return { inputsValue, onChangeValue }

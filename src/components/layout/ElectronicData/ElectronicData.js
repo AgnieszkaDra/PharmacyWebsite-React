@@ -2,16 +2,21 @@ import React, { useState } from 'react'
 import Input from '../../ui/Input'
 import Button from '../../ui/Button'
 // import formFields from '../../../data/form/formFields'
-import { useInputsValue } from '../../../hooks/useInputsValue'
+// import { useInputsValue } from '../../../hooks/useInputsValue'
 import { validateForm } from '../../features/Forms/Validate/Validate'
+// import { useShowElectronicOrder } from '../../../hooks/useShowElectronicOrder'
 import PropTypes from 'prop-types'
 
-export const ElectronicData = () => {
-  // const [form, setForm] = useState({
-  //   PIN: '',
-  //   PESEL: ''
-  // })
-  const { inputsValue, onChangeValue } = useInputsValue()
+export const ElectronicData = (props) => {
+  const { data, onChange } = props
+  console.log(data)
+
+  const [form] = useState({
+    PIN: '',
+    PESEL: ''
+  })
+  // const { inputsValue, onChangeValue } = useInputsValue()
+  // // const { showElectronicOrder } = useShowElectronicOrder()
 
   // eslint-disable-next-line no-unused-vars
   const [validationErrors, setValidationErrors] = useState({
@@ -26,16 +31,17 @@ export const ElectronicData = () => {
   //     ...form,
   //     [name]: value
   //   })
+  //   console.log(form)
   // }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const errors = validateForm(inputsValue)
+    const errors = validateForm(form)
     console.log(errors)
     errors.PIN.length > 0 ||
     errors.PESEL.length > 0
       ? setValidationErrors(errors)
-      : alert('Form is sent successfully')
+      : alert('form i send successfully')
   }
   return (
     <>
@@ -63,8 +69,8 @@ export const ElectronicData = () => {
           label={'PIN'}
           name={'PIN'}
           id={'PIN'}
-          value={inputsValue.name}
-          onChange={(e) => onChangeValue(e)}
+          value= {data.name}
+          onChange={(e) => onChange(e)}
           error={validationErrors.PIN}
         >
         </Input>
@@ -72,8 +78,8 @@ export const ElectronicData = () => {
           label={'PESEL'}
           name={'PESEL'}
           id={'PESEL'}
-          value={inputsValue.name}
-          onChange={(e) => onChangeValue(e)}
+          value={data.name}
+          onChange={(e) => onChange(e)}
           error={validationErrors.PESEL}
         >
         </Input>
@@ -96,7 +102,9 @@ export const ElectronicData = () => {
 
 ElectronicData.propTypes = {
   className: PropTypes.string,
-  logo: PropTypes.string
+  logo: PropTypes.string,
+  data: PropTypes.object,
+  onChange: PropTypes.func
 }
 
 export default ElectronicData

@@ -5,13 +5,14 @@ import ElectronicData from './components/layout/ElectronicData'
 import NonPrescriptionData from './components/layout/NonPrescriptionData'
 import ElectronicOrder from './components/layout/ElectronicOrder'
 import Button from './components/ui/Button'
-import PropTypes from 'prop-types'
 import PaperPrescriptionData from './components/layout/PaperPrescriptionData'
-
+import { useInputsValue } from './hooks/useInputsValue'
+import PropTypes from 'prop-types'
 export const Form = (props) => {
   const {
     className
   } = props
+  const { inputsValue, onChangeValue } = useInputsValue()
   return (
     <div className={className}>
       <Section
@@ -23,7 +24,7 @@ export const Form = (props) => {
       <Section
         className={'section-form-electronicPrescription'}
         title={'Drugs for electronic prescription'}
-        content={<ElectronicData></ElectronicData>}
+        content={<ElectronicData data={inputsValue} onChange={onChangeValue}></ElectronicData>}
       >
       </Section>
       <Section
@@ -41,7 +42,7 @@ export const Form = (props) => {
       <Section
         className={'section-form-order'}
         title={'Your order'}
-        content={<ElectronicOrder></ElectronicOrder>}
+        content={<ElectronicOrder data={inputsValue} onChange={onChangeValue}></ElectronicOrder>}
       >
       </Section>
       <Button
