@@ -8,13 +8,18 @@ import Button from './components/ui/Button'
 import PaperPrescriptionData from './components/layout/PaperPrescriptionData'
 import { useInputsValue } from './hooks/useInputsValue'
 import { addNewElectronicOrder } from './hooks/addNewElectronicOrder'
+import { addNewNonprescriptionOrder } from './hooks/addNewNonPrescriptionOrder'
 import PropTypes from 'prop-types'
+import { NonPrescriptionOrder } from './components/layout/NonPrescrptionOrder'
 export const Form = (props) => {
   const {
     className
   } = props
   const { inputsValue, onChangeValue } = useInputsValue()
-  const { newOne, addNew } = addNewElectronicOrder()
+  const { newOne, addNew, removeElement } = addNewElectronicOrder()
+  const { newOneNon, addNewNon } = addNewNonprescriptionOrder()
+
+  console.log(newOne, addNew, removeElement)
   return (
     <div className={className}>
       <Section
@@ -30,7 +35,8 @@ export const Form = (props) => {
           <ElectronicData
             data={inputsValue}
             onChange={onChangeValue}
-            result={addNew}>
+            result={addNew}
+          >
           </ElectronicData>
         }
       >
@@ -44,19 +50,35 @@ export const Form = (props) => {
       <Section
         className={'section-form-nonPrescription'}
         title={'Other drugs and medicaments'}
-        content={<NonPrescriptionData></NonPrescriptionData>}
+        content={
+          <NonPrescriptionData
+            data={inputsValue}
+            onChange={onChangeValue}
+            result={addNewNon}
+          >
+          </NonPrescriptionData>
+        }
       >
       </Section>
       <Section
         className={'section-form-order'}
         title={'Your order'}
         content={
-          <ElectronicOrder
-            data={inputsValue}
-            onChange={onChangeValue}
-            result={newOne}
-          >
-          </ElectronicOrder>
+          <>
+            <ElectronicOrder
+              data={inputsValue}
+              onChange={onChangeValue}
+              result={newOne}
+              remove={removeElement}
+            >
+            </ElectronicOrder>
+            <NonPrescriptionOrder
+              data={inputsValue}
+              onChange={onChangeValue}
+              result={newOneNon}
+            >
+            </NonPrescriptionOrder>
+          </>
         }
       >
       </Section>

@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Input from '../../ui/Input'
 import Button from '../../ui/Button'
 // import formFields from '../../../data/form/formFields'
 // import { useInputsValue } from '../../../hooks/useInputsValue'
 import { validateForm } from '../../features/Forms/Validate/Validate'
+import { useValidationErrors } from '../../../hooks/useValidationErrors'
 // import { addNewElectronicOrder } from '../../../hooks/addNewElectronicOrder'
 // import { electronicOrder } from '../../../hooks/electronicOrder'
 // import { useShowElectronicOrder } from '../../../hooks/useShowElectronicOrder'
@@ -12,20 +13,21 @@ import PropTypes from 'prop-types'
 export const ElectronicData = (props) => {
   const { data, onChange, result } = props
   console.log(result)
-
-  const [validationErrors, setValidationErrors] = useState({
-    PIN: '',
-    PESEL: ''
-  }
-  )
+  const { validationErrors, onSetErrors } = useValidationErrors()
+  // const [validationErrors, setValidationErrors] = useState({
+  //   PIN: '',
+  //   PESEL: ''
+  // }
+  // )
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    alert('electronic Order')
     const errors = validateForm(data)
     console.log(data.PIN, data.PESEL)
     errors.PIN.length > 0 ||
       errors.PESEL.length > 0
-      ? setValidationErrors(errors)
+      ? onSetErrors(errors)
       : result(data)
   }
   return (

@@ -3,7 +3,10 @@ import { useState } from 'react'
 export const useInputsValue = () => {
   const [inputsValue, setInputsValue] = useState({
     PIN: '',
-    PESEL: ''
+    PESEL: '',
+    drugName: '',
+    drugDose: '',
+    drugAmount: ''
   })
 
   const onChangeValue = (e) => {
