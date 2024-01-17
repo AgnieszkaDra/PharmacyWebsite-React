@@ -7,19 +7,18 @@ import ElectronicOrder from './components/layout/ElectronicOrder'
 import Button from './components/ui/Button'
 import PaperPrescriptionData from './components/layout/PaperPrescriptionData'
 import { useInputsValue } from './hooks/useInputsValue'
-import { addNewElectronicOrder } from './hooks/addNewElectronicOrder'
-import { addNewNonprescriptionOrder } from './hooks/addNewNonPrescriptionOrder'
-import PropTypes from 'prop-types'
+import { useShowElectronicPrescriptions } from './hooks/useShowElectronicPrescriptions'
 import { NonPrescriptionOrder } from './components/layout/NonPrescrptionOrder'
+import { useShowNonPrescriptions } from './hooks/useShowNonPrescriptions'
+import PropTypes from 'prop-types'
 export const Form = (props) => {
   const {
     className
   } = props
-  const { inputsValue, onChangeValue } = useInputsValue()
-  const { newOne, addNew, removeElement } = addNewElectronicOrder()
-  const { newOneNon, addNewNon } = addNewNonprescriptionOrder()
 
-  console.log(newOne, addNew, removeElement)
+  const { inputsValue, onChangeValue } = useInputsValue()
+  const { electronicPrescription, addElectroPrescription, deleteElectroPrescription } = useShowElectronicPrescriptions()
+  const { nonPrescription, addNonPrescription, deleteNonPrescription } = useShowNonPrescriptions()
   return (
     <div className={className}>
       <Section
@@ -35,7 +34,7 @@ export const Form = (props) => {
           <ElectronicData
             data={inputsValue}
             onChange={onChangeValue}
-            result={addNew}
+            result={addElectroPrescription}
           >
           </ElectronicData>
         }
@@ -54,7 +53,7 @@ export const Form = (props) => {
           <NonPrescriptionData
             data={inputsValue}
             onChange={onChangeValue}
-            result={addNewNon}
+            result={addNonPrescription}
           >
           </NonPrescriptionData>
         }
@@ -68,14 +67,15 @@ export const Form = (props) => {
             <ElectronicOrder
               data={inputsValue}
               onChange={onChangeValue}
-              result={newOne}
-              remove={removeElement}
+              result={electronicPrescription}
+              remove={deleteElectroPrescription}
             >
             </ElectronicOrder>
             <NonPrescriptionOrder
               data={inputsValue}
               onChange={onChangeValue}
-              result={newOneNon}
+              result={nonPrescription}
+              remove={deleteNonPrescription}
             >
             </NonPrescriptionOrder>
           </>

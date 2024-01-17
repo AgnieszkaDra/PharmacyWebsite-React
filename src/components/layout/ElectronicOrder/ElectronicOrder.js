@@ -4,9 +4,8 @@ import PropTypes from 'prop-types'
 
 export const ElectronicOrder = (props) => {
   const { data, result, remove } = props
-  console.log(result.data)
+
   const handleClick = (id) => {
-    console.log(id, data)
     remove(id, data)
   }
   return (
@@ -14,10 +13,9 @@ export const ElectronicOrder = (props) => {
       {result.map((item) => (
         <div key={item.id}>
           {item.PIN} {item.PESEL}
-          {/* <Button text={'usuń'} onClick={() => handleRemove(item.id)}/> */}
           <Button
             text={'usuń'}
-            onClick={handleClick(item.id)}
+            onClick={() => handleClick(item.id)}
           >
           </Button>
         </div>

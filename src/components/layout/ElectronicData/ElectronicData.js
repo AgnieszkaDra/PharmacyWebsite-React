@@ -22,7 +22,6 @@ export const ElectronicData = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('electronic Order')
     const errors = validateForm(data)
     console.log(data.PIN, data.PESEL)
     errors.PIN.length > 0 ||
