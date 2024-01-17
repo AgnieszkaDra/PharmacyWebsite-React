@@ -4,13 +4,17 @@ import Button from '../../ui/Button'
 // import formFields from '../../../data/form/formFields'
 // import { useInputsValue } from '../../../hooks/useInputsValue'
 import { validateForm } from '../../features/Forms/Validate/Validate'
+// import { electronicOrder } from '../../../hooks/electronicOrder'
 // import { useShowElectronicOrder } from '../../../hooks/useShowElectronicOrder'
 import PropTypes from 'prop-types'
 
 export const ElectronicData = (props) => {
-  const { data, onChange, result } = props
-  console.log(data)
-
+  const { data, onChange } = props
+  const [newOne, addElectronicElement] = useState([])
+  const addNew = () => {
+    addElectronicElement([...newOne, { id: Date.now(), ...data }])
+  }
+  console.log(newOne)
   // const [form] = useState({
   //   PIN: '',
   //   PESEL: ''
@@ -37,10 +41,11 @@ export const ElectronicData = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const errors = validateForm(data)
+    console.log(data.PIN, data.PESEL)
     errors.PIN.length > 0 ||
       errors.PESEL.length > 0
       ? setValidationErrors(errors)
-      : result()
+      : addNew()
   }
   return (
     <>

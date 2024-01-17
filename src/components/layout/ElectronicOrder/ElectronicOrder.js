@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../../ui/Button'
 import PropTypes from 'prop-types'
 
 export const ElectronicOrder = (props) => {
@@ -7,7 +8,7 @@ export const ElectronicOrder = (props) => {
     <div>
       {
         result ?
-          <><div>{data.PIN}</div><div>{data.PESEL}</div></>
+          <div>{data.PIN} {data.PESEL} <Button text={'usuń'} ></Button></div>
           : ''
       }
     </div>

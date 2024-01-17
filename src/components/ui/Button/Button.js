@@ -5,13 +5,15 @@ export const Button = (props) => {
   const {
     type,
     className,
-    text
+    text,
+    onClick
   } = props
 
   return (
     <button
       className={className}
       type={type}
+      onClick={onClick}
     >
       {text}
     </button>
@@ -21,7 +23,8 @@ export const Button = (props) => {
 Button.propTypes = {
   type: PropTypes.string,
   className: PropTypes.string,
-  text: PropTypes.string
+  text: PropTypes.string,
+  onClick: PropTypes.func
 }
 
 export default Button
