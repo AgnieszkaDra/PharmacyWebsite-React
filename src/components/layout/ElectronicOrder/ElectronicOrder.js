@@ -4,13 +4,17 @@ import PropTypes from 'prop-types'
 
 export const ElectronicOrder = (props) => {
   const { result } = props
-  console.log(result)
+  console.log(result.data)
+  // const removeTask = (taskId) => {
+  //   setTasks(tasks.filter((task) => task.id !== taskId));
+  // };
   return (
     <div>
       {result.map((item) => (
         <div key={item.id}>
-          {item.id} {/* Assuming you want to display the ID */}
-          <Button text={'usuń'} />
+          {item.PIN} {item.PESEL}
+          {/* <Button text={'usuń'} onClick={() => handleRemove(item.id)}/> */}
+          <Button text={'usuń'}></Button>
         </div>
       ))}
     </div>

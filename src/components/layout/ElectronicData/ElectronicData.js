@@ -12,34 +12,12 @@ import PropTypes from 'prop-types'
 export const ElectronicData = (props) => {
   const { data, onChange, result } = props
   console.log(result)
-  // const { addNew } = addNewElectronicOrder(data)
-  // const [newOne, addElectronicElement] = useState([])
-  // const addNew = () => {
-  //   addElectronicElement([...newOne, { id: Date.now(), ...data }])
-  // }
-  // console.log(newOne)
-  // const [form] = useState({
-  //   PIN: '',
-  //   PESEL: ''
-  // })
-  // const { inputsValue, onChangeValue } = useInputsValue()
-  // // const { showElectronicOrder } = useShowElectronicOrder()
 
-  // eslint-disable-next-line no-unused-vars
   const [validationErrors, setValidationErrors] = useState({
     PIN: '',
     PESEL: ''
   }
   )
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target
-  //   setForm({
-  //     ...form,
-  //     [name]: value
-  //   })
-  //   console.log(form)
-  // }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -48,7 +26,7 @@ export const ElectronicData = (props) => {
     errors.PIN.length > 0 ||
       errors.PESEL.length > 0
       ? setValidationErrors(errors)
-      : result()
+      : result(data)
   }
   return (
     <>
@@ -80,12 +58,6 @@ export const ElectronicData = (props) => {
           text={'Dodaj kolejną receptę elektroniczną'}
         >
         </Button>
-        {/* <Input
-          label={'PESEL'}
-          name={'PESEL'}
-          id={'PESEL'}
-        >
-        </Input> */}
       </form>
     </>
   )
