@@ -7,14 +7,16 @@ import ElectronicOrder from './components/layout/ElectronicOrder'
 import Button from './components/ui/Button'
 import PaperPrescriptionData from './components/layout/PaperPrescriptionData'
 import { useInputsValue } from './hooks/useInputsValue'
-import { useShowElectronicOrder } from './hooks/useShowElectronicOrder'
+// import { useShowElectronicOrder } from './hooks/useShowElectronicOrder'
+import { addNewElectronicOrder } from './hooks/addNewElectronicOrder'
 import PropTypes from 'prop-types'
 export const Form = (props) => {
   const {
     className
   } = props
   const { inputsValue, onChangeValue } = useInputsValue()
-  const { electronicOrder, showElectronicOrder } = useShowElectronicOrder()
+  // const { electronicOrder, showElectronicOrder } = useShowElectronicOrder()
+  const { newOne, addNew } = addNewElectronicOrder()
   return (
     <div className={className}>
       <Section
@@ -26,7 +28,7 @@ export const Form = (props) => {
       <Section
         className={'section-form-electronicPrescription'}
         title={'Drugs for electronic prescription'}
-        content={<ElectronicData data={inputsValue} onChange={onChangeValue} result={showElectronicOrder}></ElectronicData>}
+        content={<ElectronicData data={inputsValue} onChange={onChangeValue} result={addNew}></ElectronicData>}
       >
       </Section>
       <Section
@@ -44,7 +46,7 @@ export const Form = (props) => {
       <Section
         className={'section-form-order'}
         title={'Your order'}
-        content={<ElectronicOrder data={inputsValue} onChange={onChangeValue} result={electronicOrder}></ElectronicOrder>}
+        content={<ElectronicOrder data={inputsValue} onChange={onChangeValue} result={newOne}></ElectronicOrder>}
       >
       </Section>
       <Button

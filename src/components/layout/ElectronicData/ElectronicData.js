@@ -4,17 +4,20 @@ import Button from '../../ui/Button'
 // import formFields from '../../../data/form/formFields'
 // import { useInputsValue } from '../../../hooks/useInputsValue'
 import { validateForm } from '../../features/Forms/Validate/Validate'
+// import { addNewElectronicOrder } from '../../../hooks/addNewElectronicOrder'
 // import { electronicOrder } from '../../../hooks/electronicOrder'
 // import { useShowElectronicOrder } from '../../../hooks/useShowElectronicOrder'
 import PropTypes from 'prop-types'
 
 export const ElectronicData = (props) => {
-  const { data, onChange } = props
-  const [newOne, addElectronicElement] = useState([])
-  const addNew = () => {
-    addElectronicElement([...newOne, { id: Date.now(), ...data }])
-  }
-  console.log(newOne)
+  const { data, onChange, result } = props
+  console.log(result)
+  // const { addNew } = addNewElectronicOrder(data)
+  // const [newOne, addElectronicElement] = useState([])
+  // const addNew = () => {
+  //   addElectronicElement([...newOne, { id: Date.now(), ...data }])
+  // }
+  // console.log(newOne)
   // const [form] = useState({
   //   PIN: '',
   //   PESEL: ''
@@ -45,7 +48,7 @@ export const ElectronicData = (props) => {
     errors.PIN.length > 0 ||
       errors.PESEL.length > 0
       ? setValidationErrors(errors)
-      : addNew()
+      : result()
   }
   return (
     <>
@@ -93,7 +96,7 @@ ElectronicData.propTypes = {
   logo: PropTypes.string,
   data: PropTypes.object,
   onChange: PropTypes.func,
-  result: PropTypes.bool
+  result: PropTypes.func
 }
 
 export default ElectronicData

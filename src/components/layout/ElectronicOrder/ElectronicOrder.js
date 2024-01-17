@@ -3,14 +3,16 @@ import Button from '../../ui/Button'
 import PropTypes from 'prop-types'
 
 export const ElectronicOrder = (props) => {
-  const { data, result } = props
+  const { result } = props
+  console.log(result)
   return (
     <div>
-      {
-        result ?
-          <div>{data.PIN} {data.PESEL} <Button text={'usuń'} ></Button></div>
-          : ''
-      }
+      {result.map((item) => (
+        <div key={item.id}>
+          {item.id} {/* Assuming you want to display the ID */}
+          <Button text={'usuń'} />
+        </div>
+      ))}
     </div>
   )
 }
@@ -18,7 +20,7 @@ export const ElectronicOrder = (props) => {
 ElectronicOrder.propTypes = {
   className: PropTypes.string,
   data: PropTypes.object,
-  result: PropTypes.bool,
+  result: PropTypes.array,
   onChange: PropTypes.func
 }
 
