@@ -21,8 +21,9 @@ export const Form = (props) => {
 
   const { inputsValue, onChangeValue } = useInputsValue()
   const { electronicPrescription, addElectroPrescription, deleteElectroPrescription } = useShowElectronicPrescriptions()
-  const { imageSrc, handleFileChange } = useShowPaperPrescriptions()
+  const { imageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription } = useShowPaperPrescriptions()
   const { nonPrescription, addNonPrescription, deleteNonPrescription } = useShowNonPrescriptions()
+  console.log(imageSrc)
   return (
     <div className={className}>
       <Section
@@ -49,9 +50,7 @@ export const Form = (props) => {
         title={'Drugs for paper prescription'}
         content={
           <PaperPrescriptionData
-            // data={fileInput}
-            onChange={handleFileChange}
-            // result={addPaperPrescription}
+           onChange={handleFileChange}
           >
 
           </PaperPrescriptionData>
@@ -84,10 +83,9 @@ export const Form = (props) => {
             >
             </ElectronicOrder>
             <PaperOrder
-              data={InputFile}
-              onChange={handleFileChange}
+              data={imageSrc}
               result={imageSrc}
-              remove={deleteElectroPrescription}
+              remove={deletePaperPrescription}
             >
             </PaperOrder>
             <NonPrescriptionOrder

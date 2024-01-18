@@ -7,6 +7,7 @@ export const PaperOrder = (props) => {
   console.log(typeof result)
 
   const handleClick = (id) => {
+    console.log(id)
     remove(id, data)
   }
   return (
@@ -21,6 +22,16 @@ export const PaperOrder = (props) => {
           </Button>
         </div>
       ))}
+      {/* {result.map((item) => (
+        <div key={item.id}>
+          {item}
+          <Button
+            text={'usuń'}
+            onClick={() => handleClick(item.id)}
+          >
+          </Button>
+        </div>
+      ))} */}
     </div>
   )
 }

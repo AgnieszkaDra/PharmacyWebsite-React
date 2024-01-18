@@ -13,6 +13,13 @@ export const InputFile = (props) => {
     error
   } = props
 
+  const IDFile = 10
+
+  const handleFileChange = (e) => {
+    // Call the onChange prop with both the event and the input ID
+    onChange(e, IDFile)
+  }
+
   return (
     <div
       className={'form__field'}
@@ -24,12 +31,17 @@ export const InputFile = (props) => {
         {label}
       </label>
       <input
-        id={id}
-        value={value}
+        // id={Date.now()}
+        // value={value}
+        // className={'form__input'}
+        // type={'file'}
+        // name={name}
+        // onChange={(e, id) => onChange(e, id)}
+        id={IDFile}
         className={'form__input'}
         type={'file'}
         name={name}
-        onChange={onChange}
+        onChange={handleFileChange}
         // eslint-disable-next-line react/no-unknown-property
       />
       {error && error.length > 0 && <Error message={error} />}
