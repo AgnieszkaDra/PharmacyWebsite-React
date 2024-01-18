@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
-import { FaChevronDown } from 'react-icons/fa';
-import { HeaderDataTeamContext } from '../../context';
+import { FaChevronDown } from 'react-icons/fa'
+import { HeaderDataTeamContext } from '../../context'
 import { Link } from 'react-router-dom';
 
 

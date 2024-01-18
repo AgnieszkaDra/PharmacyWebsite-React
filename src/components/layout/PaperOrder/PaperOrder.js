@@ -2,17 +2,18 @@ import React from 'react'
 import Button from '../../ui/Button'
 import PropTypes from 'prop-types'
 
-export const ElectronicOrder = (props) => {
+export const PaperOrder = (props) => {
   const { data, result, remove } = props
   console.log(typeof result)
+
   const handleClick = (id) => {
     remove(id, data)
   }
   return (
     <div>
-      {result.map((item) => (
+      {Object.keys(result).map((item) => (
         <div key={item.id}>
-          {item.PIN} {item.PESEL}
+          <img src={result[item]} alt="Uploaded Image" />
           <Button
             text={'usuń'}
             onClick={() => handleClick(item.id)}
@@ -24,7 +25,7 @@ export const ElectronicOrder = (props) => {
   )
 }
 
-ElectronicOrder.propTypes = {
+PaperOrder.propTypes = {
   className: PropTypes.string,
   data: PropTypes.object,
   result: PropTypes.array,
@@ -32,4 +33,4 @@ ElectronicOrder.propTypes = {
   remove: PropTypes.func
 }
 
-export default ElectronicOrder
+export default PaperOrder

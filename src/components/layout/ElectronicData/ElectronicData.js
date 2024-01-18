@@ -66,7 +66,6 @@ export const ElectronicData = (props) => {
 
 ElectronicData.propTypes = {
   className: PropTypes.string,
-  logo: PropTypes.string,
   data: PropTypes.object,
   onChange: PropTypes.func,
   result: PropTypes.func
