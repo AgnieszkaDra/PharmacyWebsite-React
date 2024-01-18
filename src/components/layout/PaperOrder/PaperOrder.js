@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 export const PaperOrder = (props) => {
   const { data, result, remove } = props
-  console.log(typeof result)
+  console.log(result)
 
   const handleClick = (id) => {
     console.log(id)
@@ -12,7 +12,7 @@ export const PaperOrder = (props) => {
   }
   return (
     <div>
-      {Object.keys(result).map((item) => (
+      {/* {Object.keys(result).map((item) => (
         <div key={item.id}>
           <img src={result[item]} alt="Uploaded Image" />
           <Button
@@ -21,17 +21,17 @@ export const PaperOrder = (props) => {
           >
           </Button>
         </div>
-      ))}
-      {/* {result.map((item) => (
+      ))} */}
+      {result.map((item) => (
         <div key={item.id}>
-          {item}
+          <img src={item.firstImage} alt="Uploaded Image" />
           <Button
             text={'usuń'}
             onClick={() => handleClick(item.id)}
           >
           </Button>
         </div>
-      ))} */}
+      ))}
     </div>
   )
 }

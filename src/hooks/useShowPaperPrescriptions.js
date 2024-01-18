@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 export const useShowPaperPrescriptions = () => {
   // eslint-disable-next-line no-unused-vars
-  const [imageSrc, setImageSrc] = useState({})
+  const [imageSrc, setImageSrc] = useState([])
   console.log(imageSrc)
   // const [paperPrescription, setPaperPrescription] = useState([])
   const handleFileChange = (event, idFile) => {
@@ -12,7 +12,7 @@ export const useShowPaperPrescriptions = () => {
       const reader = new FileReader()
 
       reader.onload = (e) => {
-        setImageSrc({ firstImage: e.target.result, id: idFile })
+        setImageSrc([...imageSrc, { firstImage: e.target.result, id: idFile }])
       }
 
       reader.readAsDataURL(file)
@@ -25,8 +25,8 @@ export const useShowPaperPrescriptions = () => {
 
   const deletePaperPrescription = (id) => {
     console.log(id)
-    // setImageSrc(imageSrc.filter((el) => el.id !== id))
-    Object.keys(imageSrc).filter((el) => el.id !== id)
+    setImageSrc(imageSrc.filter((el) => el.id !== id))
+    // Object.keys(imageSrc).filter((el) => el.id !== id)
   }
 
   const [uploadedFile, setUploadedFile] = useState(false)
