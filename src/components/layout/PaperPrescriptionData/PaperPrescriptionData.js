@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import Button from '../../ui/Button'
 import InputFile from '../../ui/InputFile'
+import { useShowPaperPrescriptions } from '../../../hooks/useShowPaperPrescriptions'
 import PropTypes from 'prop-types'
 
 export const PaperPrescriptionData = (props) => {
   const { onChange } = props
   const [uploadedFile, setUploadedFile] = useState(false)
+  const { inputFile, addInputFileWithId, sharedId } = useShowPaperPrescriptions()
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -22,7 +24,9 @@ export const PaperPrescriptionData = (props) => {
               // onChange={(e) => onChange(e, Date.now())}
               // onChange={onChange}
               name={'fileInput'}
-              onChange={(e, id) => onChange(e, id)}
+              id={(e, sharedId) => addInputFileWithId(e, sharedId)}
+              // onChange={(e, id) => onChange(e, id)}
+              onChange={(e) => onChange(e)}
             >
             </InputFile>
             : ''

@@ -1,6 +1,7 @@
 import React from 'react'
 // import { useInputStates } from '../../../hooks/useInputStates'
 import Error from '../Error/Error'
+import { useShowPaperPrescriptions } from '../../../hooks/useShowPaperPrescriptions'
 import PropTypes from 'prop-types'
 
 export const InputFile = (props) => {
@@ -14,10 +15,16 @@ export const InputFile = (props) => {
   } = props
 
   const IDFile = 10
+  const { inputFile, addInputFileWithId, sharedId } = useShowPaperPrescriptions()
 
   const handleFileChange = (e) => {
     // Call the onChange prop with both the event and the input ID
-    onChange(e, IDFile)
+    onChange(e)
+  }
+
+  const handleId = (e, idShare) => {
+    // Call the onChange prop with both the event and the input ID
+    id(e, idShare)
   }
 
   return (
@@ -37,7 +44,8 @@ export const InputFile = (props) => {
         // type={'file'}
         // name={name}
         // onChange={(e, id) => onChange(e, id)}
-        id={IDFile}
+        // id={handleId}
+        id={sharedId}
         className={'form__input'}
         type={'file'}
         name={name}
