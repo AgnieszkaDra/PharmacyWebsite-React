@@ -9,6 +9,7 @@ import NonPrescriptionOrder from './components/layout/NonPrescrptionOrder'
 import Button from './components/ui/Button'
 import PaperPrescriptionData from './components/layout/PaperPrescriptionData'
 import { useInputsValue } from './hooks/useInputsValue'
+import { useInputFiles } from './hooks/useInputFileValue'
 import { useShowElectronicPrescriptions } from './hooks/useShowElectronicPrescriptions'
 import { useShowPaperPrescriptions } from './hooks/useShowPaperPrescriptions'
 import { useShowNonPrescriptions } from './hooks/useShowNonPrescriptions'
@@ -20,10 +21,11 @@ export const Form = (props) => {
   } = props
 
   const { inputsValue, onChangeValue } = useInputsValue()
+  const { inputsFiles, handleAddForm } = useInputFiles()
   const { electronicPrescription, addElectroPrescription, deleteElectroPrescription } = useShowElectronicPrescriptions()
-  const { imageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription } = useShowPaperPrescriptions()
+  const { imageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription, inputFile, addInputFileWithId, sharedId } = useShowPaperPrescriptions()
   const { nonPrescription, addNonPrescription, deleteNonPrescription } = useShowNonPrescriptions()
-  console.log(imageSrc)
+  console.dir(inputsFiles)
   return (
     <div className={className}>
       <Section
@@ -50,9 +52,10 @@ export const Form = (props) => {
         title={'Drugs for paper prescription'}
         content={
           <PaperPrescriptionData
-           onChange={handleFileChange}
+            data={inputsFiles}
+            onChange={handleFileChange}
+            result={addPaperPrescription}
           >
-
           </PaperPrescriptionData>
         }
       >

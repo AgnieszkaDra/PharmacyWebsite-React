@@ -1,53 +1,65 @@
-import React, { useState } from 'react'
-import Button from '../../ui/Button'
-import InputFile from '../../ui/InputFile'
-import { useShowPaperPrescriptions } from '../../../hooks/useShowPaperPrescriptions'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react';
+import Button from '../../ui/Button';
+import FileUploadForm from '../../ui/FileUploadForm';
+import { useInputsValue } from '../../../hooks/useInputsValue';
+import PropTypes from 'prop-types';
 
 export const PaperPrescriptionData = (props) => {
-  const { onChange } = props
-  const [uploadedFile, setUploadedFile] = useState(false)
-  const { inputFile, addInputFileWithId, sharedId } = useShowPaperPrescriptions()
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const { data, onChange, result } = props;
+  const [fileUploadForms, setFileUploadForms] = useState([]);
 
-    // Perform any additional actions on form submission
-    // You can access the uploaded file through the `uploadedFile` state
-    setUploadedFile(true)
-  }
+  const { inputsValue, onChangeValue } = useInputsValue();
+
+  const handleAddForm = () => {
+    setFileUploadForms((prevForms) => [
+      ...prevForms,
+      { key: fileUploadForms.length, files: data, onChange: onChangeValue },
+    ]);
+  };
+
+  const handleRemoveForm = (index) => {
+    const updatedForms = [...fileUploadForms];
+    updatedForms.splice(index, 1);
+    setFileUploadForms(updatedForms);
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <div className={'paperInputsContainer'}>
-        <div className={'inputCont'}>
-          {uploadedFile ?
-            <InputFile
-              // onChange={(e) => onChange(e, Date.now())}
-              // onChange={onChange}
-              name={'fileInput'}
-              id={(e, sharedId) => addInputFileWithId(e, sharedId)}
-              // onChange={(e, id) => onChange(e, id)}
-              onChange={(e) => onChange(e)}
-            >
-            </InputFile>
-            : ''
-          }
-        </div>
-      </div>
+    <>
       <Button
         type={'submit'}
         className={'button__submit'}
-        text={'Dodaj kolejną receptę papierową'}
-      >
-      </Button>
-    </form>
-  )
-}
+        text={'Dodaj kolejną receptę elektroniczną'}
+        onClick={handleAddForm}
+      />
+
+      {fileUploadForms.map((formData, index) => (
+        <div key={formData.key}>
+           <form>
+        {/* Other form fields can go here */}
+
+        <label htmlFor="fileInput">Select a file:</label>
+        <input
+          type="file"
+          id="fileInput"
+          name="fileInput"
+        
+        />
+
+        {/* Submit button */}
+        <input type="submit" value="Upload" />
+      </form>
+          <button onClick={() => handleRemoveForm(index)}>Remove Form</button>
+        </div>
+      ))}
+    </>
+  );
+};
 
 PaperPrescriptionData.propTypes = {
   className: PropTypes.string,
   data: PropTypes.object,
   onChange: PropTypes.func,
-  result: PropTypes.func
-}
+  result: PropTypes.func,
+};
 
-export default PaperPrescriptionData
+export default PaperPrescriptionData;

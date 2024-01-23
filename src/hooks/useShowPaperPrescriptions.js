@@ -43,5 +43,5 @@ export const useShowPaperPrescriptions = () => {
   // const deletePaperPrescription = (id) => {
   //   setElectroPrescription(electronicPrescription.filter((el) => el.id !== id))
   // }
-  return { imageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription, inputFile, addInputFileWithId, sharedId }
+  return { imageSrc, setImageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription, inputFile, addInputFileWithId, sharedId }
 }
