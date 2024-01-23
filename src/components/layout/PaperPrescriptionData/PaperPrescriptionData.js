@@ -42,7 +42,7 @@ export const PaperPrescriptionData = (props) => {
           type="file"
           id="fileInput"
           name="fileInput"
-        
+          onChange={(e) => onChange(e)}
         />
 
         {/* Submit button */}
