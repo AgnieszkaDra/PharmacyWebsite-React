@@ -25,7 +25,7 @@ export const Form = (props) => {
    const { electronicPrescription, addElectroPrescription, deleteElectroPrescription } = useShowElectronicPrescriptions()
   const { imageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription, inputFile, addInputFileWithId, sharedId } = useShowPaperPrescriptions()
   const { nonPrescription, addNonPrescription, deleteNonPrescription } = useShowNonPrescriptions()
-  console.log(fileUploadForms.key)
+  console.log(fileUploadForms, imageSrc)
   return (
     <div className={className}>
       <Section
@@ -53,6 +53,7 @@ export const Form = (props) => {
         content={
           <PaperPrescriptionData
             data={fileUploadForms}
+            // onAddFile={handleAddForm}
             onChange={handleFileChange}
             result={addPaperPrescription}
           >
@@ -88,6 +89,7 @@ export const Form = (props) => {
             <PaperOrder
               data={imageSrc}
               result={imageSrc}
+              resul2={fileUploadForms}
               remove={deletePaperPrescription}
             >
             </PaperOrder>

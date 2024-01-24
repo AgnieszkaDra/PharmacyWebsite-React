@@ -7,7 +7,7 @@ export const Logo = (props) => {
   } = props
 
   return (
-    <h1
+    <div
       className={className}
     >
       <img
@@ -15,7 +15,7 @@ export const Logo = (props) => {
         src={props.logo}
       >
       </img>
-    </h1>
+    </div>
   )
 }
 

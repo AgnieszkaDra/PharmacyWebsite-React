@@ -35,16 +35,6 @@ body {
   background: rgb(254, 46, 22);
 }
 
-.text-center {
-  text-align: center;
-}
-
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .link {
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -77,9 +67,9 @@ body {
 }
 .headline--h4 {
   margin: 0;
-  font-size: 20px;
+  font-size: 24px;
   color: rgb(57, 57, 57);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .section__headline--h3 {
@@ -182,16 +172,6 @@ body {
   background: rgb(254, 46, 22);
 }
 
-.text-center {
-  text-align: center;
-}
-
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .link {
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -224,9 +204,9 @@ body {
 }
 .headline--h4 {
   margin: 0;
-  font-size: 20px;
+  font-size: 24px;
   color: rgb(57, 57, 57);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .section__headline--h3 {
@@ -481,6 +461,7 @@ span.spanwrong .error {
   right: 0;
   opacity: 1;
   cursor: pointer;
+  z-index: 30;
 }
 
 .topcontrol__container {
@@ -491,7 +472,6 @@ span.spanwrong .error {
   position: absolute;
   right: 20px;
   width: 38px;
-  z-index: 100;
   text-align: center;
   background-color: rgb(254, 46, 22);
 }
@@ -689,6 +669,7 @@ canvas {
   align-items: center;
   flex-direction: column;
   padding: 20px 0 20px 0;
+  width: 100%;
 }
 
 @media only screen and (min-width: 900px) {
@@ -696,9 +677,12 @@ canvas {
     flex-direction: row;
     padding: 30px 0 30px 0;
   }
+  .section--first > * {
+    width: 50%;
+  }
 }
 .section--first__element {
-  width: 100%;
+  width: 50%;
   height: 350px;
   display: flex;
   justify-content: center;
@@ -712,21 +696,12 @@ canvas {
     width: 49%;
   }
 }
-.section--first__element.order {
-  padding: 10px;
-}
-
-@media only screen and (min-width: 900px) {
-  .section--first__element.order {
-    padding: 20px;
-  }
-}
-.section--first__element.hero {
+.section--first__element.image {
   display: none;
 }
 
 @media only screen and (min-width: 900px) {
-  .section--first__element.hero {
+  .section--first__element.image {
     display: block;
     background-size: contain;
     background-repeat: no-repeat;
@@ -747,7 +722,7 @@ canvas {
   text-align: center;
 }
 
-.section--second__element.order {
+.section--second__element.container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 300px 300px 300px;
@@ -756,7 +731,7 @@ canvas {
 }
 
 @media only screen and (min-width: 900px) {
-  .section--second__element.order {
+  .section--second__element.container {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 400px;
   }
@@ -790,7 +765,7 @@ canvas {
   font-weight: 700;
 }
 
-.section--second .order__sub__icon i {
+.section--second .order__sub__icon svg {
   width: 40px;
   height: 40px;
   font-size: 50px;

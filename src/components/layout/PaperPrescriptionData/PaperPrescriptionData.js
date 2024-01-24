@@ -6,7 +6,7 @@ import { useInputFiles } from '../../../hooks/useInputFileValue';
 import PropTypes from 'prop-types';
 
 export const PaperPrescriptionData = (props) => {
-  const { data, onChange, result } = props;
+  const { data, onChange, onAddFile, result } = props;
   // const { fileUploadForms, setFileUploadForms } = useState([]);
   const { inputsFiles, handleAddForm, fileUploadForms, setFileUploadForms } = useInputFiles()
   const { inputsValue, onChangeValue } = useInputsValue();
@@ -30,7 +30,8 @@ export const PaperPrescriptionData = (props) => {
         type={'submit'}
         className={'button__submit'}
         text={'Dodaj kolejną receptę elektroniczną'}
-        onClick={handleAddForm}
+        // onClick={handleAddForm}
+        onClick={onAddFile}
       />
 
       {fileUploadForms.map((formData, index) => (

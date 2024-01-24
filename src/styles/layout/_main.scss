@@ -15,15 +15,18 @@
     align-items: center;
     flex-direction: column;
     padding: 20px 0 20px 0;
+    width: 100%;
 
     @include respond(tablet) {
         flex-direction: row;
         padding: 30px 0 30px 0;
-
+        & > * {
+            width: 50%;
+        }
     }
 
     &__element {
-        width: 100%;
+        width: 50%;
         height: 350px;
         display: flex;
         justify-content: center;
@@ -36,21 +39,11 @@
         }
     }
 
-    &__element.order {
-        padding: 10px;
-
-        @include respond(tablet) {
-            padding: 20px;
-        }
-    }
-
-    &__element.hero {
+    &__element.image {
         display: none;
 
         @include respond(tablet) {
             display: block;
-      
-            // background-image: url('../../images/drofarmaptekanamyslow.webp');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -71,7 +64,7 @@
         text-align: center;
     }
 
-    &__element.order {
+    &__element.container {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 300px 300px 300px;
@@ -109,7 +102,7 @@
                 font-weight: 700;
             }
 
-            i {
+            svg {
                 width: 40px;
                 height: 40px;
                 font-size: 50px;

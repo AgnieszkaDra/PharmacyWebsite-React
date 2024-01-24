@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import { useInputFiles } from './useInputFileValue'
 import FileUploadForm from '../components/ui/FileUploadForm'
 
 export const useShowPaperPrescriptions = () => {
   // eslint-disable-next-line no-unused-vars
   const [imageSrc, setImageSrc] = useState([])
   const [inputFile, setInputFile] = useState([])
+  const {fileUploadForms, handleAddForm } = useInputFiles()
+
 
   const handleFileChange = (event, idFile) => {
     const file = event.target.files[0]
@@ -20,6 +23,8 @@ export const useShowPaperPrescriptions = () => {
       }
 
       reader.readAsDataURL(file)
+      handleAddForm()
+
     }
   }
 

@@ -41,7 +41,7 @@ export const SectionSecond = (props) => {
 
           <FontAwesomeIcon icon={element.icon}></FontAwesomeIcon>
         </div>
-        <div className={''}>
+        <div className={'order__sub__title hedaline--h4'}>
           {element.description}
         </div>
       </div>
@@ -53,7 +53,7 @@ export const SectionSecond = (props) => {
       className={className}
     >
       <h2 className={'section--second__element headline--h2'}>Jak to działa?</h2>
-      <div className={'section--second__element order'}>
+      <div className={'section--second__element container'}>
         {howToBook.list.map((element, index) => {
           return renderListItem(element, index)
         })}

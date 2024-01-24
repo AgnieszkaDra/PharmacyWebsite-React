@@ -19,7 +19,7 @@ export const SectionFirst = (props) => {
   return (
     <section className={className}>
       <div
-        className={'section--first__element order border--pink'}
+        className={'section--first__element border--pink'}
       >
         <h2 className={'headline--h2'}>Złóż rezerwację na leki i odbierz je w aptece
         </h2>
@@ -43,7 +43,7 @@ export const SectionFirst = (props) => {
         </button>
       </div>
       <div
-        className={'section--first__element hero border--pink'}
+        className={'section--first__element image border--pink'}
         style={style}
       >
       </div>

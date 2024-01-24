@@ -1,13 +1,17 @@
 import React from 'react'
 import Button from '../../ui/Button'
+import { useInputFiles } from '../../../hooks/useInputFileValue';
+import { useShowPaperPrescriptions } from '../../../hooks/useShowPaperPrescriptions';
 import PropTypes from 'prop-types'
 
 export const PaperOrder = (props) => {
-  const { data, result, remove } = props
-  console.log(result)
+  const { data, result, result2, remove } = props
+  console.log(result2)
+  const { inputsFiles, handleAddForm, setFileUploadForms } = useInputFiles()
 
-  const handleClick = (id) => {
-    console.log(id)
+
+  const handleClick = (id, rem) => {
+    console.log(id, rem)
     remove(id, data)
   }
   return (
@@ -32,6 +36,7 @@ export const PaperOrder = (props) => {
           </Button>
         </div>
       ))}
+    
     </div>
   )
 }
