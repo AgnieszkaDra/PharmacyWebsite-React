@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Logo from '../Logo'
 import Navigation from '../Navigation'
 import TopControl from '../ui/TopControl'
+import { useScroll } from '../../hooks/useScroll'
 import logo from '../../data/logo/drofarmaptekanamyslow.webp'
 
 import PropTypes from 'prop-types'
@@ -12,26 +13,9 @@ export const Header = (props) => {
   } = props
   const logoImage = logo
 
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
+  const { isScrolled } = useScroll()
   return (
-    <header className={`${className}${scrolled ? ' scrolled' : ''}`}>
+    <header className={`${className}${isScrolled ? ' scrolled' : ''}`}>
       <Logo
         className={'header__logo'}
         logo={logoImage}

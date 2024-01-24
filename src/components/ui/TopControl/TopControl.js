@@ -1,33 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { useScroll } from '../../../hooks/useScroll'
 
 const TopControl = () => {
-  const [isVisible, setIsVisible] = useState(false)
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+  const { isScrolled, scrollToTop } = useScroll()
 
   return (
     <div
-      className={`topcontrol ${isVisible ? 'visible' : ''}`}
+      className={`topcontrol ${isScrolled ? 'visible' : ''}`}
       onClick={scrollToTop}
     >
       <div className={'topcontrol__container'}>
