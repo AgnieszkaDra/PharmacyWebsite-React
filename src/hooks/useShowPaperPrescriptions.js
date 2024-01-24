@@ -1,10 +1,26 @@
 import { useState } from 'react'
+import FileUploadForm from '../components/ui/FileUploadForm';
 
 export const useShowPaperPrescriptions = () => {
   // eslint-disable-next-line no-unused-vars
   const [imageSrc, setImageSrc] = useState([])
   const [inputFile, setInputFile] = useState([])
-  const [sharedId, setSharedId] = useState(10)
+  const [inputsFiles, setInputsFiles] = useState([]);
+  const [sharedId, setSharedId] = useState('');
+
+  const generateId = () => {
+    const newId = Math.floor(Math.random() * 1000);
+    setSharedId(newId);
+  };
+
+  const handleAddForm = () => {
+    setInputsFiles([
+      ...inputsFiles,
+      <FileUploadForm key={Date.now()} />
+    ]);
+  };
+
+  // const [sharedId, setSharedId] = useState(10)
   console.log(imageSrc)
   // const [paperPrescription, setPaperPrescription] = useState([])
   const handleFileChange = (event, idFile) => {
@@ -17,7 +33,7 @@ export const useShowPaperPrescriptions = () => {
       //   setImageSrc([...imageSrc, { firstImage: e.target.result, id: idFile }])
       // }
       reader.onload = (e) => {
-        setImageSrc([...imageSrc, { firstImage: e.target.result, id: sharedId }])
+        setImageSrc([...imageSrc, { firstImage: e.target.result }])
       }
 
       reader.readAsDataURL(file)
@@ -26,7 +42,7 @@ export const useShowPaperPrescriptions = () => {
 
   const addInputFileWithId = (e) => {
     alert('id')
-    setInputFile([...inputFile, { id: sharedId }])
+    setInputFile([...inputFile])
   }
 
   const addPaperPrescription = (data) => {
@@ -43,5 +59,7 @@ export const useShowPaperPrescriptions = () => {
   // const deletePaperPrescription = (id) => {
   //   setElectroPrescription(electronicPrescription.filter((el) => el.id !== id))
   // }
-  return { imageSrc, setImageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription, inputFile, addInputFileWithId, sharedId }
+
+  console.log(imageSrc)
+  return { imageSrc, setImageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription, inputFile, addInputFileWithId }
 }

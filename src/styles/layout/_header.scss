@@ -163,12 +163,45 @@
 
 @include respond(tablet) {
     .scrolled {
-      background-color: $color-white;
+    //   background-color: $color-white;
       border-bottom: 1px solid $color-dark-grey;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
       // .menu__sublist {
       //   display: none;
       // }
     }
-  }
+}
+
+.topcontrol {
+    display: none;
+    &.visible {
+        display: block;
+        position: fixed;
+        bottom: 52px;
+        right: 0;
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    &__container {
+        transition: all .3s linear;
+        bottom: 30px;
+        cursor: pointer;
+        height: 38px;
+        position: absolute;
+        right: 20px;
+        width: 38px;
+        z-index: 100;
+        text-align: center;
+        background-color: $color-main;
+    }
+
+    &__icon {
+        color: wheat;
+        font-size: 16px;
+        line-height: 20px;
+        padding-top: 10px;
+       
+    }
+}
 

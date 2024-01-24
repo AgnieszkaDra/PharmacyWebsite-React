@@ -462,11 +462,43 @@ span.spanwrong .error {
 
 @media only screen and (min-width: 900px) {
   .scrolled {
-    background-color: rgb(255, 255, 255);
     border-bottom: 1px solid rgb(70, 70, 70);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   }
 }
+.topcontrol {
+  display: none;
+}
+
+.topcontrol.visible {
+  display: block;
+  position: fixed;
+  bottom: 52px;
+  right: 0;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.topcontrol__container {
+  transition: all 0.3s linear;
+  bottom: 30px;
+  cursor: pointer;
+  height: 38px;
+  position: absolute;
+  right: 20px;
+  width: 38px;
+  z-index: 100;
+  text-align: center;
+  background-color: rgb(254, 46, 22);
+}
+
+.topcontrol__icon {
+  color: wheat;
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 10px;
+}
+
 @media (min-width: 768px) {
   .container {
     max-width: 720px;

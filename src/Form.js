@@ -22,10 +22,11 @@ export const Form = (props) => {
 
   const { inputsValue, onChangeValue } = useInputsValue()
   const { inputsFiles, handleAddForm } = useInputFiles()
+
   const { electronicPrescription, addElectroPrescription, deleteElectroPrescription } = useShowElectronicPrescriptions()
-  const { imageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription, inputFile, addInputFileWithId, sharedId } = useShowPaperPrescriptions()
+  const { imageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription, fileUploadForms, inputFile, addInputFileWithId, sharedId } = useShowPaperPrescriptions()
   const { nonPrescription, addNonPrescription, deleteNonPrescription } = useShowNonPrescriptions()
-  console.dir(inputsFiles)
+  console.log(fileUploadForms)
   return (
     <div className={className}>
       <Section

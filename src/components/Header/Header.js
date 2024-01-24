@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Logo from '../Logo'
 import Navigation from '../Navigation'
+import TopControl from '../ui/TopControl'
 import logo from '../../data/logo/drofarmaptekanamyslow.webp'
 
 import PropTypes from 'prop-types'
@@ -41,6 +42,7 @@ export const Header = (props) => {
       >
         <Navigation></Navigation>
       </div>
+      <TopControl></TopControl>
     </header>
   )
 }
