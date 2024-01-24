@@ -38,12 +38,11 @@ export const SectionSecond = (props) => {
           <div className={'number'}>
             {element.id + '.'}
           </div>
-
           <FontAwesomeIcon icon={element.icon}></FontAwesomeIcon>
         </div>
-        <div className={'order__sub__title hedaline--h4'}>
+        <h4 className={'order__sub__title hedaline--h4'}>
           {element.description}
-        </div>
+        </h4>
       </div>
     )
   }

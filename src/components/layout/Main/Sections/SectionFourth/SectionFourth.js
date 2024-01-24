@@ -17,7 +17,8 @@ export const SectionFourth = (props) => {
       <div
         className={'section--fourth__element border--pink'}
       >
-        <FontAwesomeIcon icon={faClock} />
+        <div>
+          <FontAwesomeIcon icon={faClock} />
         <strong>Apteka otwarta</strong>
         <br></br>
         Od poniedziałku do soboty
@@ -25,10 +26,12 @@ export const SectionFourth = (props) => {
         w godzinach
         <br></br>
         od < span > 8:00 do 20:00</span >
+        </div>
       </div>
 
       <div className={'section--fourth__element border--pink'}>
-        <FontAwesomeIcon icon={faMortarPestle}/>
+        <div>
+          <FontAwesomeIcon icon={faMortarPestle}/>
         <strong>
           Apteka
           <br></br>
@@ -41,7 +44,9 @@ export const SectionFourth = (props) => {
         <br></br>
         55-220 Jelcz-Laskowice
         <br></br>
-        tel. <span>89078990</span>
+        tel. <span>89078990</span> 
+        </div>
+       
 
       </div>
 
