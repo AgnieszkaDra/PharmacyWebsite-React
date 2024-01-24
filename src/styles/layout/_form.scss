@@ -1,7 +1,7 @@
 @import '../abstracts';
 
 .order {
-    padding: 20px;
+    padding: 80px;
     display: grid;
     width: 100%;
     grid-gap: 20px;
@@ -22,24 +22,6 @@
         grid-template-columns: 1fr 1fr;
     }
 
-    &-electronicPrescription,
-    &-paperPrescription,
-    &-nonPrescription {
-        width: 50%;
-        @include flexAbsoluteCenter();
-        flex-direction: column;
-    }
-}
-
-.section-form {
-    position: relative;
-    background-color: $color-main;
-    min-height: 100px;
-    padding: 30px 10px 30px 10px;
-    width: 100%;
-    @include flexAbsoluteCenter;
-    flex-direction: column;
-
     &__title {
         position: absolute;
         top: 0;
@@ -48,56 +30,40 @@
         text-transform: uppercase;
         line-height: 1;
         margin: -9px 0 0;
-        background-color: $color-pink;
-        padding: 0 3px;
+        background-color: $color-main;
+        padding: 3px;
     }
 
-    &__inputContainer {
-
-        display: flex;
+    &__section {
+        position: relative;
+        padding: 30px 10px 30px 10px;
+        width: 100%;
+        @include flexAbsoluteCenter;
         flex-direction: column;
-        padding: 5px;
+        background-color: $color-submain;
 
-        &>* {
-            margin: 2px;
+        &.username {
+            grid-area: username;
         }
+
+        &.electronicPrescription {
+            grid-area: electronicPrescription;
+        }
+
+        &.paperPrescription {
+            grid-area: paperPrescription;
+        }
+
+        &.nonPrescription {
+            grid-area: nonPrescription;
+        }
+
+        &.totalOrder {
+            grid-area: orderSection;
+        }
+
     }
 
-    &__label {
-        text-transform: uppercase;
-        font-size: 0.8rem;
-    }
-
-    &-username {
-        grid-area: username;
-        flex-direction: column;
-    }
-
-    &-electronicPrescription {
-        grid-area: electronicPrescription;
-    }
-
-    &-paperPrescription {
-        grid-area: paperPrescription;
-    }
-
-    &-nonPrescription {
-        grid-area: nonPrescription;
-    }
-
-    &-order {
-        grid-area: orderSection;
-    }
-
-    &-button {
-        background-color: $color-pink;
-        border: 2px solid $color-white;
-        border-radius: 10px;
-        margin-top: 15px;
-        padding: 5px;
-        font-size: 0.7rem;
-        grid-area: formButton;
-    }
 }
 
 .button__submit {
@@ -111,12 +77,17 @@
 }
 
 .form {
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-direction: column;
     &__field {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 25px;
-      color: $color-font;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+        color: $color-font;
     }
+
     &__input {
         width: 60%;
         margin-top: 10px;
@@ -125,21 +96,25 @@
         border-radius: 0.3em;
         border: 1px solid $color-font;
         background-color: $color-white;
-        &:focus, &:active {
-          outline: none;
+
+        &:focus,
+        &:active {
+            outline: none;
         }
     }
+
     &__label {
         text-transform: capitalize;
         font-weight: 500;
     }
+
     &__button {
-      width: 60%;
-        margin-bottom: 15px; 
+        width: 60%;
+        margin-bottom: 15px;
         padding: 5px;
         border-radius: 0.3em;
         background-color: $color-very-light-pink;
-        color: black; 
+        color: black;
         border: none;
         box-shadow: none;
         box-sizing: border-box;
@@ -148,11 +123,20 @@
         font-weight: bold;
         font-size: 1.5em;
         transition: 0.5s;
-        &:active, &:focus {
-          outline: 0;
+
+        &:active,
+        &:focus {
+            outline: 0;
         }
+
         &:hover {
-          background-color:  white;;
+            background-color: white;
+            ;
         }
     }
+
+    button {
+        width: 60%;
+        font-size: 15px;
     }
+}

@@ -55,7 +55,7 @@ export const ElectronicData = (props) => {
         </Input>
         <Button
           type={'submit'}
-          className={'button__submit'}
+          className={'form__button'}
           text={'Dodaj kolejną receptę elektroniczną'}
         >
         </Button>

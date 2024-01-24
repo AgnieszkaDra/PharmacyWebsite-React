@@ -1,3 +1,4 @@
+@import '../abstracts';
 .footer {
     @include flexAbsoluteCenter();
     padding: 20px 0 20px 0;

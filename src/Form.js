@@ -27,16 +27,16 @@ export const Form = (props) => {
   const { nonPrescription, addNonPrescription, deleteNonPrescription } = useShowNonPrescriptions()
   console.log(fileUploadForms, imageSrc)
   return (
-    <div className={className}>
+    <div className={'order'}>
       <Section
-        className={'section-form-username'}
-        title={'Name and Surname'}
+        className={'order__section username'}
+        title={'Dane Pacjenta'}
         content={<PatientData></PatientData>}
       >
       </Section>
       <Section
-        className={'section-form-electronicPrescription'}
-        title={'Drugs for electronic prescription'}
+        className={'order__section electronicPrescription'}
+        title={'Leki na recepte elektroniczną'}
         content={
           <ElectronicData
             data={inputsValue}
@@ -48,8 +48,8 @@ export const Form = (props) => {
       >
       </Section>
       <Section
-        className={'section-form-paperPrescription'}
-        title={'Drugs for paper prescription'}
+        className={'order__section paperPrescription'}
+        title={'Leki na receptę papierową'}
         content={
           <PaperPrescriptionData
             data={fileUploadForms}
@@ -62,8 +62,8 @@ export const Form = (props) => {
       >
       </Section>
       <Section
-        className={'section-form-nonPrescription'}
-        title={'Other drugs and medicaments'}
+        className={'order__section nonPrescription'}
+        title={'Pozostałe leki'}
         content={
           <NonPrescriptionData
             data={inputsValue}
@@ -75,8 +75,8 @@ export const Form = (props) => {
       >
       </Section>
       <Section
-        className={'section-form-order'}
-        title={'Your order'}
+        className={'order__section totalOrder'}
+        title={'Twoje zamówienie'}
         content={
           <>
             <ElectronicOrder
@@ -106,7 +106,7 @@ export const Form = (props) => {
       </Section>
       <Button
         type={'submit'}
-        className={'button__submit'}
+        className={'button'}
         text={'Zamawiam'}
       >
       </Button>
