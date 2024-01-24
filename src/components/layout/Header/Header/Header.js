@@ -1,9 +1,9 @@
 import React from 'react'
-import Logo from '../Logo'
-import Navigation from '../Navigation'
-import TopControl from '../ui/TopControl'
-import { useScroll } from '../../hooks/useScroll'
-import logo from '../../data/logo/drofarmaptekanamyslow.webp'
+import Logo from '../../../ui/Logo/Logo'
+import Navigation from '../Navigation/Navigation'
+import TopControl from '../../../ui/TopControl'
+import { useScroll } from '../../../../hooks/useScroll'
+import logo from '../../../../images/drofarmaptekanamyslow.webp'
 
 import PropTypes from 'prop-types'
 

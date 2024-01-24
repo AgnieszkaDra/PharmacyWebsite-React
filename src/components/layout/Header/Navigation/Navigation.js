@@ -1,7 +1,6 @@
 import React from 'react'
-
-import { useToggleNavbar } from '../../hooks/useToggleNavbar'
-import ChocolateHamburger from '../ChocolateHamburger/ChocolateHamburger'
+import { useToggleNavbar } from '../../../../hooks/useToggleNavbar'
+import ChocolateHamburger from '../../../ui/ChocolateHamburger'
 import Menu from '../Menu/Menu'
 
 export const Navigation = () => {
@@ -10,7 +9,7 @@ export const Navigation = () => {
     <>
       <button
         onClick={openNavbar}
-        className={'hamburger'}
+        className={`${'hamburger'}${navbarOpen ? '' : ' close'}`}
       >
         <ChocolateHamburger
           isNavbarOpen={navbarOpen}

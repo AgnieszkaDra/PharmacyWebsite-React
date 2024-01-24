@@ -322,12 +322,11 @@ span.spanwrong .error {
 }
 
 .nav .nav__block {
-  width: 200%;
+  width: calc(200% + 20px);
   position: absolute;
-  top: 20vh;
+  left: calc(-100% - 10px);
+  height: calc(100vh + 20px);
   margin-top: -20px;
-  left: -100%;
-  height: 80vh;
   z-index: 100;
   background-color: rgb(255, 228, 225);
   display: flex;
@@ -365,6 +364,7 @@ span.spanwrong .error {
 
 .menu__item a {
   color: rgb(254, 46, 22);
+  font-size: 24px;
 }
 
 @media only screen and (min-width: 900px) {
@@ -374,6 +374,7 @@ span.spanwrong .error {
 }
 .hamburger {
   position: absolute;
+  z-index: 200;
   right: 10px;
   top: calc(50% - 20px);
   display: block;
@@ -404,7 +405,6 @@ span.spanwrong .error {
 .hamburger__icon-open, .hamburger__icon-close {
   width: 30px;
   height: 30px;
-  transition: 0.1s;
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -423,7 +423,7 @@ span.spanwrong .error {
 .hamburger__icon-open div span {
   width: 5px;
   height: 5px;
-  background-color: rgb(228, 0, 124);
+  background-color: rgb(254, 46, 22);
   display: block;
   border-radius: 50%;
 }
@@ -437,11 +437,32 @@ span.spanwrong .error {
 .hamburger__icon-close div:nth-child(odd) span {
   width: 5px;
   height: 5px;
-  background-color: rgb(228, 0, 124);
+  background-color: rgb(254, 46, 22);
   display: block;
   border-radius: 50%;
   transition-delay: 200ms;
   transition: 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+}
+
+.hamburger.close {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.hamburger.close .hamburger__icon-open {
+  width: 40px;
+  height: 40px;
+}
+
+.hamburger.close .hamburger__icon-open div span {
+  width: 7px;
+  height: 7px;
+  background-color: rgb(254, 46, 22);
+}
+
+.hamburger.close .hamburger__icon-close {
+  width: 40px;
+  height: 40px;
 }
 
 @media only screen and (min-width: 900px) {
