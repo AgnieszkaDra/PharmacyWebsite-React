@@ -28,5 +28,5 @@ export const useInputFiles = () => {
 
   console.log(fileUploadForms)
 
-  return { inputsFiles, handleAddForm, fileUploadForms };
+  return { inputsFiles, handleAddForm, fileUploadForms, setFileUploadForms };
 };

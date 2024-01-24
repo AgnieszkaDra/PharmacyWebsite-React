@@ -371,6 +371,10 @@ span.spanwrong .error {
     background-color: rgb(254, 46, 22);
   }
 }
+.nav .nav__block.scrolled {
+  display: none;
+}
+
 .nav .nav__hide {
   display: none;
 }

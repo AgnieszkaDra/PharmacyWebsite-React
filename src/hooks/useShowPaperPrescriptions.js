@@ -1,28 +1,11 @@
 import { useState } from 'react'
-import FileUploadForm from '../components/ui/FileUploadForm';
+import FileUploadForm from '../components/ui/FileUploadForm'
 
 export const useShowPaperPrescriptions = () => {
   // eslint-disable-next-line no-unused-vars
   const [imageSrc, setImageSrc] = useState([])
   const [inputFile, setInputFile] = useState([])
-  const [inputsFiles, setInputsFiles] = useState([]);
-  const [sharedId, setSharedId] = useState('');
 
-  const generateId = () => {
-    const newId = Math.floor(Math.random() * 1000);
-    setSharedId(newId);
-  };
-
-  const handleAddForm = () => {
-    setInputsFiles([
-      ...inputsFiles,
-      <FileUploadForm key={Date.now()} />
-    ]);
-  };
-
-  // const [sharedId, setSharedId] = useState(10)
-  console.log(imageSrc)
-  // const [paperPrescription, setPaperPrescription] = useState([])
   const handleFileChange = (event, idFile) => {
     const file = event.target.files[0]
 
@@ -60,6 +43,6 @@ export const useShowPaperPrescriptions = () => {
   //   setElectroPrescription(electronicPrescription.filter((el) => el.id !== id))
   // }
 
-  console.log(imageSrc)
+
   return { imageSrc, setImageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription, inputFile, addInputFileWithId }
 }

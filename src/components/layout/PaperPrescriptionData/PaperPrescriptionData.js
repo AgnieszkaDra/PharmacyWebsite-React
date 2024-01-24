@@ -2,20 +2,21 @@ import React, { useState } from 'react';
 import Button from '../../ui/Button';
 import FileUploadForm from '../../ui/FileUploadForm';
 import { useInputsValue } from '../../../hooks/useInputsValue';
+import { useInputFiles } from '../../../hooks/useInputFileValue';
 import PropTypes from 'prop-types';
 
 export const PaperPrescriptionData = (props) => {
   const { data, onChange, result } = props;
-  const [fileUploadForms, setFileUploadForms] = useState([]);
-
+  // const { fileUploadForms, setFileUploadForms } = useState([]);
+  const { inputsFiles, handleAddForm, fileUploadForms, setFileUploadForms } = useInputFiles()
   const { inputsValue, onChangeValue } = useInputsValue();
 
-  const handleAddForm = () => {
-    setFileUploadForms((prevForms) => [
-      ...prevForms,
-      { key: fileUploadForms.length, files: data, onChange: onChangeValue },
-    ]);
-  };
+  // const handleAddForm = () => {
+  //   setFileUploadForms((prevForms) => [
+  //     ...prevForms,
+  //     { key: fileUploadForms.length, files: data, onChange: onChangeValue },
+  //   ]);
+  // };
 
   const handleRemoveForm = (index) => {
     const updatedForms = [...fileUploadForms];

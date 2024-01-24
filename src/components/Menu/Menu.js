@@ -1,10 +1,12 @@
 import React from 'react'
+import { useScroll } from '../../hooks/useScroll'
 import PropTypes from 'prop-types'
 
 export const Menu = (props) => {
   const {
     isNavbarOpen
   } = props
+  const { isScrolled } = useScroll()
 
   return (
     <>
@@ -15,7 +17,7 @@ export const Menu = (props) => {
       <nav className={'nav'} >
         {/* <button onClick={handleToggle} className={classes.hamburger__btn}><GiHamburgerMenu/></button>     */}
         {/* <ul className={'nav__menu menu '}> */}
-        <ul className={`${'nav__menu menu'} ${isNavbarOpen ? `${'nav__hide'}` : `${'nav__block'}`} `}>
+        <ul className={`${'nav__menu menu'} ${isNavbarOpen ? `${'nav__hide'}` : `${'nav__block'}`} ${isScrolled ? 'scrolled' : ''} `}>
           <li className={'menu__item'}>
             <a
               href={'/'}
