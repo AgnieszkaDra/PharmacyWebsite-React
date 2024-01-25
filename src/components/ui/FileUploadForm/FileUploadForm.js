@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
 import { useShowPaperPrescriptions } from '../../../hooks/useShowPaperPrescriptions'
-import { useInputFiles } from '../../../hooks/useInputFileValue'
-const FileUploadForm = (props) => {
-    const { files } = props
-  const [selectedFile, setSelectedFile] = useState(null)
-  const [inputsFiles, setInputsFiles] = useInputFiles()
-  const { imageSrc, setImageSrc,addPaperPrescription, deletePaperPrescription, inputFile, addInputFileWithId, sharedId } = useShowPaperPrescriptions()
+const FileUploadForm = () => {
+  const [setSelectedFile] = useState(null)
+  const { imageSrc, setImageSrc, sharedId } = useShowPaperPrescriptions()
   const handleFileChange2 = (event) => {
     // Update the state with the selected file
 
@@ -23,7 +20,6 @@ const FileUploadForm = (props) => {
 
       reader.readAsDataURL(file)
     }
-
   }
 
   const handleSubmit = (event) => {
@@ -41,16 +37,19 @@ const FileUploadForm = (props) => {
       <form onSubmit={handleSubmit}>
         {/* Other form fields can go here */}
 
-        <label htmlFor="fileInput">Select a file:</label>
+        <label htmlFor={'fileInput'}>Select a file:</label>
         <input
-          type="file"
-          id="fileInput"
-          name="fileInput"
+          type={'file'}
+          id={'fileInput'}
+          name={'fileInput'}
           onChange={(e) => handleFileChange2(e)}
         />
 
         {/* Submit button */}
-        <input type="submit" value="Upload" />
+        <input
+          type={'submit'}
+          value={'Upload'}
+        />
       </form>
     </div>
   )

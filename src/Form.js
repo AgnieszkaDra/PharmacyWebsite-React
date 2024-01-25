@@ -13,17 +13,14 @@ import { useInputFiles } from './hooks/useInputFileValue'
 import { useShowElectronicPrescriptions } from './hooks/useShowElectronicPrescriptions'
 import { useShowPaperPrescriptions } from './hooks/useShowPaperPrescriptions'
 import { useShowNonPrescriptions } from './hooks/useShowNonPrescriptions'
-import PropTypes from 'prop-types'
-import InputFile from './components/ui/InputFile'
-export const Form = (props) => {
-  const {
-    className
-  } = props
 
+import PropTypes from 'prop-types'
+
+export const Form = () => {
   const { inputsValue, onChangeValue } = useInputsValue()
-  const { handleAddForm, fileUploadForms, setFileUploadForms } = useInputFiles()
-   const { electronicPrescription, addElectroPrescription, deleteElectroPrescription } = useShowElectronicPrescriptions()
-  const { imageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription, inputFile, addInputFileWithId, sharedId } = useShowPaperPrescriptions()
+  const { fileUploadForms } = useInputFiles()
+  const { electronicPrescription, addElectroPrescription, deleteElectroPrescription } = useShowElectronicPrescriptions()
+  const { imageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription } = useShowPaperPrescriptions()
   const { nonPrescription, addNonPrescription, deleteNonPrescription } = useShowNonPrescriptions()
   console.log(fileUploadForms, imageSrc)
   return (
@@ -51,13 +48,15 @@ export const Form = (props) => {
         className={'order__section paperPrescription'}
         title={'Leki na receptę papierową'}
         content={
-          <PaperPrescriptionData
-            data={fileUploadForms}
-            // onAddFile={handleAddForm}
-            onChange={handleFileChange}
-            result={addPaperPrescription}
-          >
-          </PaperPrescriptionData>
+          <>
+            <PaperPrescriptionData
+              data={fileUploadForms}
+              // onAddFile={handleAddForm}
+              onChange={handleFileChange}
+              result={addPaperPrescription}
+            >
+            </PaperPrescriptionData>
+          </>
         }
       >
       </Section>
