@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from '../../ui/Button'
-import { useInputFiles } from '../../../hooks/useInputFileValue'
+import Button from '../../../../ui/Button'
+import { useInputFiles } from '../../../../../hooks/useInputFileValue'
 import PropTypes from 'prop-types'
 
 export const PaperPrescriptionData = (props) => {

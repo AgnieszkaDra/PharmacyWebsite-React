@@ -1,7 +1,7 @@
 import React from 'react'
-import Input from '../../ui/Input'
-import Button from '../../ui/Button'
-import { useValidationErrors } from '../../../hooks/useValidationErrors'
+import Input from '../../../../ui/Input'
+import Button from '../../../../ui/Button'
+import { useValidationErrors } from '../../../../../hooks/useValidationErrors'
 import PropTypes from 'prop-types'
 
 export const NonPrescriptionData = (props) => {

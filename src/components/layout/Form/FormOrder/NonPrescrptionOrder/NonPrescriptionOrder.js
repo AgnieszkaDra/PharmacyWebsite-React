@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../ui/Button'
+import Button from '../../../../ui/Button'
 import PropTypes from 'prop-types'
 
 export const NonPrescriptionOrder = (props) => {
