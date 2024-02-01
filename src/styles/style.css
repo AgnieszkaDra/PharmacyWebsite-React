@@ -670,6 +670,11 @@ span.spanwrong .error {
   font-size: 15px;
 }
 
+.totalOrder__form > * {
+  margin: 20px;
+  font-size: 20px;
+}
+
 .footer {
   display: flex;
   justify-content: center;

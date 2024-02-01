@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const useValidationErrors = (error) => {
+export const useValidationErrors = () => {
   const [validationErrors, setValidationErrors] = useState({
     PIN: '',
     PESEL: '',
@@ -11,7 +11,10 @@ export const useValidationErrors = (error) => {
   )
 
   const onSetErrors = (e) => {
-    setValidationErrors(error)
+    setValidationErrors({
+      ...validationErrors,
+      e
+    })
   }
 
   return { validationErrors, onSetErrors }

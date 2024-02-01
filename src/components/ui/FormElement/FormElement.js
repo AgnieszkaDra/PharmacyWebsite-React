@@ -2,10 +2,7 @@ import React from 'react'
 
 import PropTypes from 'prop-types'
 
-export const FormElement = ({ children }, props) => {
-  const {
-    className
-  } = props
+export const FormElement = ({ children, className }) => {
   return (
     <form className={className}>
       {children}
