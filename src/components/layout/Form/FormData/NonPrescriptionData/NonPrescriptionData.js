@@ -21,7 +21,7 @@ export const NonPrescriptionData = (props) => {
         label={'Nazwa leku'}
         name={'drugName'}
         id={'drugName'}
-        value= {data.name}
+        value= {data.drugName}
         onChange={(e) => onChange(e)}
         error={validationErrors.drugName}
       >
@@ -30,7 +30,7 @@ export const NonPrescriptionData = (props) => {
         label={'Dawka'}
         name={'drugDose'}
         id={'drugDose'}
-        value= {data.name}
+        value= {data.drugDose}
         onChange={(e) => onChange(e)}
         error={validationErrors.drugDose}
       >

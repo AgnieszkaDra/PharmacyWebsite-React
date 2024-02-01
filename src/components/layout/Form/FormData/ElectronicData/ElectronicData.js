@@ -39,7 +39,7 @@ export const ElectronicData = (props) => {
           label={'PIN'}
           name={'PIN'}
           id={'PIN'}
-          value= {data.name}
+          value= {data.PIN}
           onChange={(e) => onChange(e)}
           error={validationErrors.PIN}
         >
@@ -48,7 +48,7 @@ export const ElectronicData = (props) => {
           label={'PESEL'}
           name={'PESEL'}
           id={'PESEL'}
-          value={data.name}
+          value={data.PESEL}
           onChange={(e) => onChange(e)}
           error={validationErrors.PESEL}
         >

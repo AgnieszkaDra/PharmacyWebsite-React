@@ -3,6 +3,7 @@ import Section from './components/Section'
 import PatientData from './components/layout/Form/FormData/PatientData'
 import ElectronicData from './components/layout/Form/FormData/ElectronicData'
 import NonPrescriptionData from './components/layout/Form/FormData/NonPrescriptionData'
+import PatientDataOrder from './components/layout/Form/FormOrder/PatientDataOrder'
 import ElectronicOrder from './components/layout/Form/FormOrder/ElectronicOrder'
 import PaperOrder from './components/layout/Form/FormOrder/PaperOrder'
 import NonPrescriptionOrder from './components/layout/Form/FormOrder/NonPrescrptionOrder'
@@ -10,6 +11,7 @@ import Button from './components/ui/Button'
 import PaperPrescriptionData from './components/layout/Form/FormData/PaperPrescriptionData'
 import { useInputsValue } from './hooks/useInputsValue'
 import { useInputFiles } from './hooks/useInputFileValue'
+import { useShowPatientData } from './hooks/useShowPatientData'
 import { useShowElectronicPrescriptions } from './hooks/useShowElectronicPrescriptions'
 import { useShowPaperPrescriptions } from './hooks/useShowPaperPrescriptions'
 import { useShowNonPrescriptions } from './hooks/useShowNonPrescriptions'
@@ -19,6 +21,7 @@ import PropTypes from 'prop-types'
 export const Form = () => {
   const { inputsValue, onChangeValue } = useInputsValue()
   const { fileUploadForms } = useInputFiles()
+  const { patientData } = useShowPatientData()
   const { electronicPrescription, addElectroPrescription, deleteElectroPrescription } = useShowElectronicPrescriptions()
   const { imageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription } = useShowPaperPrescriptions()
   const { nonPrescription, addNonPrescription, deleteNonPrescription } = useShowNonPrescriptions()
@@ -28,7 +31,14 @@ export const Form = () => {
       <Section
         className={'order__section username'}
         title={'Dane Pacjenta'}
-        content={<PatientData></PatientData>}
+        content={
+          <PatientData
+            data={inputsValue}
+            onChange={onChangeValue}
+            // result={addPatientData}
+          >
+          </PatientData>
+        }
       >
       </Section>
       <Section
@@ -78,6 +88,13 @@ export const Form = () => {
         title={'Twoje zamówienie'}
         content={
           <>
+            <PatientDataOrder
+              data={inputsValue}
+              onChange={onChangeValue}
+              // result={patientData}
+              // remove={deletePatientData}
+            >
+            </PatientDataOrder>
             <ElectronicOrder
               data={inputsValue}
               onChange={onChangeValue}
