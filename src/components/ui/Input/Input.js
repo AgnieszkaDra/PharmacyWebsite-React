@@ -66,6 +66,8 @@ export const Input = (props) => {
         name={name}
         onChange={onChange}
         // eslint-disable-next-line react/no-unknown-property
+        error={error}
+        // eslint-disable-next-line react/no-unknown-property
       />
       {error && error.length > 0 && <Error message={error} />}
       {/* {hasError && <ErrorText>{errors[name]}</ErrorText>} */}

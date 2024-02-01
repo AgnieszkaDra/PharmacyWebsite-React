@@ -2,7 +2,7 @@ import React from 'react'
 
 import PropTypes from 'prop-types'
 
-export const Form = ({ children }, props) => {
+export const FormElement = ({ children }, props) => {
   const {
     className
   } = props
@@ -13,9 +13,9 @@ export const Form = ({ children }, props) => {
   )
 }
 
-Form.propTypes = {
+FormElement.propTypes = {
   className: PropTypes.string,
   children: PropTypes.array
 }
 
-export default Form
+export default FormElement

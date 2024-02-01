@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 
 export const PaperPrescriptionData = (props) => {
   const { onChange } = props
-  // const { fileUploadForms, setFileUploadForms } = useState([]);
   const { fileUploadForms, setFileUploadForms } = useInputFiles()
 
   const handleAddForm = () => {
@@ -26,15 +25,12 @@ export const PaperPrescriptionData = (props) => {
       <Button
         type={'submit'}
         className={'button__submit'}
-        text={'Dodaj kolejną receptę elektroniczną'}
+        text={'Dodaj kolejną receptę papierową'}
         onClick={handleAddForm}
       />
-
       {fileUploadForms.map((formData, index) => (
         <div key={formData.key}>
           <form>
-            {/* Other form fields can go here */}
-
             <label htmlFor={'fileInput'}>Select a file:</label>
             <input
               type={'file'}
@@ -43,8 +39,6 @@ export const PaperPrescriptionData = (props) => {
               name={'fileInput'}
               onChange={(e) => onChange(e)}
             />
-
-            {/* Submit button */}
             <input
               type={'submit'}
               value={'Upload'}

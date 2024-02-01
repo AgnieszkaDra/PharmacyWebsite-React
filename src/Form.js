@@ -3,6 +3,7 @@ import Section from './components/Section'
 import PatientData from './components/layout/Form/FormData/PatientData'
 import ElectronicData from './components/layout/Form/FormData/ElectronicData'
 import NonPrescriptionData from './components/layout/Form/FormData/NonPrescriptionData'
+import FormElement from './components/ui/Form/Form'
 import PatientDataOrder from './components/layout/Form/FormOrder/PatientDataOrder'
 import ElectronicOrder from './components/layout/Form/FormOrder/ElectronicOrder'
 import PaperOrder from './components/layout/Form/FormOrder/PaperOrder'
@@ -35,7 +36,7 @@ export const Form = () => {
           <PatientData
             data={inputsValue}
             onChange={onChangeValue}
-            // result={addPatientData}
+          // result={addPatientData}
           >
           </PatientData>
         }
@@ -87,12 +88,12 @@ export const Form = () => {
         className={'order__section totalOrder'}
         title={'Twoje zamówienie'}
         content={
-          <>
+          <FormElement className={'totalOrder__form'}>
             <PatientDataOrder
               data={inputsValue}
               onChange={onChangeValue}
-              // result={patientData}
-              // remove={deletePatientData}
+            // result={patientData}
+            // remove={deletePatientData}
             >
             </PatientDataOrder>
             <ElectronicOrder
@@ -116,16 +117,16 @@ export const Form = () => {
               remove={deleteNonPrescription}
             >
             </NonPrescriptionOrder>
-          </>
+            <Button
+              type={'submit'}
+              className={'button'}
+              text={'Zamawiam'}
+            >
+            </Button>
+          </FormElement>
         }
       >
       </Section>
-      <Button
-        type={'submit'}
-        className={'button'}
-        text={'Zamawiam'}
-      >
-      </Button>
     </div>
   )
 }

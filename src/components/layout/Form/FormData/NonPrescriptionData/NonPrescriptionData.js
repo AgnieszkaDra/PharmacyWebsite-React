@@ -39,7 +39,7 @@ export const NonPrescriptionData = (props) => {
         label={'Ilość'}
         name={'drugAmount'}
         id={'drugAmount'}
-        value= {data.name}
+        value= {data.drugAmount}
         onChange={(e) => onChange(e)}
         error={validationErrors.drugAmount}
       >

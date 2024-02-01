@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 export const PaperOrder = (props) => {
   const { data, result, remove } = props
   const handleClick = (id, rem) => {
-    console.log(id, rem)
     remove(id, data)
   }
   return (

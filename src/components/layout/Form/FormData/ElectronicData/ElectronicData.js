@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Input from '../../../../ui/Input'
 import Button from '../../../../ui/Button'
 // import formFields from '../../../data/form/formFields'
 // import { useInputsValue } from '../../../hooks/useInputsValue'
 import { validateForm } from '../../../../../components/features/Forms/Validate/Validate'
-import { useValidationErrors } from '../../../../../hooks/useValidationErrors'
+// import { useValidationErrors } from '../../../../../hooks/useValidationErrors'
 // import { addNewElectronicOrder } from '../../../hooks/addNewElectronicOrder'
 // import { electronicOrder } from '../../../hooks/electronicOrder'
 // import { useShowElectronicOrder } from '../../../hooks/useShowElectronicOrder'
@@ -12,21 +12,21 @@ import PropTypes from 'prop-types'
 
 export const ElectronicData = (props) => {
   const { data, onChange, result } = props
-  console.log(result)
-  const { validationErrors, onSetErrors } = useValidationErrors()
-  // const [validationErrors, setValidationErrors] = useState({
-  //   PIN: '',
-  //   PESEL: ''
-  // }
-  // )
+  const [validationErrors, setValidationErrors] = useState({
+    PIN: '',
+    PESEL: ''
+  }
+  )
 
   const handleSubmit = (e) => {
+    validationErrors.PIN = ''
+    validationErrors.PESEL = ''
     e.preventDefault()
     const errors = validateForm(data)
-    console.log(data.PIN, data.PESEL)
+    console.log(errors.PIN, errors.PESEL)
     errors.PIN.length > 0 ||
       errors.PESEL.length > 0
-      ? onSetErrors(errors)
+      ? setValidationErrors(errors)
       : result(data)
   }
   return (
@@ -55,7 +55,7 @@ export const ElectronicData = (props) => {
         </Input>
         <Button
           type={'submit'}
-          className={'form__button'}
+          className={'button__submit'}
           text={'Dodaj kolejną receptę elektroniczną'}
         >
         </Button>

@@ -540,15 +540,16 @@ span.spanwrong .error {
 }
 
 .order {
-  padding: 80px;
+  padding: 10px;
   display: grid;
   width: 100%;
   grid-gap: 20px;
-  grid-template-areas: "username" "electronicPrescription" "paperPrescription" "nonPrescription" "formButton";
+  grid-template-areas: "username" "electronicPrescription" "paperPrescription" "nonPrescription" "orderSection" "formButton";
 }
 
 @media only screen and (min-width: 900px) {
   .order {
+    padding: 80px;
     grid-template-areas: "username username" "electronicPrescription orderSection" "paperPrescription orderSection" "nonPrescription orderSection" "formButton formButton";
     grid-template-columns: 1fr 1fr;
   }
