@@ -11,7 +11,7 @@ export const Menu = (props) => {
   return (
     <>
       <nav className={'nav'} >
-        <ul className={`${'nav__menu menu'} ${isNavbarOpen ? `${'nav__hide'}` : `${'nav__block'}`} ${isScrolled ? 'scrolled' : ''} `}>
+        <ul className={`${'nav__menu menu'} ${isNavbarOpen ? `${'nav__block'}` : `${'nav__hide'}`} ${isScrolled ? 'scrolled' : ''} `}>
           <li className={'menu__item'}>
             <a
               href={'/'}
