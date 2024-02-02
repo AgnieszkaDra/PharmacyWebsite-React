@@ -519,8 +519,15 @@ span.spanwrong .error {
   height: 350px;
   display: flex;
   justify-content: center;
+  width: 100%;
+  margin: 20px 0;
 }
 
+@media only screen and (min-width: 900px) {
+  .section--fourth__element {
+    margin: 0;
+  }
+}
 .section--fourth__element div {
   transform: translateY(25%);
 }
