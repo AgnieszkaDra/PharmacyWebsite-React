@@ -4,14 +4,15 @@ import PropTypes from 'prop-types'
 
 export const Menu = (props) => {
   const {
+    className,
     isNavbarOpen
   } = props
   const { isScrolled } = useScroll()
 
   return (
     <>
-      <nav className={'nav'} >
-        <ul className={`${'nav__menu menu'} ${isNavbarOpen ? `${'nav__block'}` : `${'nav__hide'}`} ${isScrolled ? 'scrolled' : ''} `}>
+      <nav className={className}>
+        <ul className={`${'nav__menu menu'} ${isNavbarOpen ? `${'block'}` : `${''}`} ${isScrolled ? 'scrolled' : ''} `}>
           <li className={'menu__item'}>
             <a
               href={'/'}

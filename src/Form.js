@@ -24,7 +24,6 @@ export const Form = () => {
   const { electronicPrescription, addElectroPrescription, deleteElectroPrescription } = useShowElectronicPrescriptions()
   const { imageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription } = useShowPaperPrescriptions()
   const { nonPrescription, addNonPrescription, deleteNonPrescription } = useShowNonPrescriptions()
-  console.log(fileUploadForms, imageSrc)
   return (
     <div className={'order'}>
       <Section

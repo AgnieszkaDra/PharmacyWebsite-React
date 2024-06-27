@@ -13,7 +13,6 @@ export const useInputsValue = () => {
 
   const onChangeValue = (e) => {
     const { name, value } = e.target
-    console.log(name, value)
     setInputsValue({
       ...inputsValue,
       [name]: value

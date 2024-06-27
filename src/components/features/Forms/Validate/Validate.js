@@ -1,18 +1,3 @@
-// const validatePIN = {
-//     required: false,
-//     pattern: "[0-9]{4}"
-// },
-// const reg = new RegExp(pattern);
-
-// if(!reg.test(value)){
-//     alert(`Field ${label} is invalid`);
-//     setError(valParent, `${label} jest niepoprawny`)
-//     errors.push('error');
-// }
-
-// export const validatePIN = (value) => (value.length !== 4 ? 'PIN must be exactly 4 characters' : '')
-// export const validatePESEL = (value) => (value.length !== 11 ? 'PESEL must be exactly 11 characters' : '')
-
 const fields = [
   {
     name: 'PIN',
@@ -31,7 +16,6 @@ const fields = [
 ]
 
 export const validateForm = (data) => {
-  alert('validate')
   let errors = {
     PIN: '',
     PESEL: ''
@@ -40,7 +24,6 @@ export const validateForm = (data) => {
   fields.forEach((field) => {
     const { label, name, required, pattern, error: errorMessage } = field
     const value = data[name]
-    console.log(value)
     if (required) {
       if (value.length === 0) {
         const error = `${label} is required!`

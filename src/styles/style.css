@@ -116,8 +116,8 @@ span.spanwrong .error {
 }
 
 .header {
-  background-color: rgb(254, 46, 22);
   height: 22vh;
+  background-color: rgb(254, 46, 22);
   padding: 20px 10px;
   display: flex;
   justify-content: space-between;
@@ -146,17 +146,11 @@ span.spanwrong .error {
   }
 }
 .header__navigation {
-  position: relative;
   height: 100%;
+  position: relative;
 }
 
 .nav {
-  height: 100%;
-  flex-direction: row;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin-top: 0px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -168,28 +162,27 @@ span.spanwrong .error {
 }
 
 @media only screen and (max-width: 899px) {
-  .nav .nav__block {
-    width: calc(200% + 20px);
-    position: absolute;
-    top: 0;
-    left: calc(-100% - 10px);
-    height: calc(100vh + 20px);
-    margin-top: -20px;
-    z-index: 100;
+  .menu {
+    display: none;
+  }
+  .menu.block {
     background-color: rgb(255, 228, 225);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 40px;
   }
-  .nav .nav__hide {
+  .menu.block.scrolled {
     display: none;
   }
 }
-.nav .nav__block.scrolled {
-  display: none;
-}
-
 .menu__item {
   padding: 40px;
 }
@@ -229,11 +222,6 @@ span.spanwrong .error {
     display: none;
   }
 }
-.hamburger__icon {
-  background-color: white;
-  font-size: 30px;
-}
-
 .hamburger__icon-open, .hamburger__icon-close {
   width: 30px;
   height: 30px;
@@ -253,8 +241,8 @@ span.spanwrong .error {
 }
 
 .hamburger__icon-open div span {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   background-color: rgb(254, 46, 22);
   display: block;
   border-radius: 50%;
@@ -276,28 +264,6 @@ span.spanwrong .error {
   transition: 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
 }
 
-.hamburger.close .hamburger__icon-open {
-  width: 40px;
-  height: 40px;
-}
-
-.hamburger.close .hamburger__icon-open div span {
-  width: 7px;
-  height: 7px;
-  background-color: rgb(254, 46, 22);
-}
-
-.hamburger.close .hamburger__icon-close {
-  width: 40px;
-  height: 40px;
-}
-
-@media only screen and (min-width: 900px) {
-  .scrolled {
-    border-bottom: 1px solid rgb(70, 70, 70);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  }
-}
 .topcontrol {
   display: none;
 }
