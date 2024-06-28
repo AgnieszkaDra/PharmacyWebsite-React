@@ -1,0 +1,23 @@
+@import '../src//styles/reset/reset.css';
+@import '../src/styles/style.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #393939; 
+  overflow-x: hidden;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+  box-sizing: border-box;
+
+}
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJvdXRwdXQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnLi4vc3JjLy9zdHlsZXMvcmVzZXQvcmVzZXQuY3NzJztcclxuQGltcG9ydCAnLi4vc3JjL3N0eWxlcy9zdHlsZS5jc3MnO1xyXG5AdGFpbHdpbmQgYmFzZTtcclxuQHRhaWx3aW5kIGNvbXBvbmVudHM7XHJcbkB0YWlsd2luZCB1dGlsaXRpZXM7XHJcblxyXG5odG1sLFxyXG5ib2R5IHtcclxuXHJcbiAgbWFyZ2luOiAwO1xyXG4gIHBhZGRpbmc6IDA7XHJcbiAgZm9udC1mYW1pbHk6ICdQb3BwaW5zJywgc2Fucy1zZXJpZjtcclxuICBjb2xvcjogIzM5MzkzOTsgXHJcbiAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG4gIGxpbmUtaGVpZ2h0OiAxLjU7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuXHJcbn1cclxuXHJcbiJdfQ== */

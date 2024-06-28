@@ -19,6 +19,22 @@ body {
     border-radius: 2px;
 }
 
+.section {
+    width: calc(50% - 20px);
+    height: 350px;
+    padding: 20px 10px 20px 10px;
+    margin-top: 20px;
+}
+
+
+.space-between {
+    justify-content: space-between;
+}
+
+.color--main {
+    color: $color-main;
+}
+
 .button {
     border-radius: 55px;
     font-size: 20px;
