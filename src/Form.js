@@ -96,12 +96,14 @@ export const Form = () => {
             remove={deleteNonPrescription}
           >
           </NonPrescriptionOrder>
-          <Button
-            type={'submit'}
-            className={'button'}
-            text={'Zamawiam'}
-          >
-          </Button>
+          <div className={'text-center'}>
+            <Button
+              type={'submit'}
+              className={'button__submit text-2xl'}
+              text={'WYŚLIJ'}
+            >
+            </Button>
+          </div>
         </FormElement>
       </Section>
     </div>

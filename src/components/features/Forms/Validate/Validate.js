@@ -4,14 +4,14 @@ const fields = [
     label: 'PIN recepty',
     required: true,
     pattern: /^[0-9]{4}$/,
-    error: 'PIN is invalid'
+    error: 'Numer PIN jest nieprawidłowy'
   },
   {
     name: 'PESEL',
     label: 'PESEL',
     required: true,
     pattern: '[0-9]{4}[0-3]{1}[0-9}{1}[0-9]{5}',
-    error: 'PESEL is invalid'
+    error: 'Numer PESEL jest niepoprawny'
   }
 ]
 

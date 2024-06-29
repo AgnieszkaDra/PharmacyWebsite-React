@@ -1,5 +1,6 @@
 import React from 'react'
-import Button from '../../../../ui/Button'
+import { FaTrash } from 'react-icons/fa'
+import Typography from '../../../../ui/Typography/Typography'
 import PropTypes from 'prop-types'
 
 export const NonPrescriptionOrder = (props) => {
@@ -9,14 +10,22 @@ export const NonPrescriptionOrder = (props) => {
   }
   return (
     <div>
+      <Typography
+        variant={'h3'}
+        className={'underline mb-8'}
+      >
+        Zamówienie - leki, suplementy diety i wyroby medyczne dostępne bez recepty
+      </Typography>
       {result.map((item) => (
         <div key={item.id}>
           {item.drugName} {item.drugDose} {item.drugAmount}
-          <Button
-            text={'usuń'}
+          <button
+            type={'button'}
             onClick={() => handleClick(item.id)}
+            className={'ml-8'}
           >
-          </Button>
+            <FaTrash />
+          </button>
         </div>
       ))}
     </div>

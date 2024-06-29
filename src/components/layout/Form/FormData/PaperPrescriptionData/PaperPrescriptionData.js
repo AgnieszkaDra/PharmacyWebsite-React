@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../../../../ui/Button'
 import { useInputFiles } from '../../../../../hooks/useInputFileValue'
+import { FaTrash } from 'react-icons/fa'
 import PropTypes from 'prop-types'
 
 export const PaperPrescriptionData = (props) => {
@@ -22,16 +23,20 @@ export const PaperPrescriptionData = (props) => {
 
   return (
     <>
-      <Button
-        type={'submit'}
-        className={'button__submit'}
-        text={'Dodaj kolejną receptę papierową'}
-        onClick={handleAddForm}
-      />
+      <div>
+        <form>
+          <input
+            type={'file'}
+            id={'fileInput'}
+            multiple
+            name={'fileInput'}
+            onChange={(e) => onChange(e)}
+          />
+        </form>
+      </div>
       {fileUploadForms.map((formData, index) => (
         <div key={formData.key}>
-          <form>
-            <label htmlFor={'fileInput'}>Select a file:</label>
+          <form className={'mt-8'}>
             <input
               type={'file'}
               id={'fileInput'}
@@ -39,14 +44,21 @@ export const PaperPrescriptionData = (props) => {
               name={'fileInput'}
               onChange={(e) => onChange(e)}
             />
-            <input
-              type={'submit'}
-              value={'Upload'}
-            />
+            <button
+              type={'button'}
+              onClick={() => handleRemoveForm(index)}
+            >
+              <FaTrash />
+            </button>
           </form>
-          <button onClick={() => handleRemoveForm(index)}>Remove Form</button>
         </div>
       ))}
+      <Button
+        type={'submit'}
+        className={'button__submit'}
+        text={'Dodaj kolejną receptę papierową'}
+        onClick={handleAddForm}
+      />
     </>
   )
 }

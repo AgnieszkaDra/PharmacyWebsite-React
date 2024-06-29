@@ -1,25 +1,35 @@
 import React from 'react'
-import Button from '../../../../ui/Button'
+import { FaTrash } from 'react-icons/fa'
+import Typography from '../../../../ui/Typography/Typography'
 import PropTypes from 'prop-types'
 
 export const PaperOrder = (props) => {
   const { data, result, remove } = props
-  const handleClick = (id, rem) => {
+  const handleClick = (id) => {
     remove(id, data)
   }
   return (
     <div>
+      <Typography
+        variant={'h3'}
+        className={'underline mb-8'}
+      >
+        Zamówienie - leki na receptę papierową
+      </Typography>
       {result.map((item) => (
         <div key={item.id}>
           <img
             src={item.firstImage}
             alt={'Uploaded'}
+            className={'w-32 h-32 object-cover'}
           />
-          <Button
-            text={'usuń'}
+          <button
+            type={'button'}
             onClick={() => handleClick(item.id)}
+            className={'ml-8'}
           >
-          </Button>
+            <FaTrash />
+          </button>
         </div>
       ))}
 

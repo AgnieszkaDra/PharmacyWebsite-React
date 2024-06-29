@@ -12,10 +12,6 @@ export const Main = (props) => {
     className
   } = props
 
-  const toPage = (value) => {
-    return `/${value}`
-  }
-
   const listDescription = [
     'Złożone zamówienie nie zobowiązuje do wykupienia. Bez problemu możesz zrezygnować, wybrać zamiennik lub zrealizować kolejną receptę',
     'W razie niejasności będziemy się z Panią/Panem kontaktować drogą mailową'
@@ -54,7 +50,7 @@ export const Main = (props) => {
           >
             <NavLink
               className={'link'}
-              to={toPage('form')}
+              to={'/form'}
             >
               Złóż zamówienie
             </NavLink>
@@ -68,7 +64,7 @@ export const Main = (props) => {
         </Section>
         <Section
           background={drug}
-          className={'section border--pink'}
+          className={'section border--pink hidden md:block'}
         />
       </div>
       <div className={'mt-6'}>
@@ -84,7 +80,7 @@ export const Main = (props) => {
           })}
         </ul>
       </div>
-      <div className={'flex justify-between'}>
+      <div className={'flex justify-between flex-col md:flex-row'}>
         <Section
           className={'border--pink flex justify-center items-center'}
         >
