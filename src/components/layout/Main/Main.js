@@ -5,7 +5,7 @@ import drug from '../../../images/leki.webp'
 import PropTypes from 'prop-types'
 import Typography from '../../ui/Typography/Typography'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClock, faMortarPestle } from '@fortawesome/free-solid-svg-icons'
+import { faClock, faMortarPestle, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 export const Main = (props) => {
   const {
@@ -28,13 +28,55 @@ export const Main = (props) => {
     )
   }
 
+  const howToBook = {
+    list: [
+      {
+        id: 1,
+        icon: faEnvelope,
+        description: 'Wypełnij formularz'
+      },
+      {
+        id: 2,
+        icon: faEnvelope,
+        description: 'Potwierdź złożenie zamówienia'
+      },
+      {
+        id: 3,
+        icon: faEnvelope,
+        description: 'Czekaj na informację o przygotowanym zamówienie i zrealizuj je w aptece'
+      }
+    ]
+  }
+
+  const renderElementsItem = (element, index) => {
+    return (
+      <div
+        className={'order-conditions__item'}
+        key={index}
+      >
+        <div className={'order-conditions__item__icon'}>
+          <div className={'number'}>
+            {element.id + '.'}
+          </div>
+          <FontAwesomeIcon icon={element.icon}></FontAwesomeIcon>
+        </div>
+        <Typography
+          variant={'h4'}
+          className={'order-conditions__item__title'}
+        >
+          {element.description}
+        </Typography>
+      </div>
+    )
+  }
+
   return (
     <main
       className={className}
     >
       <div className={'flex justify-between'}>
         <Section
-          className={'border--pink'}
+          className={'border--pink width-350'}
         >
           <Typography
             variant={'h2'}
@@ -64,9 +106,24 @@ export const Main = (props) => {
         </Section>
         <Section
           background={drug}
-          className={'section border--pink hidden md:block'}
+          className={'section border--pink hidden md:block width-350'}
         />
       </div>
+      <Section
+        className={'mt-6'}
+      >
+        <Typography
+          variant={'h2'}
+          className={'color--main text-center'}
+        >
+          Jak to działa?
+        </Typography>
+        <div className={'order-conditions'}>
+          { howToBook.list.map((element, index) => {
+            return renderElementsItem(element, index)
+          })}
+        </div>
+      </Section>
       <div className={'mt-6'}>
         <Typography
           variant={'h2'}
@@ -82,7 +139,7 @@ export const Main = (props) => {
       </div>
       <div className={'flex justify-between flex-col md:flex-row'}>
         <Section
-          className={'border--pink flex justify-center items-center'}
+          className={'border--pink flex justify-center items-center width-350'}
         >
           <div>
             <FontAwesomeIcon
@@ -104,7 +161,7 @@ export const Main = (props) => {
           </div>
         </Section>
         <Section
-          className={'border--pink flex justify-center items-center'}
+          className={'border--pink flex justify-center items-center width-350'}
         >
           <div>
             <FontAwesomeIcon
