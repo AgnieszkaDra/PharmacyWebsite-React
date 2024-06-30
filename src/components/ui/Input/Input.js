@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-// import { useInputStates } from '../../../hooks/useInputStates'
 import Error from '../Error/Error'
 import PropTypes from 'prop-types'
 
@@ -13,34 +12,6 @@ export const Input = (props) => {
     error
   } = props
 
-  // const { form, handleInputChange } = useInputStates()
-  // const useFormInput = (initialValue) => {
-  //   const [value, setValue] = useState(initialValue)
-  //   const handleChange = (e) => {
-  //     setValue(e.target.value)
-  //   }
-  //   return {
-  //     value,
-  //     onChange: handleChange
-  //   }
-  // }
-
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target
-  //   this.setState({ [name]: value })
-  // }
-  // const state = useFormInput('')
-
-  // const useFormInput = (initialValue) => {
-  //   const [value, setValue] = useState(initialValue)
-  //   const handleChange = (e) => {
-  //     setValue(e.target.value)
-  //   }
-  //   return {
-  //     value,
-  //     onChange: handleChange
-  //   }
-  // }
   const inputRef = useRef(null)
   const handleClick = () => {
     inputRef.current.focus()
@@ -65,13 +36,8 @@ export const Input = (props) => {
         type={'input'}
         name={name}
         onChange={onChange}
-        // eslint-disable-next-line react/no-unknown-property
-        error={error}
-        // eslint-disable-next-line react/no-unknown-property
       />
-     {console.log(error)}
       {error && error.length > 0 && <Error message={error} />}
-      {/* {hasError && <ErrorText>{errors[name]}</ErrorText>} */}
     </div>
   )
 }

@@ -18,8 +18,9 @@ export const Section = (props) => {
   }
 
   return (
-    <section className={`${className} section`}
-    style={style}
+    <section
+      className={`${className} section`}
+      style={style}
     >
       <h3 className={'order__title'}>{title}</h3>
       {children}
