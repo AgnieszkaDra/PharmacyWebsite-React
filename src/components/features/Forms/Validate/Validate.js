@@ -10,7 +10,7 @@ const fields = [
     name: 'PESEL',
     label: 'PESEL',
     required: true,
-    pattern: '[0-9]{4}[0-3]{1}[0-9}{1}[0-9]{5}',
+    pattern: '^[0-9]{11}$',
     error: 'Numer PESEL jest niepoprawny'
   }
 ]
@@ -26,7 +26,7 @@ export const validateForm = (data) => {
     const value = data[name]
     if (required) {
       if (value.length === 0) {
-        const error = `${label} is required!`
+        const error = `${label} jest wymagany!`
         errors = { ...errors, [name]: error }
       } else if (pattern) {
         const reg = new RegExp(pattern)

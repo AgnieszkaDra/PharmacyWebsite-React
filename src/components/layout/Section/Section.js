@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Typography from '../../ui/Typography/Typography'
 import PropTypes from 'prop-types'
 
 export const Section = (props) => {
@@ -22,7 +22,15 @@ export const Section = (props) => {
       className={`${className} section`}
       style={style}
     >
-      <h3 className={'order__title'}>{title}</h3>
+      {title && (
+        <Typography
+          variant={'h4'}
+          className={'uppercase mb-8 order__title'}
+          style={{ fontWeight: 800 }}
+        >
+          {title}
+        </Typography>
+      )}
       {children}
     </section>
   )

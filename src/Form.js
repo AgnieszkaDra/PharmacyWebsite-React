@@ -1,5 +1,6 @@
 import React from 'react'
 import Section from './components/layout/Section'
+import { Link } from 'react-router-dom'
 import PatientData from './components/layout/Form/FormData/PatientData'
 import ElectronicData from './components/layout/Form/FormData/ElectronicData'
 import NonPrescriptionData from './components/layout/Form/FormData/NonPrescriptionData'
@@ -26,6 +27,12 @@ export const Form = () => {
   const { nonPrescription, addNonPrescription, deleteNonPrescription } = useShowNonPrescriptions()
   return (
     <div className={'order'}>
+      <Link
+        className={'order__link-home'}
+        to={'/'}
+      >
+        Strona główna
+      </Link>
       <Section
         className={'order__section username'}
         title={'Dane Pacjenta'}
@@ -99,7 +106,7 @@ export const Form = () => {
           <div className={'text-center'}>
             <Button
               type={'submit'}
-              className={'button__submit text-2xl'}
+              className={'button__submit font-bold'}
               text={'WYŚLIJ'}
             >
             </Button>

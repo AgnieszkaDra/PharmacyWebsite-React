@@ -7,7 +7,7 @@ export const PatientData = (props) => {
   return (
     <>
       <Input
-        label={'Imię i nazwisko'}
+        label={'IMIĘ I NAZWISKO'}
         name={'name'}
         id={'name'}
         value={data.name}
@@ -15,7 +15,7 @@ export const PatientData = (props) => {
       >
       </Input>
       <Input
-        label={'Email'}
+        label={'EMAIL'}
         name={'email'}
         id={'email'}
         value={data.email}

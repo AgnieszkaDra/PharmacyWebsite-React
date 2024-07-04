@@ -4,8 +4,10 @@ import PropTypes from 'prop-types'
 export const PatientDataOrder = (props) => {
   const { data } = props
   return (
-    <div>
-      {data.name} {data.email}
+    <div className={'mb-2'}>
+      {data.name}
+      <br></br>
+      {data.email}
     </div>
   )
 }

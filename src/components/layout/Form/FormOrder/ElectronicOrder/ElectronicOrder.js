@@ -9,15 +9,18 @@ export const ElectronicOrder = (props) => {
     remove(id, data)
   }
   return (
-    <div>
+    <div className={'totalOrder__form__element mt-10 p-2.5'}>
       <Typography
-        variant={'h3'}
-        className={'underline mb-8'}
+        variant={'h5'}
+        className={'uppercase mb-8'}
+        style={{ fontWeight: 800 }}
       >
         Zamówienie - recepta elektroniczna
       </Typography>
       {result.map((item) => (
-        <div key={item.id}>
+        <div
+          key={item.id}
+        >
           PIN {item.PIN}
           <br></br>
           PESEL {item.PESEL}

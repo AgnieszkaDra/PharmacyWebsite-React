@@ -11,12 +11,11 @@ export const Typography = (props) => {
   } = props
 
   const variantClass = classes[variant]
-  // const colorFont = color
+
   if (variant === 'h1') {
     return (
       <h1
         className={`${classes.root}${className ? ` ${className}` : ''}${variantClass ? ` ${variantClass}` : ''}`}
-        // style={{ color: colorFont }}
         {...otherProps}
       >
         {children}
@@ -26,7 +25,6 @@ export const Typography = (props) => {
     return (
       <h2
         className={`${classes.root}${className ? ` ${className}` : ''}${variantClass ? ` ${variantClass}` : ''}`}
-        // style={{ color: colorFont }}
         {...otherProps}
       >
         {children}
@@ -36,7 +34,6 @@ export const Typography = (props) => {
     return (
       <h3
         className={`${classes.root}${className ? ` ${className}` : ''}${variantClass ? ` ${variantClass}` : ''}`}
-        // style={{ color: colorFont }}
         {...otherProps}
       >
         {children}
@@ -46,7 +43,15 @@ export const Typography = (props) => {
     return (
       <h4
         className={`${classes.root}${className ? ` ${className}` : ''}${variantClass ? ` ${variantClass}` : ''}`}
-        // style={{ color: colorFont }}
+        {...otherProps}
+      >
+        {children}
+      </h4>
+    )
+  } else if (variant === 'h5') {
+    return (
+      <h4
+        className={`${classes.root}${className ? ` ${className}` : ''}${variantClass ? ` ${variantClass}` : ''}`}
         {...otherProps}
       >
         {children}
@@ -56,7 +61,6 @@ export const Typography = (props) => {
     return (
       <p
         className={`${classes.root}${className ? ` ${className}` : ''}${variantClass ? ` ${variantClass}` : ''}`}
-        // style={{ color: colorFont }}
         {...otherProps}
       >
         {children}
@@ -66,7 +70,6 @@ export const Typography = (props) => {
     return (
       <strong
         className={`${className ? ` ${className}` : ''}${variantClass ? ` ${variantClass}` : ''}`}
-         // style={{ color: colorFont }}
         {...otherProps}
       >
         {children}

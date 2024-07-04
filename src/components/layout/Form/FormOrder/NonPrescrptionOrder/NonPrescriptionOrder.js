@@ -9,10 +9,11 @@ export const NonPrescriptionOrder = (props) => {
     remove(id, data)
   }
   return (
-    <div>
+    <div className={'totalOrder__form__element mt-10 p-2.5'}>
       <Typography
-        variant={'h3'}
-        className={'underline mb-8'}
+        variant={'h5'}
+        className={'uppercase mb-8'}
+        style={{ fontWeight: 800 }}
       >
         Zamówienie - leki, suplementy diety i wyroby medyczne dostępne bez recepty
       </Typography>
