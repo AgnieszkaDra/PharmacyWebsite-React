@@ -9,7 +9,6 @@ import PatientDataOrder from './components/layout/Form/FormOrder/PatientDataOrde
 import ElectronicOrder from './components/layout/Form/FormOrder/ElectronicOrder'
 import PaperOrder from './components/layout/Form/FormOrder/PaperOrder'
 import NonPrescriptionOrder from './components/layout/Form/FormOrder/NonPrescrptionOrder'
-import Button from './components/ui/Button'
 import PaperPrescriptionData from './components/layout/Form/FormData/PaperPrescriptionData'
 import { useInputsValue } from './hooks/useInputsValue'
 import { useInputFiles } from './hooks/useInputFileValue'
@@ -103,14 +102,6 @@ export const Form = () => {
             remove={deleteNonPrescription}
           >
           </NonPrescriptionOrder>
-          <div className={'text-center'}>
-            <Button
-              type={'submit'}
-              className={'button__submit font-bold'}
-              text={'WYŚLIJ'}
-            >
-            </Button>
-          </div>
         </FormElement>
       </Section>
     </div>

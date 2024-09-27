@@ -13,6 +13,9 @@ app.get('/message', (req, res) => {
   res.json(data)
 })
 
+app.post('/', (req, res) => {
+  res.json({ message: 'Data received' })
+})
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
 })
