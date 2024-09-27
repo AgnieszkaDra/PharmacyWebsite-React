@@ -32,7 +32,7 @@ export const FormElement = ({ children, className }) => {
           text={'WYŚLIJ'}
         />
       </div>
-      {successMessage && <p className="success">{successMessage}</p>}
+      {successMessage && <p>{successMessage}</p>}
     </form>
   )
 }
