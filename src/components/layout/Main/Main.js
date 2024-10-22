@@ -74,7 +74,7 @@ export const Main = (props) => {
     <main
       className={className}
     >
-      <div className={'flex justify-between'}>
+      <div className={'flex justify-between flex-auto'}>
         <Section
           className={'border--pink width-350'}
         >
@@ -163,7 +163,9 @@ export const Main = (props) => {
         <Section
           className={'border--pink flex justify-center items-center width-350'}
         >
-          <div>
+          <div
+            id={'contact'}
+          >
             <FontAwesomeIcon
               icon={faMortarPestle}
               className={'icon'}

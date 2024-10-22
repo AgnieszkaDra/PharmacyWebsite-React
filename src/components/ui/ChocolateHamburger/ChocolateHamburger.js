@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-export const ChocolateHamburger = (props) => {
+const ChocolateHamburger = (props) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {

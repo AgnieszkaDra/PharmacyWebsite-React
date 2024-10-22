@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import Input from '../../../../ui/Input'
-import Button from '../../../../ui/Button'
+import { Button, Input } from '../../../../ui'
 import { validateForm } from '../../../../../components/features/Forms/Validate/Validate'
 
 import PropTypes from 'prop-types'

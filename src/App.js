@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './components/layout/Header/Header/Header'
+import HeaderContainer from './components/layout/Header/HeaderContainer'
 import Main from './components/layout/Main'
 import Footer from './components/layout/Footer'
 import './output.css'
@@ -7,10 +7,10 @@ import './output.css'
 const App = () => {
   return (
     <>
-      <Header
+      <HeaderContainer
         className={'header'}
       >
-      </Header>
+      </HeaderContainer>
       <Main
         className={'main'}
       >

@@ -4,11 +4,7 @@
     height: 22vh;
     background-color: $color-main;
     padding: 20px 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-
+    
     @include respond(tablet) {
         height: 22vh;
         padding: 30px 30px;
@@ -31,7 +27,6 @@
     }
 
     &__navigation {
-        height: 100%;
         position: relative;
     }
 
@@ -58,26 +53,24 @@
         z-index: 3;
         width: 100%;
         height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexAbsoluteCenter();
         flex-direction: column;
         padding: 40px;
         &.scrolled {
             display: none
         }
         }
-        }
     }
+    }
+
 .menu {
     &__item {
-        padding: 40px;
-        a {
+        .link {
             color: $color-main;
-            font-size: 24px;
+            text-decoration: none;
         }
         @include respond(tablet) {
-            a {
+            .link {
                 color: $color-white;
             }
         }
@@ -85,31 +78,17 @@
 }
 
 .hamburger {
-    position: absolute;
-    z-index: 200;
-    right: 10px;
-    top: calc(50% - 20px);
-    display: block;
     background-color: $color-very-light-pink;
-    border-radius: 5px;
-    padding: 10px 10px;
-    border: none;
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
-    border-radius: 5px;
     color: $color-white;
-
-    @include flexAbsoluteCenter();
-
+    border: none;
+   
     @include respond(tablet) {
         display: none;
     }
 
     &__icon-open,
     &__icon-close {
-        width: 30px;
-        height: 30px;
+        z-index: 100;
         cursor: pointer;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -117,9 +96,6 @@
        
         div {
             @include flexAbsoluteCenter();
-            width: 100%;
-            height: 100%;
-            padding: 2px 2px;
         }
     }
 
@@ -129,7 +105,6 @@
                 width: 6px;
                 height: 6px;
                 background-color: $color-main;
-                display: block;
                 border-radius: 50%;
             }
         }
@@ -137,15 +112,13 @@
 
     &__icon-close {
         transform: rotate(180deg);
-        cursor: pointer;
         transition: .2s cubic-bezier(.8, .5, .2, 1.4);
-
+        
         div:nth-child(odd) {
             span {
                 width: 5px;
                 height: 5px;
                 background-color: $color-main;
-                display: block;
                 border-radius: 50%;
                 transition-delay: 200ms;
                 transition: .5s cubic-bezier(.8, .5, .2, 1.4);
@@ -157,7 +130,6 @@
 .topcontrol {
     display: none;
     &.visible {
-        display: block;
         position: fixed;
         bottom: 52px;
         right: 0;

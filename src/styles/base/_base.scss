@@ -1,35 +1,23 @@
 @import '../abstracts/';
 
-html,
-body {
-
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #393939;
-    overflow-x: hidden;
-    line-height: 1.5;
-    font-size: 16px;
-    font-weight: 400;
-    box-sizing: border-box;
-}
-
 .border--pink {
     border: 10px solid $color-submain;
     border-radius: 2px;
 }
 
+.flex {
+    display: flex;
+}
+
+// .justify-between {
+//     justify-content: space-between;
+// }
+
 .section {
-    
     min-height: 350px;
     padding: 30px 10px 30px 10px;
     margin-top: 20px;
-    // @include respond(tablet){
-    //     width: calc(50% - 20px); 
-    // }
 }
-
-
 
 .width-350 {
     width: 100%;
@@ -51,40 +39,6 @@ body {
     background: $color-main;
 }
 
-.link {
-    text-decoration: none;
-    color: $color-white;
-}
-
-.headline--h2 {
-    margin: 0;
-    font-size: 30px;
-    font-weight: 700;
-    text-align: center;
-    @include respond(tablet) {
-         font-size: 40px;
-    }
-}
-
-.headline--h3 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 600;
-    @include respond(tablet) {
-        font-size: 30px;
-    }
-}
-
-.headline--h4 {
-    margin: 0;
-    font-size: 18px;
-    color: $color-font;
-    font-weight: 500;
-    @include respond(tablet) {
-        font-size: 22px;
-    }
-}
-
 label {
     width: 80%;
     margin-bottom: 5px;
@@ -102,13 +56,9 @@ label {
     animation: color_change 1s infinite alternate;
 }
 
-
-
 .success {
-
     border: none;
     background-color: $color-pink;
-
 }
 
 span.success {

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Button from '../../../components/ui/Button'
+import Button from '../Button/Button'
 import axios from 'axios'
 
 import PropTypes from 'prop-types'
 
-export const FormElement = ({ children, className }) => {
+const FormElement = ({ children, className }) => {
   const [successMessage, setSuccessMessage] = useState('')
   const handleSubmit = async (e) => {
     e.preventDefault()

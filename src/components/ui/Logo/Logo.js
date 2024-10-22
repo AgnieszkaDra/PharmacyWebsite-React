@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const Logo = (props) => {
+const Logo = (props) => {
   const {
     className
   } = props

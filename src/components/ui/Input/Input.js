@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import Error from '../Error/Error'
 import PropTypes from 'prop-types'
 
-export const Input = (props) => {
+const Input = (props) => {
   const {
     label,
     name,

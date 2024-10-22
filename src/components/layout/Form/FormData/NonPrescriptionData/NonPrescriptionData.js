@@ -1,6 +1,5 @@
 import React from 'react'
-import Input from '../../../../ui/Input'
-import Button from '../../../../ui/Button'
+import { Button, Input } from '../../../../ui'
 import { useValidationErrors } from '../../../../../hooks/useValidationErrors'
 import PropTypes from 'prop-types'
 

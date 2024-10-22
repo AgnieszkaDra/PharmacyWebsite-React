@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../../../ui/Button'
+import { Button } from '../../../../ui'
 import { useInputFiles } from '../../../../../hooks/useInputFileValue'
 import { FaTrash } from 'react-icons/fa'
 import PropTypes from 'prop-types'

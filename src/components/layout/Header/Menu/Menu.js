@@ -12,26 +12,12 @@ export const Menu = (props) => {
   return (
     <>
       <nav className={className}>
-        <ul className={`${'nav__menu menu'} ${isNavbarOpen ? `${'block'}` : `${''}`} ${isScrolled ? 'scrolled' : ''} `}>
-          <li className={'menu__item'}>
+        <ul className={`${'nav__menu menu text-2xl'} ${isNavbarOpen ? `${'block'}` : `${''}`} ${isScrolled ? 'scrolled' : ''} `}>
+          <li className={'menu__item p-10'}>
             <a
-              href={'/'}
-              className={'link'}
-            >Strona główna
-            </a>
-          </li>
-          <li className={'menu__item'}>
-            <a
-              href={'/'}
+              href={'#contact'}
               className={'link'}
             >Kontakt
-            </a>
-          </li>
-          <li className={'menu__item'}>
-            <a
-              href={'/'}
-              className={'link'}
-            >Praca
             </a>
           </li>
         </ul>
