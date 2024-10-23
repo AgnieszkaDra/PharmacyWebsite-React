@@ -1,6 +1,5 @@
 import React from 'react'
-import { TopControl, Logo } from '../../../ui/'
-import Navigation from '../Navigation/Navigation'
+import { TopControl, Logo, Navigation } from '../../../ui/'
 import logo from '../../../../images/drofarmaptekanamyslow.webp'
 
 import PropTypes from 'prop-types'

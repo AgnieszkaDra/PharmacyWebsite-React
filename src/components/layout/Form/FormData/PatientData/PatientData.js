@@ -2,7 +2,7 @@ import React from 'react'
 import { Input } from '../../../../ui'
 import PropTypes from 'prop-types'
 
-export const PatientData = (props) => {
+const PatientData = (props) => {
   const { data, onChange } = props
   return (
     <>

@@ -3,7 +3,7 @@ import Section from '../Section/Section'
 import { NavLink } from 'react-router-dom'
 import drug from '../../../images/leki.webp'
 import PropTypes from 'prop-types'
-import Typography from '../../ui/Typography/Typography'
+import Typography from '../../../styles/Typography/Typography'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faMortarPestle, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
@@ -20,7 +20,6 @@ export const Main = (props) => {
   const renderListItem = (element, index) => {
     return (
       <li
-        className={'headline--h4'}
         key={index}
       >
         {element}
@@ -51,18 +50,18 @@ export const Main = (props) => {
   const renderElementsItem = (element, index) => {
     return (
       <div
-        className={'order-conditions__item'}
+        className={'order-conditions__item p-7.5 bg-submain rounded-2xl'}
         key={index}
       >
-        <div className={'order-conditions__item__icon'}>
-          <div className={'number'}>
+        <div className={'order-conditions__item__icon w-[60px] h-1/2'}>
+          <div className={'number mt-[80%] mr-2 text-[18px] font-bold'}>
             {element.id + '.'}
           </div>
-          <FontAwesomeIcon icon={element.icon}></FontAwesomeIcon>
+          <FontAwesomeIcon icon={element.icon} className={'w-[40px] h-[40px] text-[50px] mb-5'}></FontAwesomeIcon>
         </div>
         <Typography
           variant={'h4'}
-          className={'order-conditions__item__title'}
+          className={'h-1/2'}
         >
           {element.description}
         </Typography>
@@ -72,9 +71,9 @@ export const Main = (props) => {
 
   return (
     <main
-      className={className}
+      className={`${className} px-7.5 tablet:px-7.5`}
     >
-      <div className={'flex justify-between flex-auto'}>
+      <div className={'flex justify-between'}>
         <Section
           className={'border--pink width-350'}
         >
@@ -131,7 +130,7 @@ export const Main = (props) => {
         >
           Warunki
         </Typography>
-        <ul className={'list'}>
+        <ul className={'list-disc tablet:px-12.5'}>
           {listDescription.map((item, index) => {
             return renderListItem(item, index)
           })}
@@ -144,7 +143,7 @@ export const Main = (props) => {
           <div>
             <FontAwesomeIcon
               icon={faClock}
-              className={'icon'}
+              className={'float-left text-[50px] mr-10 mb-12'}
             />
             <Typography
               variant={'strong'}
@@ -163,9 +162,7 @@ export const Main = (props) => {
         <Section
           className={'border--pink flex justify-center items-center width-350'}
         >
-          <div
-            id={'contact'}
-          >
+          <div>
             <FontAwesomeIcon
               icon={faMortarPestle}
               className={'icon'}

@@ -1,8 +1,8 @@
 import React from 'react'
-import { useScroll } from '../../../../hooks/useScroll'
+import { useScroll } from '../../../hooks/useScroll'
 import PropTypes from 'prop-types'
 
-export const Menu = (props) => {
+const Menu = (props) => {
   const {
     className,
     isNavbarOpen

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaTrash } from 'react-icons/fa'
 import PropTypes from 'prop-types'
-import Typography from '../../../../ui/Typography/Typography'
+import Typography from '../../../../../styles/Typography/Typography'
 
 export const ElectronicOrder = (props) => {
   const { data, result, remove } = props

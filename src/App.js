@@ -1,7 +1,7 @@
 import React from 'react'
 import HeaderContainer from './components/layout/Header/HeaderContainer'
 import Main from './components/layout/Main'
-import Footer from './components/layout/Footer'
+import { Footer } from './components/layout'
 import './output.css'
 
 const App = () => {
@@ -15,7 +15,10 @@ const App = () => {
         className={'main'}
       >
       </Main>
-      <Footer className={'footer'}></Footer>
+      <Footer
+        className={'footer'}
+      >
+      </Footer>
     </>
   )
 }

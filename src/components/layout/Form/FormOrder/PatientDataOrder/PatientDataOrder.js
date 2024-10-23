@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const PatientDataOrder = (props) => {
+const PatientDataOrder = (props) => {
   const { data } = props
   return (
     <div className={'mb-2'}>

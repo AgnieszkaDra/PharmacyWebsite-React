@@ -1,9 +1,9 @@
 import React from 'react'
-import { useToggleNavbar } from '../../../../hooks/useToggleNavbar'
-import { ChocolateHamburger } from '../../../ui'
+import useToggleNavbar from '../../../hooks/useToggleNavbar'
+import ChocolateHamburger from '../ChocolateHamburger/ChocolateHamburger'
 import Menu from '../Menu/Menu'
 
-export const Navigation = () => {
+const Navigation = () => {
   const { navbarOpen, openNavbar } = useToggleNavbar()
   return (
     <>

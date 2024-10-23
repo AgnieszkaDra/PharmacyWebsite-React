@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useMediaQuery } from '@react-hook/media-query'
 
-export const useToggleNavbar = () => {
+const useToggleNavbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -16,3 +16,5 @@ export const useToggleNavbar = () => {
 
   return { navbarOpen, openNavbar }
 }
+
+export default useToggleNavbar

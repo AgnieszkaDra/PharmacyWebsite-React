@@ -3,7 +3,7 @@ import { Button, Input } from '../../../../ui'
 import { useValidationErrors } from '../../../../../hooks/useValidationErrors'
 import PropTypes from 'prop-types'
 
-export const NonPrescriptionData = (props) => {
+const NonPrescriptionData = (props) => {
   const { data, onChange, result } = props
   const { validationErrors } = useValidationErrors()
 

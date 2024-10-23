@@ -1,5 +1,5 @@
 import React from 'react'
-import Typography from '../../ui/Typography/Typography'
+import Typography from '../../../styles/Typography/Typography'
 import PropTypes from 'prop-types'
 
 export const Section = (props) => {

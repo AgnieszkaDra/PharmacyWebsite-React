@@ -4,7 +4,7 @@ import { validateForm } from '../../../../../components/features/Forms/Validate/
 
 import PropTypes from 'prop-types'
 
-export const ElectronicData = (props) => {
+const ElectronicData = (props) => {
   const { data, onChange, result } = props
 
   const [validationErrors, setValidationErrors] = useState({

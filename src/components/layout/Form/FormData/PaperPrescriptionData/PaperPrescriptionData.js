@@ -4,7 +4,7 @@ import { useInputFiles } from '../../../../../hooks/useInputFileValue'
 import { FaTrash } from 'react-icons/fa'
 import PropTypes from 'prop-types'
 
-export const PaperPrescriptionData = (props) => {
+const PaperPrescriptionData = (props) => {
   const { onChange } = props
   const { fileUploadForms, setFileUploadForms } = useInputFiles()
 
