@@ -11,7 +11,7 @@ const PatientData = (props) => {
         name={'name'}
         id={'name'}
         value={data.name}
-        onChange={(e) => onChange(e)}
+        onChange={onChange}
       >
       </Input>
       <Input
@@ -19,7 +19,7 @@ const PatientData = (props) => {
         name={'email'}
         id={'email'}
         value={data.email}
-        onChange={(e) => onChange(e)}
+        onChange={onChange}
       >
       </Input>
     </>

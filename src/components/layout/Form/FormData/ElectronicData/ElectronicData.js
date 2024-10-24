@@ -37,7 +37,7 @@ const ElectronicData = (props) => {
           name={'PIN'}
           id={'PIN'}
           value= {data.PIN}
-          onChange={(e) => onChange(e)}
+          onChange={onChange}
           error={validationErrors.PIN}
         >
         </Input>
@@ -46,7 +46,7 @@ const ElectronicData = (props) => {
           name={'PESEL'}
           id={'PESEL'}
           value={data.PESEL}
-          onChange={(e) => onChange(e)}
+          onChange={onChange}
           error={validationErrors.PESEL}
         >
         </Input>

@@ -30,7 +30,7 @@ const PaperPrescriptionData = (props) => {
             id={'fileInput'}
             multiple
             name={'fileInput'}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
           />
         </form>
       </div>
@@ -42,7 +42,7 @@ const PaperPrescriptionData = (props) => {
               id={'fileInput'}
               multiple
               name={'fileInput'}
-              onChange={(e) => onChange(e)}
+              onChange={onChange}
             />
             <button
               type={'button'}

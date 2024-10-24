@@ -21,7 +21,7 @@ const NonPrescriptionData = (props) => {
         name={'drugName'}
         id={'drugName'}
         value= {data.drugName}
-        onChange={(e) => onChange(e)}
+        onChange={onChange}
         error={validationErrors.drugName}
       >
       </Input>
@@ -30,7 +30,7 @@ const NonPrescriptionData = (props) => {
         name={'drugDose'}
         id={'drugDose'}
         value= {data.drugDose}
-        onChange={(e) => onChange(e)}
+        onChange={onChange}
         error={validationErrors.drugDose}
       >
       </Input>
@@ -39,7 +39,7 @@ const NonPrescriptionData = (props) => {
         name={'drugAmount'}
         id={'drugAmount'}
         value= {data.drugAmount}
-        onChange={(e) => onChange(e)}
+        onChange={onChange}
         error={validationErrors.drugAmount}
       >
       </Input>
