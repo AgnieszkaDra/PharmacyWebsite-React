@@ -14,14 +14,17 @@ const ElectronicData = (props) => {
   )
 
   const handleSubmit = (e) => {
-    validationErrors.PIN = ''
-    validationErrors.PESEL = ''
     e.preventDefault()
+    setValidationErrors({
+      PIN: '',
+      PESEL: ''
+    })
     const errors = validateForm(data)
-    errors.PIN.length > 0 ||
-      errors.PESEL.length > 0
-      ? setValidationErrors(errors)
-      : result(data)
+    errors.PIN.length > 0 || errors.PESEL.length > 0
+      ?
+      setValidationErrors(errors)
+      :
+      result(data)
   }
   return (
     <>
