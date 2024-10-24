@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const useShowElectronicPrescriptions = () => {
+const useShowElectronicPrescriptions = () => {
   const [electronicPrescription, setElectroPrescription] = useState([])
 
   const addElectroPrescription = (data) => {
@@ -13,3 +13,5 @@ export const useShowElectronicPrescriptions = () => {
 
   return { electronicPrescription, addElectroPrescription, deleteElectroPrescription }
 }
+
+export default useShowElectronicPrescriptions

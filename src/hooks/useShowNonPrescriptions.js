@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const useShowNonPrescriptions = () => {
+const useShowNonPrescriptions = () => {
   const [nonPrescription, setNonPrescription] = useState([])
 
   const addNonPrescription = (data) => {
@@ -13,3 +13,5 @@ export const useShowNonPrescriptions = () => {
 
   return { nonPrescription, addNonPrescription, deleteNonPrescription }
 }
+
+export default useShowNonPrescriptions

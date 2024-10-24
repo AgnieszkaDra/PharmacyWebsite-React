@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useShowPaperPrescriptions } from '../../../hooks/useShowPaperPrescriptions'
+import { useShowPaperPrescriptions } from '../../../hooks'
 const FileUploadForm = () => {
   const [setSelectedFile] = useState(null)
   const { imageSrc, setImageSrc, sharedId } = useShowPaperPrescriptions()

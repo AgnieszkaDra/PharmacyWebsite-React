@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
-import { useScroll } from '../../../hooks/useScroll'
+import { useScroll } from '../../../hooks'
 
 const TopControl = () => {
   const { isScrolled, scrollToTop } = useScroll()

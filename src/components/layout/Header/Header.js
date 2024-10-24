@@ -1,10 +1,10 @@
 import React from 'react'
-import { TopControl, Logo, Navigation } from '../../../ui/'
-import logo from '../../../../images/drofarmaptekanamyslow.webp'
+import { TopControl, Logo, Navigation } from '../../ui'
+import logo from '../../../images/drofarmaptekanamyslow.webp'
 
 import PropTypes from 'prop-types'
 
-export const HeaderContainer = (props) => {
+const Header = (props) => {
   const {
     className
   } = props
@@ -29,8 +29,8 @@ export const HeaderContainer = (props) => {
   )
 }
 
-HeaderContainer.propTypes = {
+Header.propTypes = {
   className: PropTypes.string
 }
 
-export default HeaderContainer
+export default Header

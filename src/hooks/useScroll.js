@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export const useScroll = () => {
+const useScroll = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -24,3 +24,5 @@ export const useScroll = () => {
 
   return { isScrolled, scrollToTop }
 }
+
+export default useScroll

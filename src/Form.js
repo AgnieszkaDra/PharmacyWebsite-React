@@ -1,13 +1,8 @@
 import React from 'react'
-import Section from './components/layout/Section'
 import { Link } from 'react-router-dom'
-import { PatientData, ElectronicData, NonPrescriptionData, PaperPrescriptionData, ElectronicOrder, PaperOrder, NonPrescriptionOrder, PatientDataOrder } from './components/layout'
+import { Section, PatientData, ElectronicData, NonPrescriptionData, PaperPrescriptionData, ElectronicOrder, PaperOrder, NonPrescriptionOrder, PatientDataOrder } from './components/layout'
 import FormElement from './components/ui/FormElement/FormElement'
-import { useInputsValue } from './hooks/useInputsValue'
-import { useInputFiles } from './hooks/useInputFileValue'
-import { useShowElectronicPrescriptions } from './hooks/useShowElectronicPrescriptions'
-import { useShowPaperPrescriptions } from './hooks/useShowPaperPrescriptions'
-import { useShowNonPrescriptions } from './hooks/useShowNonPrescriptions'
+import { useInputFiles, useInputsValue, useShowElectronicPrescriptions, useShowPaperPrescriptions, useShowNonPrescriptions } from './hooks/'
 
 import PropTypes from 'prop-types'
 

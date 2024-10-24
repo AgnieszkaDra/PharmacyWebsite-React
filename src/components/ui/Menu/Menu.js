@@ -1,5 +1,5 @@
 import React from 'react'
-import { useScroll } from '../../../hooks/useScroll'
+import { useScroll } from '../../../hooks'
 import PropTypes from 'prop-types'
 
 const Menu = (props) => {

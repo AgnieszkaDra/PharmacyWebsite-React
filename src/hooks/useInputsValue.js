@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const useInputsValue = () => {
+const useInputsValue = () => {
   const [inputsValue, setInputsValue] = useState({
     name: '',
     email: '',
@@ -21,3 +21,5 @@ export const useInputsValue = () => {
 
   return { inputsValue, onChangeValue }
 }
+
+export default useInputsValue

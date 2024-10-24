@@ -7,7 +7,7 @@ import Typography from '../../../styles/Typography/Typography'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faMortarPestle, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-export const Main = (props) => {
+const Main = (props) => {
   const {
     className
   } = props
@@ -57,7 +57,10 @@ export const Main = (props) => {
           <div className={'number mt-[80%] mr-2 text-[18px] font-bold'}>
             {element.id + '.'}
           </div>
-          <FontAwesomeIcon icon={element.icon} className={'w-[40px] h-[40px] text-[50px] mb-5'}></FontAwesomeIcon>
+          <FontAwesomeIcon
+            icon={element.icon}
+            className={'w-[40px] h-[40px] text-[50px] mb-5'}
+          />
         </div>
         <Typography
           variant={'h4'}
@@ -99,8 +102,7 @@ export const Main = (props) => {
               className={'link'}
               href={'./form.html'}
               id={'myHref'}
-            >
-            </a>
+            />
           </button>
         </Section>
         <Section

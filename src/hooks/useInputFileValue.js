@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const useInputFiles = () => {
+const useInputFiles = () => {
   const [inputsFiles] = useState([])
   const [fileUploadForms, setFileUploadForms] = useState([])
   const handleAddForm = () => {
@@ -12,3 +12,5 @@ export const useInputFiles = () => {
 
   return { inputsFiles, handleAddForm, fileUploadForms, setFileUploadForms }
 }
+
+export default useInputFiles

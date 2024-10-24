@@ -2,7 +2,7 @@ import React from 'react'
 import Typography from '../../../styles/Typography/Typography'
 import PropTypes from 'prop-types'
 
-export const Section = (props) => {
+const Section = (props) => {
   const {
     className,
     title,

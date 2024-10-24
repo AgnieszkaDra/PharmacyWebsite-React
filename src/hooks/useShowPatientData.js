@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const useShowPatientData = () => {
+const useShowPatientData = () => {
   const [patientData, setPatientData] = useState([])
   const addPatientData = (data) => {
     setPatientData([...patientData, { id: Date.now(), ...data }])
@@ -12,3 +12,5 @@ export const useShowPatientData = () => {
 
   return { patientData, addPatientData, deletePatientData }
 }
+
+export default useShowPatientData

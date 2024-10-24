@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { useInputFiles } from './useInputFileValue'
+import useInputFiles from './useInputFileValue'
 
-export const useShowPaperPrescriptions = () => {
+const useShowPaperPrescriptions = () => {
   // eslint-disable-next-line no-unused-vars
   const [imageSrc, setImageSrc] = useState([])
   const [inputFile, setInputFile] = useState([])
@@ -44,3 +44,5 @@ export const useShowPaperPrescriptions = () => {
   // }
   return { imageSrc, setImageSrc, handleFileChange, addPaperPrescription, deletePaperPrescription, inputFile, addInputFileWithId }
 }
+
+export default useShowPaperPrescriptions
