@@ -102,7 +102,8 @@ const Main = (props) => {
               className={'link'}
               href={'./form.html'}
               id={'myHref'}
-            />
+            >
+            </a>
           </button>
         </Section>
         <Section
