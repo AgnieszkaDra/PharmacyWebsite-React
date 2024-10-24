@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaTrash } from 'react-icons/fa'
+import { Button } from '../../../../ui'
 import Typography from '../../../../../styles/Typography/Typography'
 import PropTypes from 'prop-types'
 
@@ -20,13 +21,13 @@ const NonPrescriptionOrder = (props) => {
       {result.map((item) => (
         <div key={item.id}>
           {item.drugName} {item.drugDose} {item.drugAmount}
-          <button
+          <Button
             type={'button'}
             onClick={() => handleClick(item.id)}
             className={'ml-8'}
           >
             <FaTrash />
-          </button>
+          </Button>
         </div>
       ))}
     </div>

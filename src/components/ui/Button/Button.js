@@ -5,8 +5,8 @@ const Button = (props) => {
   const {
     type,
     className,
-    text,
-    onClick
+    onClick,
+    children
   } = props
 
   return (
@@ -15,7 +15,7 @@ const Button = (props) => {
       type={type}
       onClick={onClick}
     >
-      {text}
+      {children}
     </button>
   )
 }
@@ -23,8 +23,8 @@ const Button = (props) => {
 Button.propTypes = {
   type: PropTypes.string,
   className: PropTypes.string,
-  text: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  children: PropTypes.string
 }
 
 export default Button

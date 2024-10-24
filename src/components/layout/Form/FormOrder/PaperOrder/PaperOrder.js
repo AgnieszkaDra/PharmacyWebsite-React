@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '../../../../ui'
 import { FaTrash } from 'react-icons/fa'
 import Typography from '../../../../../styles/Typography/Typography'
 import PropTypes from 'prop-types'
@@ -24,13 +25,13 @@ const PaperOrder = (props) => {
             alt={'Uploaded'}
             className={'w-32 h-32 object-cover'}
           />
-          <button
+          <Button
             type={'button'}
             onClick={() => handleClick(item.id)}
             className={'ml-8'}
           >
             <FaTrash />
-          </button>
+          </Button>
         </div>
       ))}
 

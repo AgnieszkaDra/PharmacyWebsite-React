@@ -46,8 +46,8 @@ const NonPrescriptionData = (props) => {
       <Button
         type={'submit'}
         className={'button__submit'}
-        text={'Dodaj kolejny lek'}
       >
+        <p>Dodaj kolejny lek</p>
       </Button>
     </form>
   )

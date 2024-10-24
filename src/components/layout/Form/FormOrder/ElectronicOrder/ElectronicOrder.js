@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaTrash } from 'react-icons/fa'
+import { Button } from '../../../../ui'
 import PropTypes from 'prop-types'
 import Typography from '../../../../../styles/Typography/Typography'
 
@@ -24,13 +25,13 @@ export const ElectronicOrder = (props) => {
           PIN {item.PIN}
           <br></br>
           PESEL {item.PESEL}
-          <button
+          <Button
             type={'button'}
             onClick={() => handleClick(item.id)}
             className={'ml-8'}
           >
             <FaTrash />
-          </button>
+          </Button>
         </div>
       ))}
     </div>

@@ -44,21 +44,22 @@ const PaperPrescriptionData = (props) => {
               name={'fileInput'}
               onChange={onChange}
             />
-            <button
+            <Button
               type={'button'}
               onClick={() => handleRemoveForm(index)}
             >
               <FaTrash />
-            </button>
+            </Button>
           </form>
         </div>
       ))}
       <Button
         type={'submit'}
         className={'button__submit'}
-        text={'Dodaj kolejną receptę papierową'}
         onClick={handleAddForm}
-      />
+      >
+        <p>Dodaj kolejną receptę papierową</p>
+      </Button>
     </>
   )
 }
