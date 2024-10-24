@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import logo from '../../../data/logo/drofarmaptekanamyslow.webp'
+import logo from '../../../images/drofarmaptekanamyslow.webp'
 
 const Footer = () => {
   return (

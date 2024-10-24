@@ -1,17 +1,26 @@
-import { useState } from 'react'
-import { useMediaQuery } from '@react-hook/media-query'
+import { useState, useEffect } from 'react'
 
 const useToggleNavbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState('')
 
-  const isMobile = useMediaQuery('(max-width: 768px)')
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   const openNavbar = () => {
-    if (isMobile) {
-      setNavbarOpen(!navbarOpen)
-    } else {
-      setNavbarOpen(navbarOpen)
+    if (!isMobile) {
+      return
     }
+    setNavbarOpen(navbarOpen => !navbarOpen)
   }
 
   return { navbarOpen, openNavbar }
